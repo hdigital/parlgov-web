@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Data{% endblock %}
+
+{% block content %}
+  <h1>Data</h1>
+
+  <h5><i class="bi bi-globe"></i> · Countries</h5>
+  <div class="row mb-4">
+    {% for country in countries %}
+      <div class="col-sm-3">
+        {{ country.flag }} ·
+        <a href="{% url 'parties:list' country=country.slug %}">
+          {{ country.name }}
+        </a>
+      </div>
+    {% empty %}
+      <div class="col">No countries added yet.</div>
+    {% endfor %}
+  </div>
+
+  <h5><i class="bi bi-download"></i> · Tables</h5>
+  <div class="row">
+    <p>Download data tables in CSV format.</p>
+    <div class="col-3">
+      <select id="table-select" class="form-select" onchange="location = this.value;">
+        <option value="/data/">[ Select table ]</option>
+        {% for table in tables %}
+          <option value="/data-csv/{{ table }}">{{ table }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+{% endblock %}

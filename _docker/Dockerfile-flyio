@@ -1,0 +1,25 @@
+# Pull base image
+FROM python:3.12-slim-bullseye
+
+# Set environment variables -- see also `app/config/.env.example`
+ENV PYTHONDONTWRITEBYTECODE=1 \
+  PYTHONUNBUFFERED=1
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies
+COPY requirements.txt .
+RUN python -m pip install \
+  --disable-pip-version-check --no-cache-dir --no-deps --root-user-action=ignore \
+  -r requirements.txt
+
+
+## FLY.IO DEPLOYMENT
+
+COPY app .
+EXPOSE 8000
+
+# Run migrations and server with entrypoint (SQLite Volume Fly.io)
+COPY ./_docker/entrypoint-flyio.sh ./entrypoint.sh
+ENTRYPOINT ["sh", "./entrypoint.sh"]

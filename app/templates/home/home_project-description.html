@@ -1,0 +1,56 @@
+{% load format_data %}
+
+<p>
+  The Parliaments and Governments Database (ParlGov) is a data infrastructure
+  for political science with information for all EU and most OECD democracies.
+  <em>{{ count.Party|round_100 }} parties</em>,
+  <em>{{ count.Election|round_100 }} elections</em>
+  ({{ count.ElectionResult|round_100 }} results) and
+  <em>{{ count.Cabinet|round_100 }} cabinets</em>
+  ({{ count.CabinetParty|round_100 }} parties).
+</p>
+
+<div class="col-6  mb-4">
+  <select id="country-select" class="form-select" onchange="location = this.value;">
+    {% for country in countries %}
+      <option value="/data/parties/{{ country.name_short|lower }}">
+        {{ country.name }}
+      </option>
+    {% endfor %}
+  </select>
+</div>
+
+<h5><i class="bi bi-globe"></i> · Examples</h5>
+<dl class="row">
+  <dt class="col-sm-3">Parties</dt>
+  <dd class="col-sm-9">
+    <i class="bi bi-people"></i> ·
+    <a href="{% url 'parties:detail' 'deu' 558 %}">Social Democratic Party</a>
+    — 🇩🇪 · Germany
+  </dd>
+  <dt class="col-sm-3">Elections</dt>
+  <dd class="col-sm-9">
+    <i class="bi bi-box-seam"></i> ·
+    <a href="{% url 'elections:detail' 'bgr' '2014-10-05' %}">National 2014</a>
+    (<a href="{% url 'elections:detail_ep' 'bgr' '2014-05-25' %}">EP</a>)
+    — 🇧🇬 · Bulgaria
+  </dd>
+  <dt class="col-sm-3">Cabinets</dt>
+  <dd class="col-sm-9">
+    <i class="bi bi-briefcase"></i> ·
+    <a href="{% url 'cabinets:detail' 'fin' '1917-11-27' %}">
+      Svinhufvud I – 1917
+    </a>
+    — 🇫🇮 · Finland
+  </dd>
+</dl>
+
+<h5><i class="bi bi-download"></i> · Data tables</h5>
+<p>
+  <i class="bi bi-people"></i> ·
+  <a href="{% url 'data_csv' 'view_party' %}">Parties</a> —
+  <i class="bi bi-box-seam"></i> ·
+  <a href="{% url 'data_csv' 'view_election' %}">Elections</a> —
+  <i class="bi bi-briefcase"></i> ·
+  <a href="{% url 'data_csv' 'view_cabinet' %}">Cabinets</a>
+</p>

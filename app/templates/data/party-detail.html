@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load format_data %}
+
+{% block title %}
+  {{ party.country.name_short|title }} // {{ party.name_short }}
+{% endblock %}
+
+{% block content %}
+  {% include 'data/_include_form-select-country.html' with country=party.country.slug url='/data/parties/' %}
+
+  <h1>{{ party.country.flag }} · {{ party.name_english|truncatewords:4 }}</h1>
+
+  <table class="table caption-top">
+    <caption>
+      {% include '_includes/previous-next.html' with prev_next=previous_next %}
+      — <i class="bi bi-people"></i>
+      · Party // {{ party.country.name }} · ID {{ party.id }}
+      {% url 'admin:parties_party_change' party.id as admin_url %}
+      {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=True %}
+    </caption>
+  </table>
+
+  <div class="row">
+    <div class="col-sm">
+      <h6>Name</h6>
+      <ul class="list-unstyled">
+        <li>
+          {{ party.name_short }} — <small>ID {{ party.id }}</small>
+        </li>
+        <li>{{ party.name }}</li>
+        <li>{{ party.name_english }}</li>
+        <li>
+          {{ party.foundation_date|ymd_remove_07_01|default:'<i>none</i>' }}
+        </li>
+        {% if party.family.short != "none" %}
+          <li>
+            <a
+              href="https://partyfacts.herokuapp.com/dataset/parlgov/{{ party.id }}"
+            ><i class="bi bi-box-arrow-up-right"></i></a>
+            · Party Facts
+          </li>
+        {% endif %}
+      </ul>
+
+      <h6>Party family</h6>
+      <ul class="list-unstyled">
+        <li>{{ party.family.name }}</li>
+      </ul>
+    </div>
+
+    <div class="col-sm">
+      {% include 'data/party-detail_change.html' %}
+    </div>
+
+    <div class="col-sm">
+      <h6>Description</h6>
+      <p>{{ party.description|default:'<i>none</i>' }}</p>
+      {% if user.is_authenticated %}
+        <h6>Comment</h6>
+        <p>{{ party.comment|default:'<i>none</i>' }}</p>
+      {% endif %}
+      <h6>Wikipedia</h6>
+      <p>
+        {% if party.wikipedia %}
+          <a href="{{ party.wikipedia }}">
+            {{ party.wikipedia|wikipedia_title }}
+          </a>
+        {% else %}
+          <i>none</i>
+        {% endif %}
+      </p>
+      {% if user.is_authenticated %}
+        <h6>Include rule</h6>
+        <p>{{ party.get_include_rule|default:'<i>none</i>' }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  {% include 'data/party-detail_elections.html' with elections=elections %}
+  {% include 'data/party-detail_elections.html' with elections=elections_ep ep=True %}
+
+  {% if cabinets %}
+    <!-- cabinets-section-test -->
+    <div class="row">
+      <div class="col-sm-8">
+        <h5><i class="bi bi-briefcase"></i> Cabinets</h5>
+        <ul class="list-inline">
+          {% for cabinet in cabinets %}
+            <li class="list-inline-item">
+              <a href="{{ cabinet.cabinet.get_absolute_url }}">
+                {{ cabinet.cabinet.start_date|date:'Y' }}</a>
+              – {{ cabinet.cabinet.name }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

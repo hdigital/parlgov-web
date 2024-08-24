@@ -1,0 +1,20 @@
+# Ignore everything
+*
+
+# Allow Django app files and directories
+!/app
+!/requirements*.txt
+!/_docker
+
+# Ignore local default database and configuration in environment file
+app/*.sqlite
+app/config/.env
+
+# Ignore unnecessary files inside allowed directories
+**/*~
+**/*.log
+**/.DS_Store
+**/__pycache__
+
+app/.pytest_cache
+app/.conftest

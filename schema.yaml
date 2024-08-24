@@ -1,0 +1,1250 @@
+openapi: 3.0.3
+info:
+  title: ParlGov API
+  version: 0.0.0
+  description: 'Parliaments and governments database (ParlGov): Data on parties, elections,
+    and cabinets'
+paths:
+  /api/cabinet-parties/:
+    get:
+      operationId: cabinet_parties_list
+      description: Rest API view for CabinetParty model.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - cabinet-parties
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCabinetPartyList'
+          description: ''
+  /api/cabinet-parties/{id}/:
+    get:
+      operationId: cabinet_parties_retrieve
+      description: Rest API view for CabinetParty model.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this cabinet party.
+        required: true
+      tags:
+      - cabinet-parties
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CabinetParty'
+          description: ''
+  /api/cabinets/:
+    get:
+      operationId: cabinets_list
+      description: Rest API view for Cabinet model.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - cabinets
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCabinetList'
+          description: ''
+  /api/cabinets/{id}/:
+    get:
+      operationId: cabinets_retrieve
+      description: Rest API view for Cabinet model.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this cabinet.
+        required: true
+      tags:
+      - cabinets
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cabinet'
+          description: ''
+  /api/codes/:
+    get:
+      operationId: codes_list
+      description: Rest API view for Code model.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - codes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCodeList'
+          description: ''
+  /api/codes/{id}/:
+    get:
+      operationId: codes_retrieve
+      description: Rest API view for Code model.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this code.
+        required: true
+      tags:
+      - codes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Code'
+          description: ''
+  /api/countries/:
+    get:
+      operationId: countries_list
+      description: Rest API view for Country model.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - countries
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCountryList'
+          description: ''
+  /api/countries/{id}/:
+    get:
+      operationId: countries_retrieve
+      description: Rest API view for Country model.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this country.
+        required: true
+      tags:
+      - countries
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+          description: ''
+  /api/election-results/:
+    get:
+      operationId: election_results_list
+      description: Rest API view for ElectionResult model.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - election-results
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedElectionResultList'
+          description: ''
+  /api/election-results/{id}/:
+    get:
+      operationId: election_results_retrieve
+      description: Rest API view for ElectionResult model.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this election result.
+        required: true
+      tags:
+      - election-results
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ElectionResult'
+          description: ''
+  /api/elections/:
+    get:
+      operationId: elections_list
+      description: Rest API view for Election model.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - elections
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedElectionList'
+          description: ''
+  /api/elections/{id}/:
+    get:
+      operationId: elections_retrieve
+      description: Rest API view for Election model.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this election.
+        required: true
+      tags:
+      - elections
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Election'
+          description: ''
+  /api/parties/:
+    get:
+      operationId: parties_list
+      description: Rest API view for Party model.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - parties
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPartyList'
+          description: ''
+  /api/parties/{id}/:
+    get:
+      operationId: parties_retrieve
+      description: Rest API view for Party model.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this party.
+        required: true
+      tags:
+      - parties
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Party'
+          description: ''
+  /api/party-changes/:
+    get:
+      operationId: party_changes_list
+      description: Rest API view for PartyChange model.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - party-changes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPartyChangeList'
+          description: ''
+  /api/party-changes/{id}/:
+    get:
+      operationId: party_changes_retrieve
+      description: Rest API view for PartyChange model.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this party change.
+        required: true
+      tags:
+      - party-changes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartyChange'
+          description: ''
+  /api/party-name-changes/:
+    get:
+      operationId: party_name_changes_list
+      description: Rest API view for PartyNameChange model.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - party-name-changes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPartyNameChangeList'
+          description: ''
+  /api/party-name-changes/{id}/:
+    get:
+      operationId: party_name_changes_retrieve
+      description: Rest API view for PartyNameChange model.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this party name change.
+        required: true
+      tags:
+      - party-name-changes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartyNameChange'
+          description: ''
+components:
+  schemas:
+    Cabinet:
+      type: object
+      description: Rest API serializer for Cabinet model.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          maxLength: 50
+        start_date:
+          type: string
+          format: date
+        termination_date:
+          type: string
+          format: date
+          nullable: true
+        caretaker:
+          type: boolean
+        wikipedia:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 200
+        data_source:
+          type: string
+          description: list of data sources separated by a comma
+          maxLength: 200
+        description:
+          type: string
+          description: information about the observation
+        comment:
+          type: string
+          description: comments about the coding of this observation
+        data_json:
+          description: |-
+            additional data saved as key-value pairs in JSON format
+                                     — use "{}" for empty json fields
+        country:
+          type: integer
+        election:
+          type: integer
+          nullable: true
+          description: previous election — value is added or updated on save
+      required:
+      - country
+      - created_at
+      - id
+      - name
+      - start_date
+      - updated_at
+    CabinetParty:
+      type: object
+      description: Rest API serializer for CabinetParty model.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        pm:
+          type: boolean
+        defector:
+          type: boolean
+          description: Add information in description field why party defected from
+            cabinet
+        party_id_source:
+          type: string
+          maxLength: 200
+        data_source:
+          type: string
+          description: list of data sources separated by a comma
+          maxLength: 200
+        description:
+          type: string
+          description: information about the observation
+        comment:
+          type: string
+          description: comments about the coding of this observation
+        data_json:
+          description: |-
+            additional data saved as key-value pairs in JSON format
+                                     — use "{}" for empty json fields
+        cabinet:
+          type: integer
+        party:
+          type: integer
+      required:
+      - cabinet
+      - created_at
+      - id
+      - party
+      - updated_at
+    Code:
+      type: object
+      description: Rest API serializer for Code model.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        table_variable:
+          $ref: '#/components/schemas/TableVariableEnum'
+        order:
+          type: integer
+        short:
+          type: string
+          maxLength: 25
+          pattern: ^[-a-zA-Z0-9_]+$
+        name:
+          type: string
+          maxLength: 50
+        wikipedia:
+          type: string
+          format: uri
+          maxLength: 200
+        description:
+          type: string
+          description: information about the observation
+        comment:
+          type: string
+          description: comments about the coding of this observation
+        data_json:
+          description: |-
+            additional data saved as key-value pairs in JSON format
+                                     — use "{}" for empty json fields
+      required:
+      - created_at
+      - id
+      - name
+      - order
+      - short
+      - table_variable
+      - updated_at
+    Country:
+      type: object
+      description: Rest API serializer for Country model.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        name_short:
+          type: string
+          maxLength: 3
+        flag:
+          type: string
+          maxLength: 2
+        code_iso2:
+          type: string
+          maxLength: 2
+        eu_accession_date:
+          type: string
+          format: date
+          nullable: true
+        oecd_accession_date:
+          type: string
+          format: date
+          nullable: true
+        description:
+          type: string
+          description: information about the observation
+        comment:
+          type: string
+          description: comments about the coding of this observation
+        data_json:
+          description: |-
+            additional data saved as key-value pairs in JSON format
+                                     — use "{}" for empty json fields
+      required:
+      - code_iso2
+      - created_at
+      - flag
+      - id
+      - name
+      - name_short
+      - updated_at
+    Election:
+      type: object
+      description: Rest API serializer for Election model.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        date:
+          type: string
+          format: date
+        early:
+          type: boolean
+        wikipedia:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 200
+        dissolution_date:
+          type: string
+          format: date
+          nullable: true
+        seats_total:
+          type: integer
+          maximum: 1000
+        electorate:
+          type: integer
+          nullable: true
+        votes_cast:
+          type: integer
+          nullable: true
+        votes_valid:
+          type: integer
+          nullable: true
+        data_source:
+          type: string
+          description: list of data sources separated by a comma
+          maxLength: 200
+        description:
+          type: string
+          description: information about the observation
+        comment:
+          type: string
+          description: comments about the coding of this observation
+        data_json:
+          description: |-
+            additional data saved as key-value pairs in JSON format
+                                     — use "{}" for empty json fields
+        type:
+          type: integer
+          default: 13
+        country:
+          type: integer
+      required:
+      - country
+      - created_at
+      - date
+      - id
+      - seats_total
+      - updated_at
+    ElectionResult:
+      type: object
+      description: Rest API serializer for ElectionResult model.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        party_id_source:
+          type: string
+          maxLength: 200
+        seats:
+          type: integer
+          maximum: 1000
+          nullable: true
+          description: enter '0' if the party won no seats -- leave empty for alliances
+            were seats are coded for members
+        vote_share:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,2})?$
+          nullable: true
+          description: official vote share -- max. two  decimal places
+        votes:
+          type: integer
+          nullable: true
+        data_source:
+          type: string
+          description: list of data sources separated by a comma
+          maxLength: 200
+        description:
+          type: string
+          description: information about the observation
+        comment:
+          type: string
+          description: comments about the coding of this observation
+        data_json:
+          description: |-
+            additional data saved as key-value pairs in JSON format
+                                     — use "{}" for empty json fields
+        election:
+          type: integer
+        party:
+          type: integer
+        alliance:
+          type: integer
+          nullable: true
+          description: '''election_result_id'' of electoral alliance party belongs
+            to in this election'
+      required:
+      - created_at
+      - election
+      - id
+      - party
+      - updated_at
+    PaginatedCabinetList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Cabinet'
+    PaginatedCabinetPartyList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CabinetParty'
+    PaginatedCodeList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Code'
+    PaginatedCountryList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Country'
+    PaginatedElectionList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Election'
+    PaginatedElectionResultList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ElectionResult'
+    PaginatedPartyChangeList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PartyChange'
+    PaginatedPartyList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Party'
+    PaginatedPartyNameChangeList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PartyNameChange'
+    Party:
+      type: object
+      description: Rest API serializer for Party model.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        name_short:
+          type: string
+          maxLength: 10
+        name_english:
+          type: string
+          maxLength: 200
+        name:
+          type: string
+          maxLength: 200
+        name_ascii:
+          type: string
+          maxLength: 200
+        name_nonlatin:
+          type: string
+          maxLength: 200
+        wikipedia:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 200
+        foundation_date:
+          type: string
+          format: date
+          nullable: true
+          description: |-
+            'xxxx-07-01' for known year and unknown month/day —
+                                 data_json 'xyz_date = true' for exact date on 'xxxx-07-01'
+        dissolution_date:
+          type: string
+          format: date
+          nullable: true
+        data_source:
+          type: string
+          description: list of data sources separated by a comma
+          maxLength: 200
+        description:
+          type: string
+          description: information about the observation
+        comment:
+          type: string
+          description: comments about the coding of this observation
+        data_json:
+          description: |-
+            additional data saved as key-value pairs in JSON format
+                                     — use "{}" for empty json fields
+        country:
+          type: integer
+        family:
+          type: integer
+      required:
+      - country
+      - created_at
+      - family
+      - id
+      - name
+      - name_ascii
+      - name_english
+      - name_short
+      - updated_at
+    PartyChange:
+      type: object
+      description: Rest API serializer for PartyChange model.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        date:
+          type: string
+          format: date
+          description: |-
+            'xxxx-07-01' for known year and unknown month/day —
+                                 data_json 'xyz_date = true' for exact date on 'xxxx-07-01'
+        data_source:
+          type: string
+          description: list of data sources separated by a comma
+          maxLength: 200
+        description:
+          type: string
+          description: information about the observation
+        comment:
+          type: string
+          description: comments about the coding of this observation
+        data_json:
+          description: |-
+            additional data saved as key-value pairs in JSON format
+                                     — use "{}" for empty json fields
+        party:
+          type: integer
+        party_new:
+          type: integer
+        type:
+          type: integer
+          nullable: true
+      required:
+      - created_at
+      - date
+      - id
+      - party
+      - party_new
+      - updated_at
+    PartyNameChange:
+      type: object
+      description: Rest API serializer for PartyNameChange model.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        date:
+          type: string
+          format: date
+          description: |-
+            'xxxx-07-01' for known year and unknown month/day —
+                                 data_json 'xyz_date = true' for exact date on 'xxxx-07-01'
+        party_change:
+          type: boolean
+        name_short:
+          type: string
+          maxLength: 10
+        name_english:
+          type: string
+          maxLength: 200
+        name:
+          type: string
+          maxLength: 200
+        name_ascii:
+          type: string
+          maxLength: 200
+        name_nonlatin:
+          type: string
+          maxLength: 200
+        data_source:
+          type: string
+          description: list of data sources separated by a comma
+          maxLength: 200
+        description:
+          type: string
+          description: information about the observation
+        comment:
+          type: string
+          description: comments about the coding of this observation
+        data_json:
+          description: |-
+            additional data saved as key-value pairs in JSON format
+                                     — use "{}" for empty json fields
+        party:
+          type: integer
+      required:
+      - created_at
+      - date
+      - id
+      - party
+      - updated_at
+    TableVariableEnum:
+      enum:
+      - party_family
+      - party_change_type
+      - election_type
+      - election_ep_type
+      - cabinet_termination
+      - cabinet_support
+      - confidence_vote
+      - news_type
+      type: string
+      description: |-
+        * `party_family` - party — family_id
+        * `party_change_type` - party change — type_id
+        * `election_type` - election — type_id
+        * `election_ep_type` - election ep — type_id
+        * `cabinet_termination` - cabinet — termination_id
+        * `cabinet_support` - cabinet_support — type_id
+        * `confidence_vote` - confidence_vote — type_id
+        * `news_type` - news — type_id
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

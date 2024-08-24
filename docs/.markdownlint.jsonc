@@ -1,0 +1,12 @@
+{
+  // https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.jsonc
+  "default": true,
+  // Markdown format exceptions for Python Markdown package used by mkdocs
+  // only used for Markdown files in 'doc' folder
+  // https://github.com/Python-Markdown/markdown/issues/3
+  "MD007": {
+    "indent": 4,
+  },
+  // Disable rules in file: <!-- markdownlint-disable -->
+  // Enable rules in file:  <!-- markdownlint-enable -->
+}

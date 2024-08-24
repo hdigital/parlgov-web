@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load markdown_extras %}
+
+{% block title %}News{% endblock %}
+
+{% block content %}
+  <h1>News</h1>
+
+  <div class="row">
+    {% for entry in object_list %}
+      <div class="col-sm-1"></div>
+      <div class="col-sm-2">{{ entry.date|date:'M. j, Y' }}</div>
+      <div class="col-sm-8">
+        <h6>
+          {{ entry.title }}
+          {% url 'admin:documentation_news_change' entry.id as admin_url %}
+          {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=True %}
+        </h6>
+        <p>{{ entry.content|markdown|safe }}</p>
+      </div>
+      <div class="col-sm-1"></div>
+    {% empty %}
+      <div class="col">No news added yet.</div>
+    {% endfor %}
+  </div>
+{% endblock %}

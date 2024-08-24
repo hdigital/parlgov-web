@@ -1,0 +1,52 @@
+{
+  // https://github.com/devcontainers/images/tree/main/src/python
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  // https://containers.dev/features
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/guiyomh/features/just:0": {}
+  },
+  "remoteEnv": {
+    "PIP_REQUIRE_VIRTUALENV": "true"
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "pipx install --quiet uv",
+  "postCreateCommand": "just codespace-init",
+  "forwardPorts": [8000, 8888],
+  "portsAttributes": {
+    "8000": {
+      "label": "Application"
+    },
+    "8888": {
+      "label": "Documentation"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.codespaces",
+        // duplicate section of 'extensions.json' to install VSC extensions on build
+        "batisteo.vscode-django",
+        "charliermarsh.ruff",
+        "davidanson.vscode-markdownlint",
+        "donjayamanne.githisto",
+        "eamodio.gitlens",
+        "ecmel.vscode-html-css",
+        "editorconfig.editorconfig",
+        "foxundermoon.shell-format",
+        "github.vscode-github-actions",
+        "stkb.rewrap",
+        "mikestead.dotenv",
+        "ms-python.black-formatter",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.vscode-pylance",
+        "streetsidesoftware.code-spell-checker",
+        "tamasfe.even-better-toml"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python"
+      }
+    }
+  }
+}

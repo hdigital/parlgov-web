@@ -1,0 +1,30 @@
+{% if elections %}
+  <div class="row">
+    <div class="col-sm-8">
+      <h5>
+        {% if ep %}
+          <!-- elections-ep-section-test -->
+          <i class="bi bi-globe"></i> European elections
+        {% else %}
+          <!-- elections-section-test -->
+          <i class="bi bi-pin-map"></i> National elections
+        {% endif %}
+      </h5>
+      <ul class="list-inline">
+        {% for election in elections %}
+          <li class="list-inline-item">
+            <a href="{{ election.election.get_absolute_url }}">
+              {{ election.election.date|date:'Y' }}</a>
+            –
+            {% if election.vote_share %}
+              {{ election.vote_share|floatformat }}
+            {% else %}
+              //
+            {% endif %}–
+            {{ election.seats|default_if_none:'//' }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}

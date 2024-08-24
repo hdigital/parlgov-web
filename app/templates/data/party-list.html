@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ country.name_short|title }} // parties
+{% endblock %}
+
+{% block content %}
+  {% include 'data/_include_form-select-country.html' with country=country.slug url='/data/parties/' %}
+
+  <h1>{{ country.flag }} · Parties</h1>
+
+  <table class="table table-striped caption-top">
+    <caption>List of parties in {{ country.name }}</caption>
+
+    <thead>
+      <tr>
+        <th scope="col" class="d-none d-md-table-cell">ID</th>
+        <th scope="col">
+          <span
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Name short"
+          >
+            #
+          </span>
+        </th>
+        <th scope="col" class="d-none d-md-table-cell">Name</th>
+        <th scope="col">English</th>
+        <th scope="col">Formed</th>
+        <th scope="col" style="text-align: center" class="d-none d-md-table-cell">
+          <i
+            class="bi bi-box-seam"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Elections"
+          >
+          </i>
+        </th>
+        <th scope="col" style="text-align: center" class="d-none d-md-table-cell">
+          <i
+            class="bi bi-briefcase"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Cabinets"
+          >
+          </i>
+        </th>
+        <th scope="col" style="text-align: center">
+          {% url 'admin:parties_party_add' as admin_url %}
+          {% include '_includes/admin.html' with url=admin_url icon='plus-circle' k='?country=' v=country.id %}
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for party in party_list %}
+        <tr>
+          <td class="d-none d-md-table-cell">
+            <small>{{ party.id }}</small>
+          </td>
+          <td>
+            <a href="{{ party.get_absolute_url }}">{{ party.name_short }}</a>
+            <ul>
+              {% for change in party.partynamechange_set.all %}
+                <li>{{ change.name_short }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td class="d-none d-md-table-cell">
+            {{ party.name }}
+            <ul>
+              {% for change in party.partynamechange_set.all %}
+                <li>{{ change.name }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td>
+            {{ party.name_english }}
+            <ul>
+              {% for change in party.partynamechange_set.all %}
+                <li>{{ change.name_english }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td style="text-align: center">
+            {{ party.foundation_date|date:'Y'|default:'–' }}
+            <ul>
+              {% for change in party.partynamechange_set.all %}
+                <li>{{ change.date|date:'Y' }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td
+            style="text-align: center"
+            class="d-none d-md-table-cell"
+          >
+            {{ party.electionresult__count|default:'–' }}
+          </td>
+          <td
+            style="text-align: center"
+            class="d-none d-md-table-cell"
+          >
+            {{ party.cabinetparty__count|default:'–' }}
+          </td>
+          <td style="text-align: center">
+            {% url 'admin:parties_party_change' party.id as admin_url %}
+            {% include '_includes/admin.html' with url=admin_url icon='pencil' %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% include '_includes/tooltip-initialize.html' %}
+{% endblock %}

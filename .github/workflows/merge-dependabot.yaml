@@ -1,0 +1,23 @@
+name: Dependabot auto-merge
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  ci-checks:
+    if: github.actor == 'dependabot[bot]'
+    uses: ./.github/workflows/run-ci-checks.yaml
+
+  merge-dependabot:
+    needs: [ci-checks]
+    runs-on: ubuntu-latest
+
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: Merge Dependabot PR
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}

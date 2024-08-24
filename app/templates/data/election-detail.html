@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load format_data %}
+
+{% block title %}
+  {{ election.country.name_short|title }} // {{ election.date|date:"Y" }} election
+{% endblock %}
+
+{% block content %}
+
+  {% include 'data/_include_form-select-country.html' with country=election.country.slug url='/data/elections/' %}
+
+  <h1>
+    {{ election.country.flag }} ·
+    {% if election.type.short == 'ep' %}
+      EP election
+    {% else %}
+      Election
+    {% endif %}
+    {{ election.date|date:"Y" }}
+  </h1>
+  <table class="table table-striped caption-top">
+    <caption>
+      {% include '_includes/previous-next.html' with prev_next=previous_next %}
+      —
+      {% if election.type.short == 'ep' %}
+        <i class="bi bi-globe"></i> European
+      {% else %}
+        <i class="bi bi-pin-map"></i> National
+      {% endif %}
+      // {{ election.country.name }} · ID {{ election.id }}
+      {% url 'admin:elections_election_change' election.id as admin_url %}
+      {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=True %}
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col" class="d-none d-md-table-cell">ID</th>
+        <th scope="col">Party</th>
+        <th
+          scope="col"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Alliance"
+        >
+          #
+        </th>
+        <th scope="col" class="d-none d-md-table-cell">Name</th>
+        <th scope="col" style="text-align: right">Seat share</th>
+        <th
+          scope="col"
+          style="text-align: right"
+          class="d-none d-md-table-cell"
+        >
+          Seats
+        </th>
+        <th scope="col" style="text-align: right">Vote share</th>
+        <th
+          scope="col"
+          style="text-align: right"
+          class="d-none d-md-table-cell"
+        >
+          Votes
+        </th>
+        <th scope="col" style="text-align: center">
+          {% url 'admin:elections_electionresult_add' as admin_url %}
+          {% include '_includes/admin.html' with url=admin_url icon='plus-circle' k='?election=' v=election.id %}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in election_results %}
+        {% include 'data/election-detail_results.html' with result=result alliance=result.alliance_set.all %}
+        {% for alliance_member in result.alliance_set.all %}
+          {% include 'data/election-detail_results.html' with result=alliance_member %}
+        {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col-sm">
+      <h5><i class="bi bi-info-circle"></i> · Information</h5>
+      <dl class="row">
+        <dt class="col-sm-3">Date</dt>
+        <dd class="col-sm-9">{{ election.date|date:"j. F Y" }}</dd>
+        <dt class="col-sm-3">Early · <i class="bi bi-lightning"></i></dt>
+        <dd class="col-sm-9">
+          {% if election.early %} yes {% else %} no {% endif %}
+        </dd>
+        <dt class="col-sm-3">Total seats</dt>
+        <dd class="col-sm-9">{{ election.seats_total|default_if_none:"" }}</dd>
+        <dt class="col-sm-3">Wikipedia</dt>
+        <dd class="col-sm-9">
+          <a href={{ election.wikipedia }}>
+            {{ election.wikipedia|wikipedia_title }}
+          </a>
+        </dd>
+        {% if election.ep_previous_election %}
+          <dt class="col-sm-3">Election parliament</dt>
+          <dd class="col-sm-9">
+            <a href="{{ election.ep_previous_election.get_absolute_url }}">
+              {{ election.ep_previous_election.date|date:"j. F Y"|default:"<i>none</i>" }}
+            </a>
+          </dd>
+        {% endif %}
+      </dl>
+    </div>
+    <div class="col-sm">
+      <h5><i class="bi bi-box2"></i> · Votes</h5>
+      <dl class="row">
+        <dt class="col-sm-3">Electorate</dt>
+        <dd class="col-sm-9">
+          {{ election.electorate|default_if_none:""|intcomma }}
+        </dd>
+        <dt class="col-sm-3">Total votes</dt>
+        <dd class="col-sm-9">
+          {{ election.votes_cast|default_if_none:""|intcomma }}
+        </dd>
+        <dt class="col-sm-3">Valid votes</dt>
+        <dd class="col-sm-9">
+          {{ election.votes_valid|default_if_none:""|intcomma }}
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  {% if cabinets %}
+    <!-- cabinets-section-test -->
+    <div class="row">
+      <div class="col-sm-8">
+        <h5><i class="bi bi-briefcase"></i> · Cabinets</h5>
+        <ul class="list-inline">
+          {% for cabinet in cabinets %}
+            <li class="list-inline-item">
+              <a href="{{ cabinet.get_absolute_url }}">
+                {{ cabinet.start_date|date:"Y-m-d" }}</a>
+              – {{ cabinet.name }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+
+  {% include '_includes/tooltip-initialize.html' %}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load humanize %}
+
+<tr>
+  <td class="d-none d-md-table-cell">
+    <small>{{ result.id }}</small>
+  </td>
+  <td>
+    <a href="{{ result.party.get_absolute_url }}">{{ result.party.name_short }}</a>
+  </td>
+  <td>
+    {{ result.alliance.party.name_short }}
+    {% if alliance %}
+      {{ result.party.name_short }}
+    {% endif %}
+  </td>
+  <td class="d-none d-md-table-cell">
+    <small>{{ result.party.name_english|truncatechars:40 }}</small>
+  </td>
+  <td style="text-align: right">
+    {{ result.seat_share|default_if_none:''|floatformat }}
+  </td>
+  <td style="text-align: right" class="d-none d-md-table-cell">
+    {{ result.seats|default_if_none:'' }}
+  </td>
+  <td style="text-align: right">
+    {{ result.vote_share|default_if_none:''|floatformat }}
+  </td>
+  <td style="text-align: right" class="d-none d-md-table-cell">
+    {{ result.votes|default_if_none:''|intcomma }}
+  </td>
+  <td style="text-align: center">
+    {% url 'admin:elections_electionresult_change' result.id as admin_url %}
+    {% include '_includes/admin.html' with url=admin_url icon='pencil' %}
+  </td>
+</tr>

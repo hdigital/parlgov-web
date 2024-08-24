@@ -1,0 +1,36 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+#
+# update versions with: `pre-commit autoupdate`
+# run without commit: `pre-commit run --all-files`
+repos:
+  - repo: https://github.com/rtts/djhtml
+    rev: 3.0.6
+    hooks:
+      - id: djhtml
+        args:
+          - --tabwidth=2
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+        exclude: ^(docs/assets)/
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-json
+        exclude: ^(\.devcontainer|\.vscode)/
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.1
+    hooks:
+      # Run Ruff linter.
+      - id: ruff
+        args: [--fix]
+      # Run Ruff formatter.
+      - id: ruff-format

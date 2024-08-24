@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load markdown_extras %}
+
+{% block content %}
+  <div class="row col-sm-12">
+    <h1 id="codebook">Codebook</h1>
+    <p class="mt-2 mb-5">
+      See also <a href="../codebook-markdown">Codebook Markdown</a>
+      and <a href="../news">News archive</a>.
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-7">
+      <p>
+        Döring, Holger and Philip Manow. 2024. Parliaments and governments
+        database (ParlGov): Information on parties, elections and cabinets
+        in established democracies.
+        <ul>
+          <li>
+            <a href="https://parlgov.org">parlgov.org</a>
+          </li>
+          <li>
+            <a href="https://dataverse.harvard.edu/dataverse/parlgov">
+              dataverse.harvard.edu/dataverse/parlgov
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/hdigital/parlgov-snippets">
+              github.com/hdigital/parlgov-snippets
+            </a>
+          </li>
+        </ul>
+      </p>
+
+      <a id="coding-rule"></a>
+      <hr />
+      {% include "docs/_include_nav-sections.html" %}
+      <h2>Coding rules</h2>
+      {% for section in codebook reversed%}
+        {% url 'admin:docs_page_change' section.id as admin_url %}
+        {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=False %}
+        {{ section.content|add_heading|markdown|safe }}
+      {% endfor %}
+
+      <a id="country"></a>
+      <hr />
+      {% include "docs/_include_nav-sections.html" %}
+      <h2>Countries</h2>
+      {% for section in country|dictsort:'content' %}
+        {% url 'admin:docs_page_change' section.id as admin_url %}
+        {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=False %}
+        <a id="{{ section.section }}"></a>
+        {{ section.content|add_heading|markdown|safe }}
+      {% endfor %}
+
+      <a id="credits"></a>
+      <hr />
+      {% include "docs/_include_nav-sections.html" %}
+      <h2>Contributors</h2>
+      {% for section in credits %}
+        {% url 'admin:docs_page_change' section.id as admin_url %}
+        {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=False %}
+        {{ section.content|add_heading:"#"|markdown|safe }}
+      {% endfor %}
+
+      <a id="changelog"></a>
+      <hr />
+      {% include "docs/_include_nav-sections.html" %}
+      <h2>Changes</h2>
+      {% for section in changelog reversed %}
+        {% url 'admin:docs_page_change' section.id as admin_url %}
+        {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=False %}
+        {{ section.content|add_heading|markdown|safe }}
+      {% endfor %}
+      <hr />
+    </div>
+  </div>
+
+{% endblock %}

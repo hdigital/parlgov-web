@@ -1,0 +1,12 @@
+# Exclude files from formatting with 'prettier'
+# https://prettier.io/docs/en/ignore.html#ignoring-files-prettierignore
+
+app/parlgov-fixture.json
+
+# Django html templates and static files
+app/templates
+app/static*
+
+# Generated files
+package-lock.json
+schema.yaml

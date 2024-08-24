@@ -1,0 +1,123 @@
+[project]
+name = "parlgov-web"
+version = "0"
+description = "A re-implementation of ParlGov"
+maintainers = [{ name = "Holger Döring" }]
+license = { text = "MIT License" }
+readme = "README.md"
+requires-python = ">=3.12"
+
+
+## ----------------------------------------------------------------------------
+## Pip packages
+
+# 'requirements.txt' created with pip compile
+dependencies = [
+  "django==4.2.*",
+  # Django tools
+  "django-environ~=0.8", # environment variables configuration
+  # Utilities
+  "docutils~=0.18",           # Django admin documentation generator
+  "markdown==3.*",            # Markdown parser for markdown fields
+  "djangorestframework==3.*",
+  # Usage tools
+  "tqdm == 4.*", # progress bar for project commands
+  # Production server
+  "gunicorn==23.*",  # HTTP server
+  "whitenoise==6.*", #  static file serving
+]
+
+# 'requirements-dev.txt' created with pip compile
+[project.optional-dependencies]
+dev = [
+  # Django development
+  "django-debug-toolbar",
+  "django-extensions==3.*", # graph models, 'shell_plus', 'validate_templates', ...
+  "django-import-export",
+  # Package management
+  "pip-tools", # pin versions packages (production)
+  # Usage tools
+  "ipython == 8.*", # enhanced shell
+]
+docs = [
+  "mkdocs-material",
+  "drf-spectacular", # OpenAPI schema generator
+]
+linting = [
+  "ruff",           # code linter and formatter
+  "pre-commit",     # see '.pre-commit-config.yaml'
+  "mypy",           # type checking
+  "types-Markdown",
+]
+testing = [
+  "pytest",               # main testing package
+  "factory_boy",          # test factories
+  "pytest-cov",           # coverage
+  "pytest-django",
+  "pytest-randomly",
+  "pytest-xdist[psutil]",
+]
+
+
+## ----------------------------------------------------------------------------
+## Web pages project
+[project.urls]
+homepage = "https://parlgov.fly.dev"
+# documentation = ""
+repository = "https://github.com/hdigital/parlgov-web.git"
+# changelog = ""
+
+
+## ============================================================================
+## PACKAGES SETTINGS
+
+## ----------------------------------------------------------------------------
+## Ruff settings
+
+[tool.ruff]
+extend-exclude = ["migrations"]
+
+[tool.ruff.lint]
+select = [
+  "E",  # pycodestyle
+  "F",  # pyflakes
+  "I",  # isort
+  "UP", # pyupgrade
+  "D",  # pydocstyle
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+# https://docs.astral.sh/ruff/rules/
+# Ignore 'Missing docstring': D100 module, D101 class, D102 method, D103 function,
+#   D104 package, D105 magic method, D106 nested class
+"__init__.py" = ["D104"]
+"admin.py" = ["D100", "D101"]
+"apps.py" = ["D100", "D101"]
+"factories.py" = ["D100", "D101", "D106"]
+"*models.py" = ["D100", "D105", "D106"]
+"serializers.py" = ["D106"]
+"test*.py" = ["D100", "D103"]
+"tests.py" = ["D100", "D103"]
+"urls.py" = ["D100"]
+"views.py" = ["D100", "D101"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["django", "pytest_django", "rest_framework"]
+known-local-folder = ["apps"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+## ----------------------------------------------------------------------------
+## Mypy settings
+
+[tool.mypy]
+exclude = ['migrations']
+
+
+## ----------------------------------------------------------------------------
+# Specify build system to run pip-tools
+# (application is not a package and no build is needed)
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

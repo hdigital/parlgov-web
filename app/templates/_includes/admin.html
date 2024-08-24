@@ -1,0 +1,6 @@
+{% if user.is_staff %}
+  {% if middot %} · {% endif %}
+  <a href="{{ url }}{{ k }}{{ v }}" class="text-decoration-none">
+    <i class="bi bi-{{ icon }}"></i>
+  </a>
+{% endif %}

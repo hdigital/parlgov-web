@@ -1,0 +1,72 @@
+<hr />
+
+<ul class="nav">
+  <li>
+    {# hard coded to avoid database queries #}
+    <select id="country-select" class="form-select" onchange="location = this.value;">
+      <option {% if country == "aus" %} selected {% else %} value="{{ url }}aus/" {% endif %}>Australia</option>
+      <option {% if country == "aut" %} selected {% else %} value="{{ url }}aut/" {% endif %}>Austria</option>
+      <option {% if country == "bel" %} selected {% else %} value="{{ url }}bel/" {% endif %}>Belgium</option>
+      <option {% if country == "bgr" %} selected {% else %} value="{{ url }}bgr/" {% endif %}>Bulgaria</option>
+      <option {% if country == "can" %} selected {% else %} value="{{ url }}can/" {% endif %}>Canada</option>
+      <option {% if country == "hrv" %} selected {% else %} value="{{ url }}hrv/" {% endif %}>Croatia</option>
+      <option {% if country == "cyp" %} selected {% else %} value="{{ url }}cyp/" {% endif %}>Cyprus</option>
+      <option {% if country == "cze" %} selected {% else %} value="{{ url }}cze/" {% endif %}>Czech Republic</option>
+      <option {% if country == "dnk" %} selected {% else %} value="{{ url }}dnk/" {% endif %}>Denmark</option>
+      <option {% if country == "est" %} selected {% else %} value="{{ url }}est/" {% endif %}>Estonia</option>
+      <option {% if country == "fin" %} selected {% else %} value="{{ url }}fin/" {% endif %}>Finland</option>
+      <option {% if country == "fra" %} selected {% else %} value="{{ url }}fra/" {% endif %}>France</option>
+      <option {% if country == "deu" %} selected {% else %} value="{{ url }}deu/" {% endif %}>Germany</option>
+      <option {% if country == "grc" %} selected {% else %} value="{{ url }}grc/" {% endif %}>Greece</option>
+      <option {% if country == "hun" %} selected {% else %} value="{{ url }}hun/" {% endif %}>Hungary</option>
+      <option {% if country == "isl" %} selected {% else %} value="{{ url }}isl/" {% endif %}>Iceland</option>
+      <option {% if country == "irl" %} selected {% else %} value="{{ url }}irl/" {% endif %}>Ireland</option>
+      <option {% if country == "isr" %} selected {% else %} value="{{ url }}isr/" {% endif %}>Israel</option>
+      <option {% if country == "ita" %} selected {% else %} value="{{ url }}ita/" {% endif %}>Italy</option>
+      <option {% if country == "jpn" %} selected {% else %} value="{{ url }}jpn/" {% endif %}>Japan</option>
+      <option {% if country == "lva" %} selected {% else %} value="{{ url }}lva/" {% endif %}>Latvia</option>
+      <option {% if country == "ltu" %} selected {% else %} value="{{ url }}ltu/" {% endif %}>Lithuania</option>
+      <option {% if country == "lux" %} selected {% else %} value="{{ url }}lux/" {% endif %}>Luxembourg</option>
+      <option {% if country == "mlt" %} selected {% else %} value="{{ url }}mlt/" {% endif %}>Malta</option>
+      <option {% if country == "nld" %} selected {% else %} value="{{ url }}nld/" {% endif %}>Netherlands</option>
+      <option {% if country == "nzl" %} selected {% else %} value="{{ url }}nzl/" {% endif %}>New Zealand</option>
+      <option {% if country == "nor" %} selected {% else %} value="{{ url }}nor/" {% endif %}>Norway</option>
+      <option {% if country == "pol" %} selected {% else %} value="{{ url }}pol/" {% endif %}>Poland</option>
+      <option {% if country == "prt" %} selected {% else %} value="{{ url }}prt/" {% endif %}>Portugal</option>
+      <option {% if country == "rou" %} selected {% else %} value="{{ url }}rou/" {% endif %}>Romania</option>
+      <option {% if country == "svk" %} selected {% else %} value="{{ url }}svk/" {% endif %}>Slovakia</option>
+      <option {% if country == "svn" %} selected {% else %} value="{{ url }}svn/" {% endif %}>Slovenia</option>
+      <option {% if country == "esp" %} selected {% else %} value="{{ url }}esp/" {% endif %}>Spain</option>
+      <option {% if country == "swe" %} selected {% else %} value="{{ url }}swe/" {% endif %}>Sweden</option>
+      <option {% if country == "che" %} selected {% else %} value="{{ url }}che/" {% endif %}>Switzerland</option>
+      <option {% if country == "tur" %} selected {% else %} value="{{ url }}tur/" {% endif %}>Turkey</option>
+      <option {% if country == "gbr" %} selected {% else %} value="{{ url }}gbr/" {% endif %}>United Kingdom</option>
+    </select>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'parties:list' country=country %}">
+      <i class="bi bi-people"></i> · Parties
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'elections:list' country=country %}">
+      <i class="bi bi-box-seam"></i> · Elections
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'cabinets:list' country=country %}">
+      <i class="bi bi-briefcase"></i> · Cabinets
+    </a>
+  </li>
+  <li>
+    <a class="nav-link" href="{% url 'docs:index' %}#{{ country }}">
+      <i
+        class="bi bi-layout-text-sidebar-reverse"
+        style="font-size: 0.85rem"
+      >
+      </i>
+    </a>
+  </li>
+</ul>
+
+<hr />

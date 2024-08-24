@@ -1,0 +1,5 @@
+[run]
+# see https://coverage.readthedocs.io/en/latest/source.html#source
+omit =
+    tests.py
+    apps/data/core/management/commands

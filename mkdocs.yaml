@@ -1,0 +1,21 @@
+site_name: ParlGov
+site_dir: _docs
+
+theme:
+  name: material
+  locale: en
+  features:
+    - navigation.footer
+
+exclude_docs: |
+  assets/parlgov-codebook.md
+
+extra:
+  generator: false
+
+nav:
+  - "index.md"
+  - "usage.md"
+  - "development.md"
+  - "migration.md"
+  - "project-history.md"

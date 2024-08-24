@@ -1,0 +1,68 @@
+## Temporary
+scripts/migrate/*.db
+
+# Project specific
+parlgov*.db
+
+# Local files
+source__*
+tmp__*
+z-tmp__*
+
+# Django deployment
+.env
+*.sqlite
+*.sqlite-journal
+# empty folder for staticfiles collect
+!app/staticfiles/.gitignore
+
+# Documentation
+_docs
+
+# Documentation
+docs/legacy
+learning-diary.md
+
+# Development
+.vscode/settings.json
+node_modules
+
+# macOS
+.DS_Store
+
+## Python ---------------------------------------------------------------------
+## see also https://github.com/github/gitignore/blob/main/Python.gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+
+# IPython interactive shell
+profile_default
+ipython_config.py
+
+# Code quality
+.mypy_cache/
+.ruff_cache/
+
+# mkdocs documentation
+/site
+
+# Django web framework
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+## ----------------------------------------------------------------------------

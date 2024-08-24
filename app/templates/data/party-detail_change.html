@@ -1,0 +1,62 @@
+{% load format_data %}
+
+<h6>
+  Party (name) changes
+  {% url 'admin:parties_partynamechange_add' as admin_url %}
+  {% include '_includes/admin.html' with url=admin_url icon='plus-circle' k='?party=' v=party.id middot=True %}
+</h6>
+<ul class="list-unstyled">
+  {% for change in party.partynamechange_set.all %}
+    <li>
+      {{ change.date|ymd_remove_07_01 }} ·
+      {{ change.name_short }} · {{ change.name }} ({{ change.name_english }})
+      {% url 'admin:parties_partynamechange_change' change.id as admin_url %}
+      {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=True %}
+    </li>
+  {% empty %}
+    <li>
+      <i>none</i>
+    </li>
+  {% endfor %}
+</ul>
+
+<h6>
+  Predecessor
+  {% url 'admin:parties_partychange_add' as admin_url %}
+  {% include '_includes/admin.html' with url=admin_url icon='plus-circle' k='?party_new=' v=party.id middot=True %}
+</h6>
+<ul class="list-unstyled">
+  {% for change in party.partychange_new_set.all %}
+    <li>
+      {{ change.date|ymd_remove_07_01 }} ·
+      <a href="{% url 'parties:detail' change.party.country.name_short|lower change.party.id %}">
+        {{ change.party.name_short }}</a>
+      {% url 'admin:parties_partychange_change' change.id as admin_url %}
+      {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=True %}
+    </li>
+  {% empty %}
+    <li>
+      <i>none</i>
+    </li>
+  {% endfor %}
+</ul>
+
+<h6>
+  Successor{% url 'admin:parties_partychange_add' as admin_url %}
+  {% include '_includes/admin.html' with url=admin_url icon='plus-circle' k='?party=' v=party.id middot=True %}
+</h6>
+<ul class="list-unstyled">
+  {% for change in party.partychange_set.all %}
+    <li>
+      {{ change.date|ymd_remove_07_01 }} ·
+      <a href="{% url 'parties:detail' change.party_new.country.name_short|lower change.party_new.id %}">
+        {{ change.party_new.name_short }}</a>
+      {% url 'admin:parties_partychange_change' change.id as admin_url %}
+      {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=True %}
+    </li>
+  {% empty %}
+    <li>
+      <i>none</i>
+    </li>
+  {% endfor %}
+</ul>

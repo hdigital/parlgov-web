@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load format_data %}
+
+{% block title %}
+  {{ cabinet.country.name_short|title }} // {{ cabinet.start_date|date:"Y" }} cabinet
+{% endblock %}
+
+{% block content %}
+
+  {% include 'data/_include_form-select-country.html' with country=cabinet.country.slug url='/data/cabinets/' %}
+
+  <h1>
+    {{ cabinet.country.flag }} · {{ cabinet.name }} · {{ cabinet.start_date|date:"Y" }}
+  </h1>
+  <table class="table table-striped caption-top">
+    <caption>
+      {% include '_includes/previous-next.html' with prev_next=previous_next %}
+      — <i class="bi bi-briefcase"></i>
+      · Cabinet // {{ cabinet.country.name }} · ID {{ cabinet.id }}
+      {% url 'admin:cabinets_cabinet_change' cabinet.id as admin_url %}
+      {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=True %}
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col" class="d-none d-md-table-cell">ID</th>
+        <th scope="col">Party</th>
+        <th
+          scope="col"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Prime minister"
+        >
+          #
+        </th>
+        <th
+          scope="col"
+          class="d-none d-md-table-cell"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Name"
+        >
+          #
+        </th>
+        <th
+          scope="col"
+          class="d-none d-md-table-cell"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Description"
+        >
+          #
+        </th>
+        <th scope="col" style="text-align: center">
+          {% url 'admin:cabinets_cabinetparty_add' as admin_url %}
+          {% include '_includes/admin.html' with url=admin_url icon='plus-circle' k='?cabinet=' v=cabinet.id %}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for party in parties %}
+        <tr>
+          <td class="d-none d-md-table-cell">
+            <small>{{ party.id }}</small>
+          </td>
+          <td>
+            <a href="{{ party.party.get_absolute_url }}">{{ party.party.name_short }}</a>
+          </td>
+          <td>
+            {% if party.pm %}
+              PM
+            {% endif %}
+            {% if party.defector %}
+              <i
+                class="bi bi-door-open"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+                title="Defector"
+              >
+              </i>
+            {% endif %}
+          </td>
+          <td class="d-none d-md-table-cell">
+            <small>{{ party.party.name_english|truncatechars:40 }}</small>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <small>{{ party.description }}</small>
+          </td>
+          <td style="text-align: center">
+            {% url 'admin:cabinets_cabinetparty_change' party.id as admin_url %}
+            {% include '_includes/admin.html' with url=admin_url icon='pencil' %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <h5>
+        <i class="bi bi-info-circle"></i> · Information
+      </h5>
+      <dl class="row">
+        <dt class="col-sm-3">Date</dt>
+        <dd class="col-sm-9">{{ cabinet.start_date|date:"j. F Y" }}</dd>
+        <dt class="col-sm-3">Caretaker</dt>
+        <dd class="col-sm-9">
+          {% if cabinet.caretaker %}
+            yes · <i class="bi bi-calendar-range"></i>
+          {% else %}
+            no
+          {% endif %}
+        </dd>
+        <dt class="col-sm-3">Wikipedia</dt>
+        <dd class="col-sm-9">
+          <a href={{ cabinet.wikipedia }}>
+            {{ cabinet.wikipedia|wikipedia_title }}
+          </a>
+        </dd>
+        <dt class="col-sm-3">
+          Election
+        </dt>
+        <dd class="col-sm-9">
+          <a href={{ cabinet.election.get_absolute_url }}>
+            {{ cabinet.election.date|date:"j. F Y"|default:"<i>none</i>" }}
+          </a>
+        </dd>
+        <dt class="col-sm-3">Description</dt>
+        <dd class="col-sm-9">
+          {{ cabinet.description|default:"<i>none</i>" }}
+        </dd>
+        <dt class="col-sm-3">Comment</dt>
+        <dd class="col-sm-9">{{ cabinet.comment|default:"<i>none</i>" }}</dd>
+      </dl>
+    </div>
+  </div>
+
+  {% include '_includes/tooltip-initialize.html' %}
+
+{% endblock %}

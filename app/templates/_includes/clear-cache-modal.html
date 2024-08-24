@@ -1,0 +1,50 @@
+<!-- Icon trigger modal -->
+<a
+  class="nav-link link-dark"
+  data-bs-toggle="modal"
+  data-bs-target="#cacheModal"
+>
+  <i class="bi bi-trash"></i>
+</a>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="cacheModal"
+  tabindex="-1"
+  aria-labelledby="cacheModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cacheModalLabel">Clear pages cache</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Pages are cached and data updates are not immediately provided on
+          page.
+        </p>
+        <p>Clear pages cache manually to see recent updates.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="window.location = '{% url 'clear_cache' %}'"
+        >
+          Clear cache
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

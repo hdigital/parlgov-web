@@ -1,0 +1,31 @@
+{% load markdown_extras %}
+# ParlGov Codebook
+
+Created on {{ today|date:"j F Y, G:i" }} from ParlGov database documentation entries.
+
+Döring, Holger and Philip Manow. 2024. Parliaments and governments database (ParlGov): Information on parties, elections and cabinets in established democracies.
+
++ [parlgov.org](https://parlgov.org)
++ [dataverse.harvard.edu/dataverse/parlgov](https://dataverse.harvard.edu/dataverse/parlgov)
++ [github.com/hdigital/parlgov-snippets](https://github.com/hdigital/parlgov-snippets)
+
+
+## Coding rules
+{% for section in codebook reversed %}
+{{ section.content|add_heading|safe }}
+{% endfor %}
+
+## Countries
+{% for section in country|dictsort:'content' %}
+{{ section.content|add_heading|safe }}
+{% endfor %}
+
+## Contributors
+{% for section in credits %}
+{{ section.content|add_heading:"#"|safe }}
+{% endfor %}
+
+## Changes
+{% for section in changelog reversed %}
+{{ section.content|add_heading|safe }}
+{% endfor %}
