@@ -5,7 +5,7 @@ A reimplementation of the Parliaments and governments database
 
 See [parlgov.fly.dev](https://parlgov.fly.dev/) and [docs](./docs).
 
-## Usage · ⚙️
+## Usage · 💡
 
 For local use, see the initialization example in `./scripts/init-dev-project.sh`.
 
@@ -16,7 +16,7 @@ Run the local development version at [localhost:8000](http://localhost:8000/).
 python manage.py runserver
 ```
 
-## License · 💻
+## License · ⚖️
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
@@ -26,4 +26,4 @@ is licensed [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ---
 
-![ParlGov Web 2007–2024](./docs/assets/parlgov-web.png)
+![ParlGov Web 2007–2024](./docs/assets/parlgov-web_2024.png)
