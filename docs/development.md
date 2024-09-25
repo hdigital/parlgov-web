@@ -70,7 +70,7 @@ views. They include the most frequently used information from the primary
 database tables.
 
 These views are created during the initialization of the project (see [Data
-import](/usage/#data-import)).
+import](usage.md#data-import)).
 
 The three main views are not included as Django models in the project.
 

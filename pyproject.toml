@@ -35,7 +35,8 @@ dev = [
   "django-extensions==3.*", # graph models, 'shell_plus', 'validate_templates', ...
   "django-import-export",
   # Package management
-  "pip-tools", # pin versions packages (production)
+  "pip-tools",  # pin versions packages (production)
+  "setuptools", # required by 'pip-tools'
   # Usage tools
   "ipython == 8.*", # enhanced shell
 ]

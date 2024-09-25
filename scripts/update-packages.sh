@@ -23,7 +23,12 @@ python -m pre_commit autoupdate
 set +e
 python -m pre_commit run --all-files
 
+# Update documentation (for mkdocs updates)
+printf "\n\n📔 · Build documentation:"
+mkdocs build --clean --strict
+
 # Show available Python packages (locked dependencies)
+printf "\n\n🔐 · Show locked dependencies:"
 python -m pip list --outdated
 
 # Provide information for Git commit
