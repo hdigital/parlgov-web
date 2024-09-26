@@ -5,6 +5,7 @@ services:
     command: python ./app/manage.py runserver 0.0.0.0:8000
     environment:
       - DJANGO_DEBUG=True
+      - DATABASE_URL=sqlite:////app/app/parlgov.sqlite
     ports:
       - "8000:8000"
     volumes:
