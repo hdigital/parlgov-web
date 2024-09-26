@@ -17,6 +17,11 @@ codespace-init: venv
   . .venv/bin/activate && cd app && python manage.py collectstatic --no-input --verbosity 0
   . .venv/bin/activate && cd app && python manage.py migrate --verbosity 0
 
+# prepare Git commit
+git-add: lint test
+  mkdocs build --clean --strict
+  git add .
+
 # prune Git and remove stale branches
 git-prune:
   git remote prune origin
