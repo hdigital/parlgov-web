@@ -84,6 +84,12 @@ Start documentation at [localhost:80](http://localhost:80/)
 mkdocs serve --dev-addr localhost:8888
 ```
 
+Build static site documentation
+
+```sh
+mkdocs build --clean --strict
+```
+
 ### Graph models · 📐
 
 Create or update [graph

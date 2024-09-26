@@ -8,5 +8,6 @@ app/templates
 app/static*
 
 # Generated files
+_docs/*
 package-lock.json
 schema.yaml
