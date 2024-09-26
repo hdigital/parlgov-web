@@ -476,7 +476,7 @@
 <h1 id="usage">Usage · ⚙️</h1>
 <h2 id="run">Run · 🚀</h2>
 <p>Use codespace, locally, or with Docker.</p>
-<p>Start server in <strong>codespace</strong> and open page in the PORTS tab.</p>
+<p>Start server in <strong>codespace</strong> and open website in the PORTS tab.</p>
 <pre><code class="language-sh">just serve
 </code></pre>
 <p>Start <strong>locally</strong> with Django at <a href="http://localhost:8000/">localhost:8000</a></p>
@@ -518,7 +518,7 @@ terminal.</p>
 </code></pre>
 <h2 id="data-import">Data import · 🏗️</h2>
 <p>Import data from ParlGov stable release, create database views, and create an
-admin user to access the Django admin pages for data editing.</p>
+admin user to access the Django admin site for data editing.</p>
 <pre><code class="language-sh"># ./app
 python manage.py loaddata parlgov-fixture.json
 cat apps/views_data/views-data.sql | python manage.py dbshell
@@ -558,9 +558,9 @@ python manage.py validate_data
 </ul>
 <h2 id="codebook">Codebook · 📙</h2>
 <p>All codebook sections are recorded in the database as Markdown entries. They can
-be edited using the ParlGov page.</p>
+be edited using the ParlGov website.</p>
 <p>A Markdown version of the codebook based on the sections from the database is
-available on the ParlGov page and can be dumped with a Django management
+available on the ParlGov website and can be dumped with a Django management
 command.</p>
 <pre><code class="language-sh"># ./app
 python manage.py create_codebook
@@ -571,7 +571,7 @@ documentation.</p>
 <pre><code class="language-sh">bash scripts/create-codebook.sh
 </code></pre>
 <h2 id="api">API · 🔗</h2>
-<p>The page provides an API with <a href="https://www.django-rest-framework.org/">Django REST
+<p>The website provides an API with <a href="https://www.django-rest-framework.org/">Django REST
 framework</a>.</p>
 <p>It is a read-only API; no login is required.</p>
 <p>Documentation with an OpenAPI 3 schema is provided in <code>schema.yaml</code>.</p>

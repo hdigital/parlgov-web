@@ -4,7 +4,7 @@
 
 Use codespace, locally, or with Docker.
 
-Start server in **codespace** and open page in the PORTS tab.
+Start server in **codespace** and open website in the PORTS tab.
 
 ```sh
 just serve
@@ -74,7 +74,7 @@ terminal.
 ## Data import · 🏗️
 
 Import data from ParlGov stable release, create database views, and create an
-admin user to access the Django admin pages for data editing.
+admin user to access the Django admin site for data editing.
 
 ```sh
 # ./app
@@ -116,10 +116,10 @@ Additional scripts data checks
 ## Codebook · 📙
 
 All codebook sections are recorded in the database as Markdown entries. They can
-be edited using the ParlGov page.
+be edited using the ParlGov website.
 
 A Markdown version of the codebook based on the sections from the database is
-available on the ParlGov page and can be dumped with a Django management
+available on the ParlGov website and can be dumped with a Django management
 command.
 
 ```sh
@@ -137,7 +137,7 @@ bash scripts/create-codebook.sh
 
 ## API · 🔗
 
-The page provides an API with [Django REST
+The website provides an API with [Django REST
 framework](https://www.django-rest-framework.org/).
 
 It is a read-only API; no login is required.
