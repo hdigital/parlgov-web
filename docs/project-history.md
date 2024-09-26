@@ -1,7 +1,7 @@
 # Project history · 👴🏼
 
 This summary of _ParlGov legacy_ describes the significant steps of the code
-evolution and summarizes its shortcomings. A public version of the web page was
+evolution and summarizes its shortcomings. A public version of the website was
 accessible between 2010 and 2021.
 
 ## History
@@ -15,7 +15,7 @@ Django but kept the focus on the database. It was also the time when I learned
 more advanced Python programming concepts through learning Django. This legacy
 is still visible in the code more than a decade later.
 
-I completed and made public an initial version of the page in 2010. At the time,
+I completed and made public an initial version of the site in 2010. At the time,
 I updated and significantly improved the structure of the database and the
 models by using better table and variable names as well as by restructuring the
 database. This year, I also started using version control, Mercurial at the
@@ -23,7 +23,7 @@ time, so that all changes since 2010 can be tracked. Before 2010, the web app
 required a login.
 
 In 2014, I conducted a major refactoring of the codebase and added the Bootstrap
-CSS framework, which led to a significantly more professional page layout.
+CSS framework, which led to a significantly more professional website layout.
 
 Even in 2015, I knew that the web app needed significant refactoring. Newer
 Django versions depreciated some approaches that the code relied on, Python 3
@@ -37,10 +37,10 @@ enhancements.
 
 In 2021, our web hosting provider, Webfaction, was closed, and _ParlGov legacy_
 was no longer publicly accessible. The main information about the project, news,
-and data were now provided with a static page at _parlgov.org_. At the time, I
+and data were now provided with a static site at _parlgov.org_. At the time, I
 created a Docker configuration that allows to run the legacy version locally,
 and that has been used to create stable releases. Internally, we used web
-hosting at PythonAnywhere to run the legacy app and to update the data. The page
+hosting at PythonAnywhere to run the legacy app and to update the data. The website
 was not publicly available due to performance and security issues.
 
 In 2024, I reimplemented the main models, pages, and data checks in _ParlGov
