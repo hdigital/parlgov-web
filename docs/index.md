@@ -1,9 +1,10 @@
 # ParGov web · 🗳️
 
-A reimplementation of the Parliaments and governments database
-([ParlGov](https://www.parlgov.org/))
+A reimplementation of the Parliaments and Governments Database
+([ParlGov](https://parlgov.org/))
 
-[parlgov.fly.dev](https://parlgov.fly.dev/)
+[parlgov.fly.dev](https://parlgov.fly.dev/) · 🌐
+— [github.com/hdigital/parlgov-web](https://github.com/hdigital/parlgov-web) · 🛠️
 
 ---
 
