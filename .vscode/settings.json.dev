@@ -70,6 +70,7 @@
     "graphviz",
     "guiyomh",
     "gunicorn",
+    "hdigital",
     "inspectdb",
     "loaddata",
     "makemigrations",
