@@ -17,10 +17,8 @@ z-tmp__*
 !app/staticfiles/.gitignore
 
 # Documentation
-_docs
-
-# Documentation
 docs/legacy
+_docs/legacy
 learning-diary.md
 
 # Development

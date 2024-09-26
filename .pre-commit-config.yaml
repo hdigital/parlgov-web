@@ -10,12 +10,13 @@ repos:
       - id: djhtml
         args:
           - --tabwidth=2
+        exclude: ^_docs/
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:
       - id: check-added-large-files
-        exclude: ^(docs/assets)/
+        exclude: ^(docs/assets|_docs/assets)/
       - id: check-case-conflict
       - id: check-merge-conflict
       - id: check-json
@@ -24,7 +25,9 @@ repos:
       - id: check-yaml
       - id: debug-statements
       - id: end-of-file-fixer
+        exclude: ^_docs/
       - id: trailing-whitespace
+        exclude: ^_docs/
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.6.1
