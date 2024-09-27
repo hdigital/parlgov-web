@@ -2,7 +2,8 @@
 FROM python:3.12-slim-bullseye
 
 # Set environment variables -- see also `app/config/.env.example`
-ENV PYTHONDONTWRITEBYTECODE=1 \
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
+  PYTHONDONTWRITEBYTECODE=1 \
   PYTHONUNBUFFERED=1
 
 # Set working directory
@@ -11,7 +12,8 @@ WORKDIR /app
 # Install dependencies
 COPY requirements.txt .
 RUN python -m pip install \
-  --disable-pip-version-check --no-cache-dir --no-deps --root-user-action=ignore \
+  --no-cache-dir --root-user-action=ignore \
+  --require-hashes --no-deps \
   -r requirements.txt
 
 
