@@ -1,3 +1,8 @@
+"""Unit tests for custom template tags.
+
+Keep tests in 'tests' folder to avoid Django issues without 'pytest' installed.
+"""
+
 from datetime import date
 
 import pytest

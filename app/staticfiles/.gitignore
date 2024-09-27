@@ -1,3 +1,6 @@
+# Folder for static files from Django `collectstatic`
+# Ignore content folder in Git with this '.gitignore'
+
 # Ignore everything in this directory
 *
 # Except this file
