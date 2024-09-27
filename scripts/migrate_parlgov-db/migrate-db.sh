@@ -15,12 +15,16 @@ printf "\n📋 · Import csv-data legacy database into Django project\n\n\n"
 
 cd scripts/migrate_parlgov-db
 
-# Format and check R code in folder
-Rscript -e "styler::style_dir()"
-Rscript -e "lintr::lint_dir()"
+if command -v Rscript &>/dev/null; then
+  # Format and check R code in folder
+  Rscript -e "styler::style_dir()"
+  Rscript -e "lintr::lint_dir()"
 
-# Create csv files in './app/scripts/import-data-legacy/'
-Rscript --vanilla migrate-db.R
+  # Create csv files in './app/scripts/import-data-legacy/'
+  Rscript --vanilla migrate-db.R
+else
+  printf "\n\n🚨 · R not found, skipping CSV creation from database\n\n"
+fi
 
 cd ../../app
 
