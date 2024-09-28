@@ -19,7 +19,7 @@ python manage.py runserver
 
 ## License · ⚖️
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/) — Holger Döring
 
 Data from [ParlGov
 Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC)
