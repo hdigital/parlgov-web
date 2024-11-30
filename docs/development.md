@@ -21,7 +21,7 @@ just
 Run tests and check test coverage with
 
 ```sh
-# ./app
+# (.venv) ./app
 pytest --cov
 ```
 
@@ -30,6 +30,7 @@ Tests are run randomly with
 disabled with
 
 ```sh
+# (.venv) ./app
 pytest --cov --randomly-dont-reorganize
 ```
 
@@ -59,7 +60,7 @@ automatically.
 All cabinets' elections can be checked and updated with
 
 ```sh
-# ./app
+# (.venv) ./app
 python manage.py update_cabinet_election
 ```
 
@@ -81,12 +82,14 @@ The three main views are not included as Django models in the project.
 Start documentation at [localhost:80](http://localhost:80/)
 
 ```sh
+# (.venv) ./
 mkdocs serve --dev-addr localhost:8888
 ```
 
 Build static site documentation
 
 ```sh
+# (.venv) ./
 mkdocs build --clean --strict
 ```
 
@@ -97,6 +100,7 @@ models](https://django-extensions.readthedocs.io/en/latest/graph_models.html#exa
 — locally only
 
 ```sh
+# (.venv) ./
 ./scripts/graph-data-models.sh
 ```
 

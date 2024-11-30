@@ -477,10 +477,11 @@
 <h2 id="run">Run · 🚀</h2>
 <p>Use codespace, locally, or with Docker.</p>
 <p>Start server in <strong>codespace</strong> and open website in the PORTS tab.</p>
-<pre><code class="language-sh">just serve
+<pre><code class="language-sh"># (.venv) ./
+just serve
 </code></pre>
 <p>Start <strong>locally</strong> with Django at <a href="http://localhost:8000/">localhost:8000</a></p>
-<pre><code class="language-sh"># ./app
+<pre><code class="language-sh"># (.venv) ./app
 python manage.py runserver
 </code></pre>
 <p>Use with <strong>Docker</strong> at <a href="http://localhost:8000/">localhost:8000</a></p>
@@ -489,7 +490,7 @@ python manage.py runserver
 <p>Create an <strong>admin user</strong> (see <a href="https://docs.djangoproject.com/en/stable/intro/tutorial02/#creating-an-admin-user">Django
 docs</a>)
 to edit data with</p>
-<pre><code class="language-sh"># ./app
+<pre><code class="language-sh"># (.venv) ./app
 python manage.py createsuperuser
 </code></pre>
 <p>See the example of a production deployment in <code>Dockerfile-flyio</code>.</p>
@@ -497,7 +498,7 @@ python manage.py createsuperuser
 <p>Run in codespace, install locally, or use Docker (see above).</p>
 <p><strong>Codespace</strong> is fully configured. Load the data and run a local server with
 <em>just</em> commands.</p>
-<pre><code class="language-sh"># source .venv/bin/activate
+<pre><code class="language-sh"># (.venv) ./
 just load-data
 just serve
 </code></pre>
@@ -519,7 +520,7 @@ terminal.</p>
 <h2 id="data-import">Data import · 🏗️</h2>
 <p>Import data from ParlGov stable release, create database views, and create an
 admin user to access the Django admin site for data editing.</p>
-<pre><code class="language-sh"># ./app
+<pre><code class="language-sh"># (.venv) ./app
 python manage.py loaddata parlgov-fixture.json
 cat apps/views_data/views-data.sql | python manage.py dbshell
 python manage.py createsuperuser
@@ -527,7 +528,7 @@ python manage.py createsuperuser
 <h2 id="data-validation">Data validation · 🕵🏼‍♀️</h2>
 <p>All data is validated during the addition to the database with Django. The
 <code>validate_data</code> command can run these and additional validations (see below).</p>
-<pre><code class="language-sh"># ./app
+<pre><code class="language-sh"># (.venv) ./app
 python manage.py validate_data
 </code></pre>
 <p>Additional validations include</p>
@@ -562,13 +563,14 @@ be edited using the ParlGov website.</p>
 <p>A Markdown version of the codebook based on the sections from the database is
 available on the ParlGov website and can be dumped with a Django management
 command.</p>
-<pre><code class="language-sh"># ./app
+<pre><code class="language-sh"># (.venv) ./app
 python manage.py create_codebook
 </code></pre>
 <p>A shell script creates the codebook, formats the Markdown text file, renders a
 <a href="../assets/parlgov-codebook.pdf">PDF</a>, and adds the two documents to the
 documentation.</p>
-<pre><code class="language-sh">bash scripts/create-codebook.sh
+<pre><code class="language-sh"># (.venv) ./
+bash scripts/create-codebook.sh
 </code></pre>
 <h2 id="api">API · 🔗</h2>
 <p>The website provides an API with <a href="https://www.django-rest-framework.org/">Django REST

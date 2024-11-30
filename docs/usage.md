@@ -7,13 +7,14 @@ Use codespace, locally, or with Docker.
 Start server in **codespace** and open website in the PORTS tab.
 
 ```sh
+# (.venv) ./
 just serve
 ```
 
 Start **locally** with Django at [localhost:8000](http://localhost:8000/)
 
 ```sh
-# ./app
+# (.venv) ./app
 python manage.py runserver
 ```
 
@@ -28,7 +29,7 @@ docs](https://docs.djangoproject.com/en/stable/intro/tutorial02/#creating-an-adm
 to edit data with
 
 ```sh
-# ./app
+# (.venv) ./app
 python manage.py createsuperuser
 ```
 
@@ -42,7 +43,7 @@ Run in codespace, install locally, or use Docker (see above).
 _just_ commands.
 
 ```sh
-# source .venv/bin/activate
+# (.venv) ./
 just load-data
 just serve
 ```
@@ -77,7 +78,7 @@ Import data from ParlGov stable release, create database views, and create an
 admin user to access the Django admin site for data editing.
 
 ```sh
-# ./app
+# (.venv) ./app
 python manage.py loaddata parlgov-fixture.json
 cat apps/views_data/views-data.sql | python manage.py dbshell
 python manage.py createsuperuser
@@ -89,7 +90,7 @@ All data is validated during the addition to the database with Django. The
 `validate_data` command can run these and additional validations (see below).
 
 ```sh
-# ./app
+# (.venv) ./app
 python manage.py validate_data
 ```
 
@@ -123,7 +124,7 @@ available on the ParlGov website and can be dumped with a Django management
 command.
 
 ```sh
-# ./app
+# (.venv) ./app
 python manage.py create_codebook
 ```
 
@@ -132,6 +133,7 @@ A shell script creates the codebook, formats the Markdown text file, renders a
 documentation.
 
 ```sh
+# (.venv) ./
 bash scripts/create-codebook.sh
 ```
 

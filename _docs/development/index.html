@@ -564,13 +564,14 @@ runner for local development and in codespace.</p>
 </code></pre>
 <h2 id="testing">Testing · 🧪</h2>
 <p>Run tests and check test coverage with</p>
-<pre><code class="language-sh"># ./app
+<pre><code class="language-sh"># (.venv) ./app
 pytest --cov
 </code></pre>
 <p>Tests are run randomly with
 <a href="https://github.com/pytest-dev/pytest-randomly">pytest-randomly</a>. This can be
 disabled with</p>
-<pre><code class="language-sh">pytest --cov --randomly-dont-reorganize
+<pre><code class="language-sh"># (.venv) ./app
+pytest --cov --randomly-dont-reorganize
 </code></pre>
 <h2 id="database">Database · 🫙</h2>
 <h3 id="tables">Tables · 📂</h3>
@@ -590,7 +591,7 @@ to a <em>cabinet</em> on save. A later change to the <em>election</em> that chan
 previous election for the <em>cabinet</em> is not updated for the <em>cabinet</em>
 automatically.</p>
 <p>All cabinets' elections can be checked and updated with</p>
-<pre><code class="language-sh"># ./app
+<pre><code class="language-sh"># (.venv) ./app
 python manage.py update_cabinet_election
 </code></pre>
 <h3 id="views">Views · 🔬</h3>
@@ -603,16 +604,19 @@ import</a>).</p>
 <h2 id="miscellaneous">Miscellaneous · 🗂️</h2>
 <h3 id="documentation">Documentation · 📚</h3>
 <p>Start documentation at <a href="http://localhost:80/">localhost:80</a></p>
-<pre><code class="language-sh">mkdocs serve --dev-addr localhost:8888
+<pre><code class="language-sh"># (.venv) ./
+mkdocs serve --dev-addr localhost:8888
 </code></pre>
 <p>Build static site documentation</p>
-<pre><code class="language-sh">mkdocs build --clean --strict
+<pre><code class="language-sh"># (.venv) ./
+mkdocs build --clean --strict
 </code></pre>
 <h3 id="graph-models">Graph models · 📐</h3>
 <p>Create or update <a href="https://django-extensions.readthedocs.io/en/latest/graph_models.html#example-usage">graph
 models</a>
 — locally only</p>
-<pre><code class="language-sh">./scripts/graph-data-models.sh
+<pre><code class="language-sh"># (.venv) ./
+./scripts/graph-data-models.sh
 </code></pre>
 <p>The script needs <em>graphviz</em> installed and is included only locally to keep
 testing, Docker, and codespace configuration lean.</p>

@@ -13,7 +13,7 @@ For local use, see the initialization example in
 Run the local development version at [localhost:8000](http://localhost:8000/).
 
 ```sh
-# ./app
+# (.venv) ./app
 python manage.py runserver
 ```
 
