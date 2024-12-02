@@ -6,23 +6,28 @@ and version numbers use
 
 ## [Unreleased]
 
-Django 5.x and Python 3.1x
+Django 4.2 and Python 3.12
 
 ### Added
 
-- [ _for new features_ ]
+- Allow robots to crawl site
+- Make R migration database optional
+- Add GitHub Actions deploy workflow docs
+- Add static page docs
 
 ### Changed
 
-- [ _for changes in functionality_ ]
-
-### Removed
-
-- [ _for removed features_ ]
+- Exclude migrations and tests from coverage reports
+- Replace Debian 'Bullseye' with 'Bookworm' in Docker
+- Revise update workflow
+- Update docs
+  - Specify 'venv' and path in docs
+  - Replace 'page' with 'site' for website
+  - Minor revisions 'readme'
 
 ### Fixed
 
-- [ _for bug fixes_ ]
+- Specify database url Docker
 
 ## [v24.08] — 2024-08-24
 
