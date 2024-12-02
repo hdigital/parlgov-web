@@ -19,7 +19,6 @@ Django 4.2 and Python 3.12
 
 - Exclude migrations and tests from coverage reports
 - Replace Debian 'Bullseye' with 'Bookworm' in Docker
-- Revise update workflow
 - Update docs
   - Specify 'venv' and path in docs
   - Replace 'page' with 'site' for website
