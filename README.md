@@ -5,6 +5,9 @@ A reimplementation of the Parliaments and governments database
 
 See [parlgov.fly.dev](https://parlgov.fly.dev/) and [docs](./docs).
 
+Python and Django versions are specified in [`pyproject.toml`](./pyproject.toml)
+and documented in the [changelog](./CHANGELOG.md).
+
 ## Usage · 💡
 
 For local use, see the initialization example in

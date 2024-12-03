@@ -1,5 +1,8 @@
 # Usage · ⚙️
 
+Python and Django versions are specified in `pyproject.toml` and documented in
+`CHANGELOG.md`.
+
 ## Run · 🚀
 
 Use codespace, locally, or with Docker.

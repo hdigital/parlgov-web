@@ -64,9 +64,9 @@ testing = [
 ## Web pages project
 [project.urls]
 homepage = "https://parlgov.fly.dev"
-# documentation = ""
+documentation = "https://hdigital.github.io/parlgov-web/"
 repository = "https://github.com/hdigital/parlgov-web.git"
-# changelog = ""
+changelog = "https://github.com/hdigital/parlgov-web/blob/main/CHANGELOG.md"
 
 
 ## ============================================================================
