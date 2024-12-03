@@ -22,7 +22,7 @@ printf "\n\n🗄️ · Load data from fixture\n\n\n"
 python manage.py loaddata parlgov-fixture.json
 
 # Create views main data tables
-cat apps/views_data/views-data.sql | python manage.py dbshell
+python manage.py dbshell <apps/views_data/views-data.sql
 
 # Generate OpenAPI schema
 python manage.py spectacular --color --file ../schema.yaml

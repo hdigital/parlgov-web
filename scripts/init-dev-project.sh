@@ -26,7 +26,7 @@ cd app
 
 python manage.py migrate --verbosity 0
 python manage.py loaddata parlgov-fixture.json
-cat apps/views_data/views-data.sql | python manage.py dbshell
+python manage.py dbshell <apps/views_data/views-data.sql
 
 python manage.py collectstatic --no-input --verbosity 0
 

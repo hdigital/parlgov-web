@@ -15,6 +15,7 @@ Django 4.2 and Python 3.12
 
 ### Changed
 
+- Use redirection instead of 'cat' in shell scripts
 - Exclude migrations and tests from coverage reports
 - Replace Debian 'Bullseye' with 'Bookworm' in Docker
 - Allow robots to crawl site
