@@ -10,6 +10,7 @@ Django 4.2 and Python 3.12
 
 ### Added
 
+- Add MIT license file
 - Add GitHub Actions deploy workflow docs
 - Add static page docs
 
