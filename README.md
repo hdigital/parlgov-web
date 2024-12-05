@@ -1,7 +1,8 @@
 # ParGov web · 🗳️
 
 A reimplementation of the Parliaments and governments database
-([ParlGov](https://parlgov.org/))
+([ParlGov](https://parlgov.org/)). The project is now in maintenance mode,
+receiving only security updates (see [post 2024-10-01](https://parlgov.org/2024/10/01/retiring-from-parlgov/)).
 
 See [parlgov.fly.dev](https://parlgov.fly.dev/) and [docs](./docs).
 
