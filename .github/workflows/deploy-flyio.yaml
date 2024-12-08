@@ -3,7 +3,7 @@ name: Fly Deploy CD
 on:
   workflow_call:
   workflow_run:
-    workflows: [Tests/Checks CI, Dependabot auto-merge]
+    workflows: [Tests/Checks CI]
     types: [completed]
     branches: [main]
 
