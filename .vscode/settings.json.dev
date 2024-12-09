@@ -83,6 +83,7 @@
     "noinput",
     "nonlatin",
     "openapi",
+    "orcid",
     "pandoc",
     "parlgov",
     "partychange",
@@ -97,6 +98,7 @@
     "reimplementation",
     "runserver",
     "sessionid",
+    "socium",
     "staticfiles",
     "stkb",
     "tabwidth",
@@ -106,7 +108,8 @@
     "viewcalc",
     "viewsets",
     "virtualenv",
-    "Webfaction",
-    "whitenoise"
+    "webfaction",
+    "whitenoise",
+    "zenodo"
   ]
 }
