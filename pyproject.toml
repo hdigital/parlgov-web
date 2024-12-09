@@ -38,7 +38,7 @@ dev = [
   "pip-tools",  # pin versions packages (production)
   "setuptools", # required by 'pip-tools'
   # Usage tools
-  "ipython == 8.*", # enhanced shell
+  "ipython", # enhanced shell
 ]
 docs = [
   "mkdocs-material",
