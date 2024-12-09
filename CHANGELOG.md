@@ -10,9 +10,28 @@ Django 4.2 and Python 3.12
 
 ### Added
 
+- [ _for new features_ ]
+
+### Changed
+
+- [ _for changes in functionality_ ]
+
+### Removed
+
+- [ _for removed features_ ]
+
+### Fixed
+
+- [ _for bug fixes_ ]
+
+## [v24.12] — 2024-12-10
+
+Django 4.2 and Python 3.12
+
+### Added
+
 - Add MIT license file
-- Add GitHub Actions deploy workflow docs
-- Add static page docs
+- Add static page docs and deploy docs with a GitHub Actions workflow
 
 ### Changed
 
