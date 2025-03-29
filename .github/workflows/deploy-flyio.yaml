@@ -6,6 +6,7 @@ on:
     workflows: [Tests/Checks CI]
     types: [completed]
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
