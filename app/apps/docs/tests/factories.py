@@ -1,13 +1,14 @@
 from datetime import date
 
-import factory
+from factory import SubFactory
+from factory.django import DjangoModelFactory
 
 from ...data.core.tests.factories import CodeFactory
 
 
-class NewsFactory(factory.django.DjangoModelFactory):
+class NewsFactory(DjangoModelFactory):
     date = date(2020, 1, 1)
-    type = factory.SubFactory(
+    type = SubFactory(
         CodeFactory,
         table_variable="news_type",
         short="announce",
@@ -20,7 +21,7 @@ class NewsFactory(factory.django.DjangoModelFactory):
         model = "docs.News"
 
 
-class PageFactory(factory.django.DjangoModelFactory):
+class PageFactory(DjangoModelFactory):
     page = "codebook"
     section = "sources"
     content = "# Data sources"
