@@ -1,7 +1,7 @@
-import factory
+from factory.django import DjangoModelFactory
 
 
-class CodeFactory(factory.django.DjangoModelFactory):
+class CodeFactory(DjangoModelFactory):
     table_variable = "news_type"
     order = 100
     short = "update"
@@ -12,7 +12,7 @@ class CodeFactory(factory.django.DjangoModelFactory):
         django_get_or_create = ("short",)
 
 
-class CountryFactory(factory.django.DjangoModelFactory):
+class CountryFactory(DjangoModelFactory):
     name = "Germany"
     name_short = "DEU"
     code_iso2 = "DE"
