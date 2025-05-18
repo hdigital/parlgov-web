@@ -87,7 +87,7 @@ def run_include_checks(party) -> str:
     )
 
     for check in checks:
-        if check(party):  # type: ignore
+        if check(party):
             return check.__name__.replace("check_", "", 1)
 
     return ""
