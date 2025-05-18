@@ -32,7 +32,7 @@ dependencies = [
 dev = [
   # Django development
   "django-debug-toolbar",
-  "django-extensions==3.*", # graph models, 'shell_plus', 'validate_templates', ...
+  "django-extensions",    # graph models, 'shell_plus', 'validate_templates', ...
   "django-import-export",
   # Package management
   "pip-tools",  # pin versions packages (production)
