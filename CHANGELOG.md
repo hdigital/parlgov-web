@@ -2,15 +2,16 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and version numbers use
-[CalVer](https://calver.org/#when-to-use-calver) YY.MM (e.g., v24.08).
+[CalVer](https://calver.org/#when-to-use-calver) YY.MM (e.g., v24.08)
+— see [tags](https://github.com/hdigital/parlgov-web/tags).
 
-## [Unreleased]
+## [Unreleased] — YYYY-MM-DD
 
 Django 4.2 and Python 3.12
 
 ### Added
 
-- [ _for new features_ ]
+- _for new features_
 
 ### Changed
 
