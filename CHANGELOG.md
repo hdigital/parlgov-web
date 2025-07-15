@@ -77,3 +77,24 @@ Django 4.2 and Python 3.12
 
 - Django 4.2 and Python 3.12
 - initial public version
+
+## [Template] — YYYY-MM-DD
+
+Django 5.x and Python 3.1x
+
+### Added
+
+- _for new features_
+
+### Changed
+
+- _for changes in functionality_
+
+### Removed
+
+- _for removed features_
+
+### Fixed
+
+- _for bug fixes_
+- Minor revisions
