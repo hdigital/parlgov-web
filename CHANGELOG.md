@@ -19,10 +19,10 @@ Django 4.2 and Python 3.12
   ([#29](https://github.com/hdigital/parlgov-web/pull/29))
 - Specify license with PEP 639 metadata format in 'pyproject.toml'
   ([#28](https://github.com/hdigital/parlgov-web/pull/28))
+- Add links to PR, issue, or commit for all entries in the 'changelog'
+  ([#30](https://github.com/hdigital/parlgov-web/pull/30))
 - Restructure 'factories' import
   ([#23](https://github.com/hdigital/parlgov-web/pull/23))
-- Remove version pinning development dependency
-  ([2d40073](https://github.com/hdigital/parlgov-web/commit/2d40073))
 
 ### Removed
 
@@ -57,8 +57,6 @@ Django 4.2 and Python 3.12
   ([b1c1477](https://github.com/hdigital/parlgov-web/commit/b1c1477))
 - Make R migration database optional
   ([253a4bc](https://github.com/hdigital/parlgov-web/commit/253a4bc))
-- Update all dependencies
-  ([#15](https://github.com/hdigital/parlgov-web/pull/15))
 - Use 'yaml' file extension instead of 'yml'
   ([a62b63d](https://github.com/hdigital/parlgov-web/commit/a62b63d))
 - Update docs
