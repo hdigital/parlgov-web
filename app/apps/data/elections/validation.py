@@ -4,7 +4,7 @@ from django.core.exceptions import ValidationError
 
 
 def check_election_includes_result(election) -> None:
-    """Validate election has at least one.
+    """Validate election has at least one result.
 
     Validation is not used in model save to allow adding election models first.
     It is included in 'python manage.py validate_data'
