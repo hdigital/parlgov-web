@@ -14,7 +14,8 @@ Django 4.2 and Python 3.12
 
 ### Changed
 
-- [ _for changes in functionality_ ]
+- Use '/api/v1' as API url for better versioning support
+  ([#29](https://github.com/hdigital/parlgov-web/pull/29))
 
 ### Removed
 
