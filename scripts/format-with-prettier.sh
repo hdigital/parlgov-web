@@ -3,10 +3,10 @@
 # Exit on error and check run from project root
 set -e && cd scripts/../
 
-printf "\n🧼 · Format Markdown and config files with 'prettier'\n\n\n"
+printf "\n🧼 · Format Markdown and config files with 'prettier'\n"
 
 # Format specified file types with 'prettier'
-prettier -w ./**/*.{md,json,jsonc,yaml}
+prettier --log-level warn --write ./**/*.{md,json,jsonc,yaml}
 
 # Specify 'sed' command for Linux (default) and macOS
 OS="$(uname)"

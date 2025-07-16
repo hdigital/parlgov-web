@@ -3,7 +3,8 @@ name = "parlgov-web"
 version = "0"
 description = "A re-implementation of ParlGov"
 maintainers = [{ name = "Holger Döring" }]
-license = { text = "MIT License" }
+license = "MIT"
+license-files = ["LICENSE"]
 readme = "README.md"
 requires-python = ">=3.12"
 
