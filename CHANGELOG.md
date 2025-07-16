@@ -14,7 +14,8 @@ Django 4.2 and Python 3.12
 
 ### Changed
 
-- [ _for changes in functionality_ ]
+- Specify license with PEP 639 metadata format in 'pyproject.toml'
+  ([#28](https://github.com/hdigital/parlgov-web/pull/28))
 
 ### Removed
 
