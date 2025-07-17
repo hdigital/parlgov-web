@@ -5,7 +5,7 @@ info:
   description: 'Parliaments and governments database (ParlGov): Data on parties, elections,
     and cabinets'
 paths:
-  /api/cabinet-parties/:
+  /api/v1/cabinet-parties/:
     get:
       operationId: cabinet_parties_list
       description: Rest API view for CabinetParty model.
@@ -35,7 +35,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedCabinetPartyList'
           description: ''
-  /api/cabinet-parties/{id}/:
+  /api/v1/cabinet-parties/{id}/:
     get:
       operationId: cabinet_parties_retrieve
       description: Rest API view for CabinetParty model.
@@ -59,7 +59,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/CabinetParty'
           description: ''
-  /api/cabinets/:
+  /api/v1/cabinets/:
     get:
       operationId: cabinets_list
       description: Rest API view for Cabinet model.
@@ -89,7 +89,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedCabinetList'
           description: ''
-  /api/cabinets/{id}/:
+  /api/v1/cabinets/{id}/:
     get:
       operationId: cabinets_retrieve
       description: Rest API view for Cabinet model.
@@ -113,7 +113,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Cabinet'
           description: ''
-  /api/codes/:
+  /api/v1/codes/:
     get:
       operationId: codes_list
       description: Rest API view for Code model.
@@ -143,7 +143,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedCodeList'
           description: ''
-  /api/codes/{id}/:
+  /api/v1/codes/{id}/:
     get:
       operationId: codes_retrieve
       description: Rest API view for Code model.
@@ -167,7 +167,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Code'
           description: ''
-  /api/countries/:
+  /api/v1/countries/:
     get:
       operationId: countries_list
       description: Rest API view for Country model.
@@ -197,7 +197,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedCountryList'
           description: ''
-  /api/countries/{id}/:
+  /api/v1/countries/{id}/:
     get:
       operationId: countries_retrieve
       description: Rest API view for Country model.
@@ -221,7 +221,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Country'
           description: ''
-  /api/election-results/:
+  /api/v1/election-results/:
     get:
       operationId: election_results_list
       description: Rest API view for ElectionResult model.
@@ -251,7 +251,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedElectionResultList'
           description: ''
-  /api/election-results/{id}/:
+  /api/v1/election-results/{id}/:
     get:
       operationId: election_results_retrieve
       description: Rest API view for ElectionResult model.
@@ -275,7 +275,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ElectionResult'
           description: ''
-  /api/elections/:
+  /api/v1/elections/:
     get:
       operationId: elections_list
       description: Rest API view for Election model.
@@ -305,7 +305,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedElectionList'
           description: ''
-  /api/elections/{id}/:
+  /api/v1/elections/{id}/:
     get:
       operationId: elections_retrieve
       description: Rest API view for Election model.
@@ -329,7 +329,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Election'
           description: ''
-  /api/parties/:
+  /api/v1/parties/:
     get:
       operationId: parties_list
       description: Rest API view for Party model.
@@ -359,7 +359,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedPartyList'
           description: ''
-  /api/parties/{id}/:
+  /api/v1/parties/{id}/:
     get:
       operationId: parties_retrieve
       description: Rest API view for Party model.
@@ -383,7 +383,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Party'
           description: ''
-  /api/party-changes/:
+  /api/v1/party-changes/:
     get:
       operationId: party_changes_list
       description: Rest API view for PartyChange model.
@@ -413,7 +413,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedPartyChangeList'
           description: ''
-  /api/party-changes/{id}/:
+  /api/v1/party-changes/{id}/:
     get:
       operationId: party_changes_retrieve
       description: Rest API view for PartyChange model.
@@ -437,7 +437,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PartyChange'
           description: ''
-  /api/party-name-changes/:
+  /api/v1/party-name-changes/:
     get:
       operationId: party_name_changes_list
       description: Rest API view for PartyNameChange model.
@@ -467,7 +467,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedPartyNameChangeList'
           description: ''
-  /api/party-name-changes/{id}/:
+  /api/v1/party-name-changes/{id}/:
     get:
       operationId: party_name_changes_retrieve
       description: Rest API view for PartyNameChange model.

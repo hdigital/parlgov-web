@@ -23,7 +23,7 @@ urlpatterns = [
     # Documentation urls
     path("docs/", include("apps.docs.urls")),
     # API urls
-    path("api/", include("apps.api.urls")),
+    path("api/v1/", include("apps.api.urls")),
     # path("api-auth/", include("rest_framework.urls")),
     # Page urls
     path("", include("apps.pages.urls")),
