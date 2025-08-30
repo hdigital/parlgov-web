@@ -23,6 +23,8 @@ Django 4.2 and Python 3.12
   ([#30](https://github.com/hdigital/parlgov-web/pull/30))
 - Restructure 'factories' import
   ([#23](https://github.com/hdigital/parlgov-web/pull/23))
+- Use 'CITATION.cff' for Zenodo metadata
+  ([#32](https://github.com/hdigital/parlgov-web/pull/32))
 
 ### Removed
 
