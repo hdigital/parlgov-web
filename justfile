@@ -97,7 +97,7 @@ update-all: venv pip-update
 
 # recreate Python environment
 venv:
-  uv venv --quiet --seed
+  uv venv --seed --clear --quiet
   uv pip sync --quiet requirements-dev.txt
   uv pip --quiet install pip
   @echo "\n\n✅ · Activate virtualenv with: source .venv/bin/activate\n"
