@@ -1,4 +1,4 @@
-# ParGov web · 🗳️
+# ParlGov web · 🗳️
 
 A reimplementation of the Parliaments and Governments Database
 ([ParlGov](https://parlgov.org/))
