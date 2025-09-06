@@ -1,7 +1,7 @@
 [project]
 name = "parlgov-web"
 version = "0"
-description = "A re-implementation of ParlGov"
+description = "A reimplementation of the Parliaments and Governments Database (ParlGov)."
 maintainers = [{ name = "Holger Döring" }]
 license = "MIT"
 license-files = ["LICENSE"]
@@ -65,7 +65,7 @@ testing = [
 ## Web pages project
 [project.urls]
 homepage = "https://parlgov.fly.dev"
-documentation = "https://hdigital.github.io/parlgov-web/"
+documentation = "https://hdigital.github.io/parlgov-web"
 repository = "https://github.com/hdigital/parlgov-web.git"
 changelog = "https://github.com/hdigital/parlgov-web/blob/main/CHANGELOG.md"
 
