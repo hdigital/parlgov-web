@@ -4,7 +4,7 @@ abstract: "The project reimplements the Parliaments and Governments Database (Pa
 authors:
   - given-names: "Holger"
     family-names: "Döring"
-    affiliation: "SOCIUM Research Center on Inequality and Social Policy"
+    affiliation: "SOCIUM Research Center, University of Bremen, Germany"
     orcid: "https://orcid.org/0000-0002-6616-8805"
 identifiers:
   - description: "Academic paper describing the ParlGov software"
