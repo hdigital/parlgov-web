@@ -11,7 +11,8 @@ Django 4.2 and Python 3.12
 
 ### Added
 
-- _for new features_
+- Add CC0 waiver for documentation
+  ([#35](https://github.com/hdigital/parlgov-web/pull/35))
 
 ### Changed
 
