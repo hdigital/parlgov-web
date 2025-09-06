@@ -15,4 +15,4 @@ pages, and validations have been migrated for an initial version.
 
 ---
 
-![ParlGov Web 2007–2024](./assets/parlgov-web.png)
+![ParlGov web 2007–2024](./assets/parlgov-web.png)

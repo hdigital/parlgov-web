@@ -1,6 +1,6 @@
 # ParlGov web · 🗳️
 
-A reimplementation of the Parliaments and governments database
+A reimplementation of the Parliaments and Governments Database
 ([ParlGov](https://parlgov.org/)). The project is now in maintenance mode,
 receiving only security updates (see [post 2024-10-01](https://parlgov.org/2024/10/01/retiring-from-parlgov/)).
 
@@ -42,4 +42,4 @@ is licensed [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ---
 
-![ParlGov Web 2007–2024](./docs/assets/parlgov-web_2024.png)
+![ParlGov web 2007–2024](./docs/assets/parlgov-web_2024.png)
