@@ -9,6 +9,17 @@ See [parlgov.fly.dev](https://parlgov.fly.dev/) and [docs](./docs).
 Python and Django versions are specified in [`pyproject.toml`](./pyproject.toml)
 and documented in the [changelog](./CHANGELOG.md).
 
+## References · 🗂️
+
+- Döring, Holger. 2025. “Advancing Data Infrastructures on Democratic
+  Representation: An Open-Source Version of ParlGov.” SOCIUM SFB 1342 Working
+  Papers. — DOI: [10.26092/elib/4362](https://doi.org/10.26092/elib/4362)
+- Döring, Holger. 2024. “ParlGov Source Code: A Web Application for Managing
+  Data on Parties, Elections, and Cabinets.” Zenodo. — DOI:
+  [10.5281/zenodo.14357360](https://doi.org/10.5281/zenodo.14357360)
+- Döring, Holger, and Philip Manow. 2024. “ParlGov 2024 Release.” Harvard
+  Dataverse. — DOI: [10.7910/dvn/2VZ5ZC](https://doi.org/10.7910/dvn/2vz5zc)
+
 ## Usage · 💡
 
 For local use, see the initialization example in
