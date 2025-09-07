@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: ParlGov API
   version: 0.0.0
-  description: 'Parliaments and governments database (ParlGov): Data on parties, elections,
+  description: 'Parliaments and Governments Database (ParlGov): Data on parties, elections,
     and cabinets'
 paths:
   /api/v1/cabinet-parties/:

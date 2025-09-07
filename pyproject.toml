@@ -1,7 +1,7 @@
 [project]
 name = "parlgov-web"
 version = "0"
-description = "A reimplementation of the Parliaments and Governments Database (ParlGov)."
+description = "A web application for managing data on parties, elections, and cabinets (ParlGov)."
 maintainers = [{ name = "Holger Döring" }]
 license = "MIT"
 license-files = ["LICENSE"]

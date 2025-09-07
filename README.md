@@ -1,7 +1,6 @@
 # ParlGov web · 🗳️
 
-A reimplementation of the Parliaments and Governments Database
-([ParlGov](https://parlgov.org/)). The project is now in maintenance mode,
+A web application for managing data on parties, elections, and cabinets ([ParlGov](https://parlgov.org/)). The project is now in maintenance mode,
 receiving only security updates (see [post 2024-10-01](https://parlgov.org/2024/10/01/retiring-from-parlgov/)).
 
 See [parlgov.fly.dev](https://parlgov.fly.dev/) and [docs](./docs).

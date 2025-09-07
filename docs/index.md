@@ -1,6 +1,6 @@
 # ParlGov web · 🗳️
 
-A reimplementation of the Parliaments and Governments Database
+A web application for managing data on parties, elections, and cabinets
 ([ParlGov](https://parlgov.org/))
 
 [parlgov.fly.dev](https://parlgov.fly.dev/) · 🌐
@@ -8,10 +8,11 @@ A reimplementation of the Parliaments and Governments Database
 
 ---
 
-The project reimplements ParlGov (_ParlGov legacy_) and provides a minimal,
-maintainable, and tested code base (_ParlGov web_). The reimplementation uses
-best practices for Django code and modern Python tools. The main data tables,
-pages, and validations have been migrated for an initial version.
+The project reimplements the Parliaments and Governments Database (_ParlGov
+legacy_) and provides a minimal, maintainable, and tested code base (_ParlGov
+web_). The reimplementation uses best practices for Django code and modern Python
+tools. The main data tables, pages, and validations have been migrated in this
+new version.
 
 ---
 

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 title: "ParlGov source code: A web application for managing data on parties, elections, and cabinets"
-abstract: "The project reimplements the Parliaments and Governments Database (ParlGov legacy) and provides a minimal, maintainable, and tested code base (ParlGov web). The reimplementation uses best practices for Django code and modern Python tools. The main data tables, pages, and validations have been migrated for an initial version."
+abstract: "The project reimplements the Parliaments and Governments Database (ParlGov legacy) and provides a minimal, maintainable, and tested code base (ParlGov web). The reimplementation uses best practices for Django code and modern Python tools. The main data tables, pages, and validations have been migrated in this new version."
 authors:
   - given-names: "Holger"
     family-names: "Döring"
