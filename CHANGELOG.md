@@ -13,6 +13,8 @@ Django 4.2 and Python 3.12
 
 - Add CodeMeta software metadata
   ([#31](https://github.com/hdigital/parlgov-web/issues/31))
+- Add paper, source code, and data references
+  ([#36](https://github.com/hdigital/parlgov-web/pull/36))
 
 ### Changed
 
