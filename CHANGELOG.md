@@ -30,6 +30,8 @@ Django 4.2 and Python 3.12
   ([#23](https://github.com/hdigital/parlgov-web/pull/23))
 - Use 'CITATION.cff' for Zenodo metadata
   ([#32](https://github.com/hdigital/parlgov-web/pull/32))
+- Harmonize project information and metadata
+  ([#38](https://github.com/hdigital/parlgov-web/issues/38))
 
 ### Removed
 

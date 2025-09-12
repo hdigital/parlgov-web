@@ -273,7 +273,7 @@ if ENV_DEBUG:  # pragma: no cover
     SPECTACULAR_SETTINGS = {
         "TITLE": "ParlGov API",
         "DESCRIPTION": (
-            "Parliaments and governments database (ParlGov): "
+            "Parliaments and Governments Database (ParlGov): "
             "Data on parties, elections, and cabinets"
         ),
     }

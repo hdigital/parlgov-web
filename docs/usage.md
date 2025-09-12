@@ -151,4 +151,4 @@ Documentation with an OpenAPI 3 schema is provided in `schema.yaml`.
 
 ---
 
-![ParlGov Web 2024](./assets/parlgov-web_2024.png)
+![ParlGov web 2024](./assets/parlgov-web_2024.png)

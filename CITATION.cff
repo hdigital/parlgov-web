@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 title: "ParlGov source code: A web application for managing data on parties, elections, and cabinets"
-abstract: "The project reimplements the Parliaments and Governments Database (ParlGov legacy) and provides a minimal, maintainable, and tested code base (ParlGov web). The reimplementation uses best practices for Django code and modern Python tools. The main data tables, pages, and validations have been migrated for an initial version."
+abstract: "The project reimplements the Parliaments and Governments Database (ParlGov legacy) and provides a minimal, maintainable, and tested code base (ParlGov web). The reimplementation uses best practices for Django code and modern Python tools. The main data tables, pages, and validations have been migrated in this new version."
 authors:
   - given-names: "Holger"
     family-names: "Döring"
-    affiliation: "SOCIUM Research Center on Inequality and Social Policy"
+    affiliation: "SOCIUM Research Center, University of Bremen, Germany"
     orcid: "https://orcid.org/0000-0002-6616-8805"
 identifiers:
   - description: "Academic paper describing the ParlGov software"
