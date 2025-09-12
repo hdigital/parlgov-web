@@ -32,13 +32,11 @@ Run the local development version at [localhost:8000](http://localhost:8000/).
 python manage.py runserver
 ```
 
-## License · ⚖️
+## Licenses · ⚖️
 
-[MIT](./LICENSE)
-
-Data from [ParlGov
-Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC)
-is licensed [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+- Code: [MIT](./LICENSE)
+- Documentation: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+- Data from [ParlGov Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC): [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 ---
 
