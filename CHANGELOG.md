@@ -26,12 +26,14 @@ Django 4.2 and Python 3.12
   ([#28](https://github.com/hdigital/parlgov-web/pull/28))
 - Add links to PR, issue, or commit for all entries in the 'changelog'
   ([#30](https://github.com/hdigital/parlgov-web/pull/30))
-- Restructure 'factories' import
-  ([#23](https://github.com/hdigital/parlgov-web/pull/23))
 - Use 'CITATION.cff' for Zenodo metadata
   ([#32](https://github.com/hdigital/parlgov-web/pull/32))
 - Harmonize project information and metadata
   ([#38](https://github.com/hdigital/parlgov-web/issues/38))
+- Restructure 'factories' import
+  ([#23](https://github.com/hdigital/parlgov-web/pull/23))
+- Use platform specification in Docker Compose
+  ([#40](https://github.com/hdigital/parlgov-web/pull/40))
 
 ### Removed
 

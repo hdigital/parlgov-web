@@ -1,5 +1,6 @@
 services:
   web:
+    platform: linux/amd64
     build:
       dockerfile: ./_docker/Dockerfile-local-dev
     command: python ./app/manage.py runserver 0.0.0.0:8000
