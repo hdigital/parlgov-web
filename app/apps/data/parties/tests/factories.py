@@ -16,7 +16,7 @@ _family_sub_factory = SubFactory(
 class PartyFactory(DjangoModelFactory):
     country = SubFactory(CountryFactory)
     family = _family_sub_factory
-    name_short = Sequence(lambda n: f"Gru{n+1}")
+    name_short = Sequence(lambda n: f"Gru{n + 1}")
     name_english = "Greens"
     name = "Die Grünen"
     name_ascii = "Die Gruenen"
