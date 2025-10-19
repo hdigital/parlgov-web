@@ -1,4 +1,5 @@
 import re
+from decimal import Decimal
 
 import pytest
 
@@ -60,3 +61,10 @@ def test_seat_share(db, election_result):
     seat_share = election_result.seats / election_result.election.seats_total * 100
 
     assert seat_share == election_result.seat_share
+
+
+def test_vote_share_decimal(db, election_result):
+    election_result.vote_share = 0.1234
+    election_result.save()
+
+    assert election_result.vote_share == Decimal("0.12")
