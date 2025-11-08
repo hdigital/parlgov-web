@@ -21,7 +21,6 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "gitlens.plusFeatures.enabled": false,
-  "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
   "python.testing.cwd": "${workspaceFolder}/app",
   "python.testing.pytestArgs": [
