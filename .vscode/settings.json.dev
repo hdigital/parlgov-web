@@ -33,9 +33,9 @@
   "search.exclude": {
     "**/app/static": true
   },
-  "cSpell.enableFiletypes": [
-    "shellscript"
-  ],
+  "cSpell.enabledFileTypes": {
+    "shellscript": true
+  },
   "cSpell.words": [
     "asgi",
     "autoupdate",
