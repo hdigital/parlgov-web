@@ -35,7 +35,6 @@
         "editorconfig.editorconfig",
         "foxundermoon.shell-format",
         "github.vscode-github-actions",
-        "stkb.rewrap",
         "mikestead.dotenv",
         "ms-python.black-formatter",
         "ms-python.python",
