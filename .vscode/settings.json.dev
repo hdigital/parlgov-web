@@ -23,8 +23,9 @@
   "gitlens.plusFeatures.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
+  "python.testing.cwd": "${workspaceFolder}/app",
   "python.testing.pytestArgs": [
-    "app"
+    "."
   ],
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
