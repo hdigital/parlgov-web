@@ -63,8 +63,19 @@ def test_seat_share(db, election_result):
     assert seat_share == election_result.seat_share
 
 
-def test_vote_share_decimal(db, election_result):
-    election_result.vote_share = 0.1234
+@pytest.mark.parametrize(
+    "value, value_decimal",
+    [
+        [0.12, "0.12"],
+        [0.1234, "0.12"],
+        [0.001, "0.00"],
+        [0.014, "0.01"],
+        [0.015, "0.02"],
+        [0.016, "0.02"],
+    ],
+)
+def test_vote_share_decimal(db, election_result, value, value_decimal):
+    election_result.vote_share = value
     election_result.save()
 
-    assert election_result.vote_share == Decimal("0.12")
+    assert election_result.vote_share == Decimal(value_decimal)
