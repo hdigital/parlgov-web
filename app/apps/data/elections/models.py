@@ -110,7 +110,7 @@ class ElectionResult(BaseModel):
     )
     vote_share = models.DecimalField(
         max_digits=5,
-        decimal_places=2,
+        decimal_places=2,  # not used in SQLite, see 'save()' method
         null=True,
         blank=True,
         validators=[
@@ -143,6 +143,18 @@ class ElectionResult(BaseModel):
             validation.check_alliance_election_ids_equal(self)
 
         return super().clean()
+
+    def save(self, *args, **kwargs):
+        """Ensure vote_share is properly rounded to field's decimal_places."""
+        if self.vote_share is not None:
+            if not isinstance(self.vote_share, Decimal):
+                self.vote_share = Decimal(str(self.vote_share))
+
+            field = self._meta.get_field("vote_share")
+            quantize_pattern = Decimal("0." + "0" * field.decimal_places)
+
+            self.vote_share = self.vote_share.quantize(quantize_pattern)
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         """Get url for election result object (parliament and EP)."""
