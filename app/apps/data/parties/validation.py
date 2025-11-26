@@ -3,6 +3,8 @@
 See tests for examples of individual checks inclusion criteria.
 """
 
+from decimal import Decimal
+
 from django.core.exceptions import ValidationError
 from django.db.models import Sum
 
@@ -64,6 +66,9 @@ def check_seats_sum(party, seats_min=SEATS_MIN) -> bool:
 
 def check_vote_share(party, vote_share_min=0.95) -> bool:
     """Check if party has the minimum vote share in a single election."""
+    if not isinstance(vote_share_min, Decimal):
+        vote_share_min = Decimal(str(vote_share_min))
+
     results = party.electionresult_set
     return results.filter(vote_share__gt=vote_share_min).exists()
 
