@@ -7,7 +7,7 @@ and version numbers use
 
 ## [Unreleased] — YYYY-MM-DD
 
-Django 4.2 and Python 3.12
+Django 5.2 and Python 3.12
 
 ### Added
 
