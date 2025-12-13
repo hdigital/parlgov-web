@@ -5,6 +5,7 @@ https://docs.djangoproject.com/en/stable/ref/settings/
 """
 
 import os
+import warnings
 from pathlib import Path
 
 import environ
@@ -231,6 +232,14 @@ DATE_FORMAT = "Y-m-d"
 LOGIN_REDIRECT_URL = "page:home"
 LOGOUT_REDIRECT_URL = "page:home"
 
+# Transitional setting from Django 5.0 (deprecated in 5.0, removed in 6.0)
+FORMS_URLFIELD_ASSUME_HTTPS = True
+# Suppress specific deprecation warning for transitional setting
+warnings.filterwarnings(
+    "ignore",
+    message="The FORMS_URLFIELD_ASSUME_HTTPS transitional setting is deprecated.",
+    category=DeprecationWarning,
+)
 
 # ADDITIONAL SETTINGS // THIRD PARTY PACKAGES
 
