@@ -29,7 +29,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, "config/.env"))
 # get environment variables and set default values
 ENV_CACHES = env.cache_url("CACHE_URL", default="dummycache://")
 ENV_DEBUG = env.bool("DJANGO_DEBUG", default=False)
-ENV_SECRET_KEY = env.str("SECRET_KEY", default=get_random_secret_key())
+# Generate secret key outside env.str() to avoid recursion bug in 'django-environ'
+_default_secret_key = get_random_secret_key()
+ENV_SECRET_KEY = env.str("SECRET_KEY", default=_default_secret_key)
 ENV_ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 ENV_SSL_REQUIRED = env.bool("SSL_REQUIRED", default=False)
 ENV_DATABASES = env.db_url(
