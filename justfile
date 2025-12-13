@@ -61,6 +61,8 @@ load-data:
 
 # synchronize Python packages
 pip-sync:
+  uv pip compile --quiet --generate-hashes -o requirements.txt pyproject.toml
+  uv pip compile --quiet --generate-hashes -o requirements-dev.txt --all-extras pyproject.toml
   uv pip sync requirements-dev.txt
 
 # update Python packages
