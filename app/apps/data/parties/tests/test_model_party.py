@@ -82,5 +82,7 @@ def test_party_family_model(db):
 
 
 def test_party_family_admin_in_party(admin_client):
+    # Django 5.2 adds CSS classes and IDs to inline headings
     response = admin_client.get(reverse("admin:parties_party_add"))
-    assert "<h2>Party familys</h2>" in response.rendered_content
+    assert "Party familys" in response.rendered_content
+    assert 'id="partyfamily_set-heading"' in response.rendered_content

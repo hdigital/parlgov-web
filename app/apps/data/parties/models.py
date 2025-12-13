@@ -199,7 +199,7 @@ class PartyChange(BaseModel):
         ordering = ("date",)
         constraints = [
             models.CheckConstraint(
-                check=~models.Q(party=models.F("party_new")),
+                condition=~models.Q(party=models.F("party_new")),
                 name="party_and_party_new_not_equal",
             ),
         ]

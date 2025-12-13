@@ -70,7 +70,7 @@ class Cabinet(BaseModel):
                 name="unique_cabinet_date_per_country",
             ),
             models.CheckConstraint(
-                check=models.Q(start_date__lte=models.F("termination_date")),
+                condition=models.Q(start_date__lte=models.F("termination_date")),
                 name="cabinet_start_date_smaller_than_termination_date",
             ),
         ]

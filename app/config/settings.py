@@ -4,7 +4,7 @@ https://docs.djangoproject.com/en/stable/topics/settings/
 https://docs.djangoproject.com/en/stable/ref/settings/
 """
 
-import os
+import warnings
 from pathlib import Path
 
 import environ
@@ -23,12 +23,14 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 env = environ.Env()
 
 # load local '.env' file -- file not in version control, mainly for development
-environ.Env.read_env(os.path.join(BASE_DIR, "config/.env"))
+environ.Env.read_env(BASE_DIR / "config" / ".env")
 
 # get environment variables and set default values
 ENV_CACHES = env.cache_url("CACHE_URL", default="dummycache://")
 ENV_DEBUG = env.bool("DJANGO_DEBUG", default=False)
-ENV_SECRET_KEY = env.str("SECRET_KEY", default=get_random_secret_key())
+# Generate secret key outside env.str() to avoid recursion bug in 'django-environ'
+_default_secret_key = get_random_secret_key()
+ENV_SECRET_KEY = env.str("SECRET_KEY", default=_default_secret_key)
 ENV_ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 ENV_SSL_REQUIRED = env.bool("SSL_REQUIRED", default=False)
 ENV_DATABASES = env.db_url(
@@ -190,9 +192,6 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
-# static files names are changed (MD5 hash added) by storage engine
-# https://docs.djangoproject.com/en/stable/ref/contrib/staticfiles/#manifeststaticfilesstorage
 
 
 # Default primary key field type
@@ -231,6 +230,14 @@ DATE_FORMAT = "Y-m-d"
 LOGIN_REDIRECT_URL = "page:home"
 LOGOUT_REDIRECT_URL = "page:home"
 
+# Transitional setting from Django 5.0 (deprecated in 5.0, removed in 6.0)
+FORMS_URLFIELD_ASSUME_HTTPS = True
+# Suppress specific deprecation warning for transitional setting
+warnings.filterwarnings(
+    "ignore",
+    message="The FORMS_URLFIELD_ASSUME_HTTPS transitional setting is deprecated.",
+    category=DeprecationWarning,
+)
 
 # ADDITIONAL SETTINGS // THIRD PARTY PACKAGES
 
