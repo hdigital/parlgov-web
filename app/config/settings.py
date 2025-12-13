@@ -4,7 +4,6 @@ https://docs.djangoproject.com/en/stable/topics/settings/
 https://docs.djangoproject.com/en/stable/ref/settings/
 """
 
-import os
 import warnings
 from pathlib import Path
 
@@ -24,7 +23,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 env = environ.Env()
 
 # load local '.env' file -- file not in version control, mainly for development
-environ.Env.read_env(os.path.join(BASE_DIR, "config/.env"))
+environ.Env.read_env(BASE_DIR / "config" / ".env")
 
 # get environment variables and set default values
 ENV_CACHES = env.cache_url("CACHE_URL", default="dummycache://")
