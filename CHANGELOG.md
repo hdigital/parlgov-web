@@ -37,7 +37,8 @@ Django 4.2 and Python 3.12
 
 ### Removed
 
-- _for removed features_
+- Remove '.python-version'
+  ([#52](https://github.com/hdigital/parlgov-web/pull/52))
 
 ### Fixed
 
