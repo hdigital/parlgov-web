@@ -48,6 +48,7 @@ docs = [
 linting = [
   "ruff",           # code linter and formatter
   "pre-commit",     # see '.pre-commit-config.yaml'
+  "typos",          # see '.typos.toml'
   "mypy",           # type checking
   "types-Markdown",
 ]
