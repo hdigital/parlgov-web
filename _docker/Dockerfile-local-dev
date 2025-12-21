@@ -1,5 +1,5 @@
 # Pull base image
-FROM python:3.12-slim-bookworm
+FROM python:3.13-slim-bookworm
 
 # Install SQLite
 RUN apt-get update && \
