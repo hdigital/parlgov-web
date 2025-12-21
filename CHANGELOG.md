@@ -7,10 +7,12 @@ and version numbers use
 
 ## [Unreleased] — YYYY-MM-DD
 
-Django 4.2 and Python 3.12
+Django 5.2 and Python 3.12
 
 ### Added
 
+- Upgrade to Django 5.2
+  ([#53](https://github.com/hdigital/parlgov-web/pull/53))
 - Add CodeMeta software metadata
   ([#31](https://github.com/hdigital/parlgov-web/issues/31))
 - Add paper, source code, and data references

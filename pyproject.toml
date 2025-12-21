@@ -14,7 +14,7 @@ requires-python = ">=3.12"
 
 # 'requirements.txt' created with pip compile
 dependencies = [
-  "django==4.2.*",
+  "django==5.2.*",
   # Django tools
   "django-environ~=0.8", # environment variables configuration
   # Utilities
