@@ -11,9 +11,10 @@ Django 5.2 and Python 3.13
 
 ### Added
 
-- Upgrade to Django 5.2 and Python 3.13
+- Upgrade to Django 5.2, Python 3.13, and Debian Trixie
   ([#53](https://github.com/hdigital/parlgov-web/pull/53),
-   [#55](https://github.com/hdigital/parlgov-web/pull/55))
+   [#55](https://github.com/hdigital/parlgov-web/pull/55),
+   [#56](https://github.com/hdigital/parlgov-web/pull/56))
 - Add CodeMeta software metadata
   ([#31](https://github.com/hdigital/parlgov-web/issues/31))
 - Add paper, source code, and data references
