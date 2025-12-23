@@ -16,9 +16,11 @@ Django 5.2 and Python 3.13
    [#55](https://github.com/hdigital/parlgov-web/pull/55),
    [#56](https://github.com/hdigital/parlgov-web/pull/56))
 - Add CodeMeta software metadata
-  ([#31](https://github.com/hdigital/parlgov-web/issues/31))
+  ([#31](https://github.com/hdigital/parlgov-web/issues/31),
+   [#37](https://github.com/hdigital/parlgov-web/pull/37))
 - Add paper, source code, and data references
-  ([#36](https://github.com/hdigital/parlgov-web/pull/36))
+  ([#17](https://github.com/hdigital/parlgov-web/issues/17),
+   [#36](https://github.com/hdigital/parlgov-web/pull/36))
 - Add CC0 waiver for documentation
   ([#35](https://github.com/hdigital/parlgov-web/pull/35))
 - Add and configure 'typos' spell checker
