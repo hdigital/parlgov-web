@@ -1,6 +1,6 @@
 {
   // https://github.com/devcontainers/images/tree/main/src/python
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
   // https://containers.dev/features
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
