@@ -34,13 +34,13 @@ Django 5.2 and Python 3.13
   ([#29](https://github.com/hdigital/parlgov-web/pull/29))
 - Specify license with PEP 639 metadata format in 'pyproject.toml'
   ([#28](https://github.com/hdigital/parlgov-web/pull/28))
-- Add links to PR, issue, or commit for all entries in the 'changelog'
+- Use links to PR, issue, or commit for 'changelog' entries
   ([#30](https://github.com/hdigital/parlgov-web/pull/30))
 - Use 'CITATION.cff' for Zenodo metadata
   ([#32](https://github.com/hdigital/parlgov-web/pull/32))
 - Harmonize project information and metadata
-  ([#38](https://github.com/hdigital/parlgov-web/issues/38))
-- Restructure 'factories' import
+  ([#38](https://github.com/hdigital/parlgov-web/pull/38))
+- Refactor 'factories' imports
   ([#23](https://github.com/hdigital/parlgov-web/pull/23))
 - Refine database migration scripts
   ([#61](https://github.com/hdigital/parlgov-web/pull/61))
@@ -94,12 +94,12 @@ Django 4.2 and Python 3.12
     ([aa3a8cf](https://github.com/hdigital/parlgov-web/commit/aa3a8cf))
   - Replace 'page' with 'site' for website
     ([f1c1827](https://github.com/hdigital/parlgov-web/commit/f1c1827))
-  - Minor revisions 'readme'
+  - Minor revisions to 'readme'
     ([7cdce99](https://github.com/hdigital/parlgov-web/commit/7cdce99))
 
 ### Fixed
 
-- Specify database url Docker
+- Specify database url for Docker
   ([ebeee42](https://github.com/hdigital/parlgov-web/commit/ebeee42))
 
 ## [v24.08] — 2024-08-24
