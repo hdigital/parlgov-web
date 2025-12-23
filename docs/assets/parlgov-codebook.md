@@ -278,7 +278,7 @@ Confidence votes are added for all recent cabinets but are not included for all 
 
 Details
 
-- cabinet desription includes a brief entry for a confidence vote
+- cabinet description includes a brief entry for a confidence vote
 - constructive vote of no confidence
   - coded for outgoing cabinet (eg. [DEU Schmitt III](/explore/deu/cabinet/1980-11-05/), [ESP Rajoy IV](/explore/ESP/cabinet/2016-10-29/))
 
@@ -408,7 +408,7 @@ Open questions
   - FDF-PPW alliance in 1991 election
   - PRL/FDF alliance in 1995 election
     - seat distribution
-    - informaton about PPW (Pari pour la Wallonie)
+    - information about PPW (Pari pour la Wallonie)
   - SPA/Spirit in 2003 election
   - CD&V/N-VA in 2007 election
 
@@ -464,7 +464,7 @@ News in English
 
 Coding comments
 
-- the data sources on election results before (and after) 1945 are often incosistent
+- the data sources on election results before (and after) 1945 are often inconsistent
 
 ### Croatia
 
@@ -618,7 +618,7 @@ Information
 
 Data sources online
 
-- [Elections – Ministery of Justice Finland](https://vaalit.fi/etusivu)
+- [Elections – Ministry of Justice Finland](https://vaalit.fi/etusivu)
 - [official election results](http://tilastokeskus.fi/til/vaa_en.html)
 - [cabinets and ministers](http://www.government.fi/tietoa-valtioneuvostosta/hallitukset/en.jsp)
 - [registered parties](http://www.vaalit.fi/15485.htm)
@@ -673,7 +673,7 @@ News in English
 
 Coding comments
 
-- "'Comparativly, France has the most poorly documented electoral statistics.' This statement of Daniele Caramani (2000) must be underlined for various reasons. (...)" (Nohlen 2010, 670). Hence, our coding may include inconsistencies and would profit from feedback by country experts.
+- "'Comparatively, France has the most poorly documented electoral statistics.' This statement of Daniele Caramani (2000) must be underlined for various reasons. (...)" (Nohlen 2010, 670). Hence, our coding may include inconsistencies and would profit from feedback by country experts.
 - Mackie/Rose election data exclude Algeria and the overseas territories and departments
 - Paloheimo (1984) cabinet parties that could not be identified: Gauche Democrats, Movement of Democrats, Payson
 - seat strength for some cabinet parties before 1945 unknown – eg. [Painleve 1925](http://www.parlgov.org/explore/fra/cabinet/1925-04-17/)
