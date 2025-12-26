@@ -1,0 +1,37 @@
+# Configure spell checking with 'typos'
+# https://github.com/crate-ci/typos/blob/master/docs/reference.md
+
+[files]
+# Files with many intentional "typos" (foreign words, proper nouns, etc.)
+extend-exclude = [
+  "app/parlgov-fixture.json",
+  "app/static/**",
+  "scripts/migrate_parlgov-db/**",
+  "_docs/**",
+]
+
+[default.extend-words]
+# Terms and proper nouns that are not typos
+
+# Abbreviations
+Ges = "Ges" # German abbreviation (Gesellschaft)
+IHS = "IHS" # Institute for Advanced Studies
+sme = "sme" # Slovak domain (.sme.sk)
+
+# Languages
+Archiv = "Archiv"         # German - Archive
+Ofer = "Ofer"             # Hebrew name
+Presse = "Presse"         # German - Press
+Statistisk = "Statistisk" # Swedish - Statistical
+sinds = "sinds"           # Dutch - since
+
+# Party names
+MKE = "MKE"     # Estonian party
+SKYP = "SKYP"   # Finnish party
+VAS = "VAS"     # Finnish party
+Linke = "Linke" # German party
+
+# Other
+CLEA = "CLEA"       # Dataset — Constituency-Level Elections Archive
+Childs = "Childs"   # Author surname
+familys = "familys" # Django admin pluralization
