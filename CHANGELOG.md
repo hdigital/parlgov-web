@@ -21,6 +21,8 @@ Django 5.2 and Python 3.13
   ([#36](https://github.com/hdigital/parlgov-web/pull/36))
 - Add CC0 waiver for documentation
   ([#35](https://github.com/hdigital/parlgov-web/pull/35))
+- Add and configure 'typos' spell checker
+  ([#58](https://github.com/hdigital/parlgov-web/pull/58))
 
 ### Changed
 
