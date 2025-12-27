@@ -19,7 +19,7 @@ python -m pre_commit run --all-files
 
 # Import data from fixture
 printf "\n\n🗄️ · Load data from fixture\n\n\n"
-python manage.py loaddata parlgov-fixture.json
+python manage.py loaddata --exclude contenttypes --exclude auth.permission parlgov-fixture.json
 
 # Create views main data tables
 python manage.py dbshell <apps/views_data/views-data.sql

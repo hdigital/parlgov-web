@@ -82,7 +82,7 @@ admin user to access the Django admin site for data editing.
 
 ```sh
 # (.venv) ./app
-python manage.py loaddata parlgov-fixture.json
+python manage.py loaddata --exclude contenttypes --exclude auth.permission parlgov-fixture.json
 cat apps/views_data/views-data.sql | python manage.py dbshell
 python manage.py createsuperuser
 ```

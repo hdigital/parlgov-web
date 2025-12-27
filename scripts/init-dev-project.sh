@@ -25,7 +25,7 @@ printf "\n🎺 · Create Django project\n\n\n"
 cd app
 
 python manage.py migrate --verbosity 0
-python manage.py loaddata parlgov-fixture.json
+python manage.py loaddata --exclude contenttypes --exclude auth.permission parlgov-fixture.json
 python manage.py dbshell <apps/views_data/views-data.sql
 
 python manage.py collectstatic --no-input --verbosity 0
