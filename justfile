@@ -6,6 +6,10 @@ alias pf := git-push-force
 
 ## Recipes 'just' — https://just.systems/man/en/chapter_20.html
 
+# create Codespace development environment
+codespace-dev: codespace-init
+  sudo apt install -y graphviz graphviz-dev pandoc r-cran-tidyverse texlive-latex-base texlive-latex-recommended
+
 # initialize Codespace
 codespace-init: venv
   sudo apt-get update -y && sudo apt-get install -y sqlite3
