@@ -46,6 +46,7 @@
     "codespace",
     "codespaces",
     "collectstatic",
+    "contenttypes",
     "createsuperuser",
     "datacore",
     "Dataverse",

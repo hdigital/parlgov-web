@@ -55,7 +55,7 @@ lint:
 load-data:
   cd app && python manage.py migrate --verbosity 0
   cd app && python manage.py collectstatic --no-input --verbosity 0
-  cd app && python manage.py loaddata parlgov-fixture.json
+  cd app && python manage.py loaddata --exclude contenttypes --exclude auth.permission parlgov-fixture.json
   cd app && cat apps/views_data/views-data.sql | python manage.py dbshell
   cd app && python manage.py create_superuser
 
