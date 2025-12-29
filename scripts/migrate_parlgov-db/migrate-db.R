@@ -1,3 +1,7 @@
+#!/usr/bin/env Rscript
+
+# Migrate legacy ParlGov SQLite database to CSV files for Django import
+
 library(conflicted)
 conflicts_prefer(dplyr::filter, .quiet = TRUE)
 
