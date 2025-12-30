@@ -3,10 +3,10 @@
 # Exit on error and check run from project root
 set -e && cd scripts/../
 
-printf "\n📋 · Initialize development project\n\n\n"
+printf "\n\n📋 · Initialize development project\n\n"
 
 # Create virtual environment and install dependencies
-printf "\n🐍 · Install Python dependencies\n\n"
+printf "\n\n🐍 · Install Python dependencies\n\n"
 rm -rf .venv
 python -m venv .venv
 source .venv/bin/activate
@@ -20,7 +20,7 @@ if [ ! -f app/config/.env ]; then
 fi
 
 # Create SQLite database and gather initial data
-printf "\n🎺 · Create Django project\n\n\n"
+printf "\n\n🎺 · Create Django project\n\n"
 
 cd app
 
