@@ -49,6 +49,7 @@ lint:
   mypy --ignore-missing-imports .
   ruff format .
   ruff check --fix .
+  typos --write-changes .
   pre-commit run --all-files
 
 # load project data (fixtures and static files)
