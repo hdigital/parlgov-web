@@ -33,7 +33,7 @@ repos:
     rev: v0.14.1
     hooks:
       # Run Ruff linter.
-      - id: ruff
+      - id: ruff-check
         args: [--fix]
       # Run Ruff formatter.
       - id: ruff-format
