@@ -38,6 +38,8 @@ Django 5.2 and Python 3.13
   ([#38](https://github.com/hdigital/parlgov-web/issues/38))
 - Restructure 'factories' import
   ([#23](https://github.com/hdigital/parlgov-web/pull/23))
+- Refine database migration scripts
+  ([#61](https://github.com/hdigital/parlgov-web/pull/61))
 - Use platform specification in Docker Compose
   ([#40](https://github.com/hdigital/parlgov-web/pull/40))
 
