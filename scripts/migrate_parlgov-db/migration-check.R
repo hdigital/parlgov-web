@@ -1,3 +1,7 @@
+#!/usr/bin/env Rscript
+
+# Compare legacy and new ParlGov databases to verify migration
+
 library(conflicted)
 conflicts_prefer(dplyr::filter, .quiet = TRUE)
 
