@@ -9,7 +9,7 @@ set -e && cd scripts/../
 printf "\n\n📋 · Graph data models\n\n"
 
 if ! command -v dot &>/dev/null; then
-  printf "🚨 · 'graphviz' is required (see docs). Exiting...\n\n\n"
+  printf "🚨 · 'graphviz' is required (see docs). Exiting...\n\n"
   exit 1
 fi
 
