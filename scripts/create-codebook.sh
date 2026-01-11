@@ -3,7 +3,7 @@
 # Exit on error and check run from project root
 set -e && cd scripts/../
 
-printf "\n📙 · Create Markdown and pdf codebook\n\n\n"
+printf "\n\n📙 · Create Markdown and pdf codebook\n\n"
 
 # Create codebook markdown file with Django manage.py command
 cd app

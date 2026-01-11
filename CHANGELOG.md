@@ -40,6 +40,8 @@ Django 5.2 and Python 3.13
   ([#23](https://github.com/hdigital/parlgov-web/pull/23))
 - Use platform specification in Docker Compose
   ([#40](https://github.com/hdigital/parlgov-web/pull/40))
+- Harmonize status messages scripts
+  ([#64](https://github.com/hdigital/parlgov-web/pull/64))
 
 ### Removed
 
