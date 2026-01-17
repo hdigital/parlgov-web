@@ -9,7 +9,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
-printf "\n📋 · Import csv-data legacy database into Django project\n\n\n"
+printf "\n\n📋 · Import csv-data legacy database into Django project\n\n"
 
 cd "$PROJECT_ROOT/app"
 
@@ -48,4 +48,4 @@ printf "\n\n📝 · Check spelling documentation tables\n\n"
 cd "$SCRIPT_DIR"
 uvx typos import-data-legacy/*__docs__*
 
-printf "\n\n✅ · Data import legacy database\n\n"
+printf "\n\n✅ · Legacy database import\n\n"
