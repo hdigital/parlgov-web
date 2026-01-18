@@ -26,6 +26,8 @@ Django 5.2 and Python 3.13
 
 ### Changed
 
+- Recreate project data (fixture, schema, codebook)
+  ([#65](https://github.com/hdigital/parlgov-web/pull/65))
 - Use '/api/v1' as API url for better versioning support
   ([#29](https://github.com/hdigital/parlgov-web/pull/29))
 - Specify license with PEP 639 metadata format in 'pyproject.toml'
