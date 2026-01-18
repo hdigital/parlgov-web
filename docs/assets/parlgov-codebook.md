@@ -1,8 +1,6 @@
 # ParlGov Codebook
 
-Created on 12 August 2024, 14:52 from ParlGov database documentation entries.
-
-## Reference
+Created on 18 January 2026, 11:44 from ParlGov database documentation entries.
 
 Döring, Holger and Philip Manow. 2024. Parliaments and governments database (ParlGov): Information on parties, elections and cabinets in established democracies.
 
@@ -1931,7 +1929,6 @@ Stable version 29 December 2014
 - BGR cabinet: updated all cabinet sources and descriptions
 - DEU: added CDU/CSU party group to parliament changes and cabinets
 - ITA elections 1994 to 2008:
-
   - recoded major alliances into Centre Left and Centre Right
   - recoded smaller parties (alliances) only recorded as alliances
   - removed parties only recorded as alliance members (no seats, no votes)
@@ -2127,7 +2124,6 @@ Stable version 26 July 2011
 - replaced missing 'left_right' party positions with 'state_market' values if available (esp. relevant for Benoit/Laver 2006 data)
 - corrected documentation of variable 'date' in 'election' table
 - CYP: removed elections and cabinets prior to 1976 (Polity IV score)
-
   - added Kyprianou III, Kyprianou V, Vassiliou II, Klerides II, Klerides IV, Papadopoulos II
 
 - AUT cabinet 1945: Figl I split into two cabinets
