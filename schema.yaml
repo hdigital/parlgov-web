@@ -619,6 +619,9 @@ components:
           $ref: '#/components/schemas/TableVariableEnum'
         order:
           type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
         short:
           type: string
           maxLength: 25
@@ -733,14 +736,24 @@ components:
         seats_total:
           type: integer
           maximum: 1000
+          minimum: 0
         electorate:
           type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
           nullable: true
         votes_cast:
           type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
           nullable: true
         votes_valid:
           type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
           nullable: true
         data_source:
           type: string
@@ -789,6 +802,7 @@ components:
         seats:
           type: integer
           maximum: 1000
+          minimum: 0
           nullable: true
           description: enter '0' if the party won no seats -- leave empty for alliances
             were seats are coded for members
@@ -800,6 +814,9 @@ components:
           description: official vote share -- max. two  decimal places
         votes:
           type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
           nullable: true
         data_source:
           type: string
