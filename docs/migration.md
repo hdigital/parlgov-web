@@ -3,9 +3,9 @@
 ## Approach
 
 The main data tables and some of the docs have been migrated from _ParlGov
-legacy_ and are presented on _ParlGov web_ (see `migrate-db.sh`). The SQLite
-database `parlgov-experimental.db` (see [ParlGov
-Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC))
+legacy_ and are presented on _ParlGov web_
+(see `./scripts/migrate_parlgov-db/`). The SQLite database
+`parlgov-experimental.db` (see [ParlGov Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC))
 is used for the migration. A mapping of the migrated tables and their new table
 names is provided in `migration-check.csv`.
 
