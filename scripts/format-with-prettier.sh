@@ -3,7 +3,7 @@
 # Exit on error and check run from project root
 set -e && cd scripts/../
 
-printf "\n🧼 · Format Markdown and config files with 'prettier'\n"
+printf "\n\n🧼 · Format Markdown and config files with 'prettier'\n\n"
 
 # Format specified file types with 'prettier'
 prettier --log-level warn --write ./**/*.{md,json,jsonc,yaml}

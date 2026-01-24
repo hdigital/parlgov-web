@@ -77,14 +77,28 @@ pip-update:
   uv pip sync requirements-dev.txt
   @echo "\n\n✅ · Use only for temporary updates, for production use './scripts/update-packages.sh'\n"
 
+# run executables in 'scripts' folder (with git reset)
+run-scripts:
+  #!/usr/bin/env bash
+  set -e
+  for script in $(find scripts -maxdepth 1 -type f -executable | sort); do
+    echo -e "\n\n▶️ · RUN '$script'\n\n"
+    ./"$script" || true
+    git restore .
+    git clean --force -d
+    uv pip sync --quiet requirements-dev.txt
+    echo -e "\n\n☑️ · Reset Git after '$script'\n\n"
+    sleep 3
+  done
+
 # run Django and MKDocs server
 serve:
   mkdocs serve --dev-addr localhost:8888 &
   cd app && python manage.py runserver &
   @sleep 3
-  @echo "\n📝 · Django server running at http://localhost:8000"
+  @echo "\n\n📝 · Django server running at http://localhost:8000"
   @echo "📝 · MKDocs server running at http://localhost:8888"
-  @echo "\n📝 · just serve-quit  # quit server (background processes)\n"
+  @echo "\n📝 · just serve-quit  # Quit server (background processes)\n\n"
 
 # quit running servers
 serve-quit:

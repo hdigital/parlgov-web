@@ -3,7 +3,7 @@
 # Exit on error and check run from project root
 set -e && cd scripts/../
 
-printf "\n📋 · Update pip and CSS/JS dependencies\n\n\n"
+printf "\n\n📋 · Update pip and CSS/JS dependencies\n\n"
 
 # Show available Python packages (all updates)
 python -m pip list --outdated
@@ -24,13 +24,13 @@ set +e
 python -m pre_commit run --all-files
 
 # Update documentation (for mkdocs updates)
-printf "\n\n📔 · Build documentation:"
+printf "\n\n📔 · Build documentation\n\n"
 mkdocs build --clean --strict
 
 # Show available Python packages (locked dependencies)
-printf "\n\n🔐 · Show locked dependencies:"
+printf "\n\n🔐 · Show locked dependencies\n\n"
 python -m pip list --outdated
 
 # Provide information for Git commit
-printf "\n\n✅ · Git commit message:"
-printf "\n\n     Update all dependencies (esp. ...)\n\n"
+printf "\n\n✅ · Git commit message\n\n"
+printf "     Update all dependencies (esp. ...)\n\n"

@@ -3,7 +3,7 @@
 # Exit on error and check run from project root
 set -e && cd scripts/../
 
-printf "\n📋 · Install Bootstrap and Bootstrap Icons\n\n\n"
+printf "\n\n📋 · Install Bootstrap and Bootstrap Icons\n\n"
 
 # Install bootstrap with npm and create "package-lock.json"
 npm install --quiet --no-fund bootstrap bootstrap-icons

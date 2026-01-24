@@ -6,10 +6,10 @@ set -e && cd scripts/../
 # Notes: This script requires 'uv' and 'Graphviz' to be installed.
 #        The script is used in local development and not in production or CI/CD.
 
-printf "\n📋 · Graph data models\n\n\n"
+printf "\n\n📋 · Graph data models\n\n"
 
 if ! command -v dot &>/dev/null; then
-  printf "🚨 · 'graphviz' is required (see docs). Exiting...\n\n\n"
+  printf "🚨 · 'graphviz' is required (see docs). Exiting...\n\n"
   exit 1
 fi
 

@@ -3,7 +3,7 @@
 # Exit on error and check run from project root
 set -e && cd scripts/../
 
-printf "\n📋 · Recreate project\n\n\n"
+printf "\n\n📋 · Recreate project\n\n"
 
 cd app
 
@@ -18,7 +18,7 @@ python manage.py migrate --verbosity 0
 python -m pre_commit run --all-files
 
 # Import data from fixture
-printf "\n\n🗄️ · Load data from fixture\n\n\n"
+printf "\n\n🗄️ · Load data from fixture\n\n"
 python manage.py loaddata --exclude contenttypes --exclude auth.permission parlgov-fixture.json
 
 # Create views main data tables
@@ -44,4 +44,4 @@ python -m ruff check --fix .
 # Create codebook (md, pdf) in './docs/assets/'
 bash scripts/create-codebook.sh
 
-printf "\n\n✅ · Project Recreation\n\n"
+printf "\n\n✅ · Project recreation\n\n"
