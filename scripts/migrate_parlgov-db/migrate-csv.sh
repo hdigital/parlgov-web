@@ -18,9 +18,7 @@ rm -f parlgov.sqlite
 python manage.py migrate --verbosity 0
 
 # Import csv data
-python manage.py loaddata \
-  --exclude contenttypes \
-  --exclude auth.permission parlgov-fixture.json
+python manage.py import_data
 cat apps/views_data/views-data.sql | python manage.py dbshell
 
 # Create fixture (without superuser)
