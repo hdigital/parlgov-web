@@ -24,7 +24,7 @@ dependencies = [
   # Usage tools
   "tqdm == 4.*", # progress bar for project commands
   # Production server
-  "gunicorn==23.*",  # HTTP server
+  "gunicorn==25.*",  # HTTP server
   "whitenoise==6.*", #  static file serving
 ]
 
