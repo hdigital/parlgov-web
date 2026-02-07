@@ -28,26 +28,26 @@ Django 5.2 and Python 3.13
 
 ### Changed
 
-- Recreate project data (fixture, schema, codebook)
-  ([#65](https://github.com/hdigital/parlgov-web/pull/65))
 - Use '/api/v1' as API url for better versioning support
   ([#29](https://github.com/hdigital/parlgov-web/pull/29))
-- Specify license with PEP 639 metadata format in 'pyproject.toml'
-  ([#28](https://github.com/hdigital/parlgov-web/pull/28))
+- Recreate project data (fixture, schema, codebook)
+  ([#65](https://github.com/hdigital/parlgov-web/pull/65))
 - Use links to PR, issue, or commit for 'changelog' entries
   ([#30](https://github.com/hdigital/parlgov-web/pull/30))
-- Use 'CITATION.cff' for Zenodo metadata
-  ([#32](https://github.com/hdigital/parlgov-web/pull/32))
 - Harmonize project information and metadata
   ([#38](https://github.com/hdigital/parlgov-web/pull/38))
+- Use 'CITATION.cff' for Zenodo metadata
+  ([#32](https://github.com/hdigital/parlgov-web/pull/32))
+- Specify license with PEP 639 metadata format in 'pyproject.toml'
+  ([#28](https://github.com/hdigital/parlgov-web/pull/28))
 - Refactor 'factories' imports
   ([#23](https://github.com/hdigital/parlgov-web/pull/23))
 - Refine database migration scripts
   ([#61](https://github.com/hdigital/parlgov-web/pull/61))
-- Use platform specification in Docker Compose
-  ([#40](https://github.com/hdigital/parlgov-web/pull/40))
 - Harmonize status messages scripts
   ([#64](https://github.com/hdigital/parlgov-web/pull/64))
+- Use platform specification in Docker Compose
+  ([#40](https://github.com/hdigital/parlgov-web/pull/40))
 
 ### Removed
 
