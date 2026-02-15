@@ -11,14 +11,12 @@ Django 5.2 and Python 3.13
 
 ### Added
 
-- Upgrade to Django 5.2, Python 3.13, and Debian Trixie
-  ([#53](https://github.com/hdigital/parlgov-web/pull/53),
-   [#55](https://github.com/hdigital/parlgov-web/pull/55),
-   [#56](https://github.com/hdigital/parlgov-web/pull/56))
 - Add CodeMeta software metadata
-  ([#31](https://github.com/hdigital/parlgov-web/issues/31))
+  ([#31](https://github.com/hdigital/parlgov-web/issues/31),
+   [#37](https://github.com/hdigital/parlgov-web/pull/37))
 - Add paper, source code, and data references
-  ([#36](https://github.com/hdigital/parlgov-web/pull/36))
+  ([#17](https://github.com/hdigital/parlgov-web/issues/17),
+   [#36](https://github.com/hdigital/parlgov-web/pull/36))
 - Add CC0 waiver for documentation
   ([#35](https://github.com/hdigital/parlgov-web/pull/35))
 - Add and configure 'typos' spell checker
@@ -26,26 +24,30 @@ Django 5.2 and Python 3.13
 
 ### Changed
 
-- Recreate project data (fixture, schema, codebook)
-  ([#65](https://github.com/hdigital/parlgov-web/pull/65))
+- Upgrade to Django 5.2, Python 3.13, and Debian Trixie
+  ([#53](https://github.com/hdigital/parlgov-web/pull/53),
+   [#55](https://github.com/hdigital/parlgov-web/pull/55),
+   [#56](https://github.com/hdigital/parlgov-web/pull/56))
 - Use '/api/v1' as API url for better versioning support
   ([#29](https://github.com/hdigital/parlgov-web/pull/29))
-- Specify license with PEP 639 metadata format in 'pyproject.toml'
-  ([#28](https://github.com/hdigital/parlgov-web/pull/28))
-- Add links to PR, issue, or commit for all entries in the 'changelog'
+- Recreate project data (fixture, schema, codebook)
+  ([#65](https://github.com/hdigital/parlgov-web/pull/65))
+- Use links to PR, issue, or commit for 'changelog' entries
   ([#30](https://github.com/hdigital/parlgov-web/pull/30))
+- Harmonize project information and metadata
+  ([#38](https://github.com/hdigital/parlgov-web/pull/38))
 - Use 'CITATION.cff' for Zenodo metadata
   ([#32](https://github.com/hdigital/parlgov-web/pull/32))
-- Harmonize project information and metadata
-  ([#38](https://github.com/hdigital/parlgov-web/issues/38))
-- Restructure 'factories' import
+- Specify license with PEP 639 metadata format in 'pyproject.toml'
+  ([#28](https://github.com/hdigital/parlgov-web/pull/28))
+- Refactor 'factories' imports
   ([#23](https://github.com/hdigital/parlgov-web/pull/23))
 - Refine database migration scripts
   ([#61](https://github.com/hdigital/parlgov-web/pull/61))
-- Use platform specification in Docker Compose
-  ([#40](https://github.com/hdigital/parlgov-web/pull/40))
 - Harmonize status messages scripts
   ([#64](https://github.com/hdigital/parlgov-web/pull/64))
+- Use platform specification in Docker Compose
+  ([#40](https://github.com/hdigital/parlgov-web/pull/40))
 
 ### Removed
 
@@ -92,12 +94,12 @@ Django 4.2 and Python 3.12
     ([aa3a8cf](https://github.com/hdigital/parlgov-web/commit/aa3a8cf))
   - Replace 'page' with 'site' for website
     ([f1c1827](https://github.com/hdigital/parlgov-web/commit/f1c1827))
-  - Minor revisions 'readme'
+  - Minor revisions to 'readme'
     ([7cdce99](https://github.com/hdigital/parlgov-web/commit/7cdce99))
 
 ### Fixed
 
-- Specify database url Docker
+- Specify database url for Docker
   ([ebeee42](https://github.com/hdigital/parlgov-web/commit/ebeee42))
 
 ## [v24.08] — 2024-08-24
