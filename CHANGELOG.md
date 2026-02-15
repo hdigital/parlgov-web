@@ -11,6 +11,27 @@ Django 5.2 and Python 3.13
 
 ### Added
 
+- _for new features_
+
+### Changed
+
+- _for changes in functionality_
+
+### Removed
+
+- _for removed features_
+
+### Fixed
+
+- _for bug fixes_
+- Minor revisions
+
+## [v26.02] — 2026-02-28
+
+Django 5.2 and Python 3.13
+
+### Added
+
 - Add CodeMeta software metadata
   ([#31](https://github.com/hdigital/parlgov-web/issues/31),
    [#37](https://github.com/hdigital/parlgov-web/pull/37))
@@ -32,20 +53,20 @@ Django 5.2 and Python 3.13
   ([#29](https://github.com/hdigital/parlgov-web/pull/29))
 - Recreate project data (fixture, schema, codebook)
   ([#65](https://github.com/hdigital/parlgov-web/pull/65))
-- Use links to PR, issue, or commit for 'changelog' entries
-  ([#30](https://github.com/hdigital/parlgov-web/pull/30))
 - Harmonize project information and metadata
   ([#38](https://github.com/hdigital/parlgov-web/pull/38))
 - Use 'CITATION.cff' for Zenodo metadata
   ([#32](https://github.com/hdigital/parlgov-web/pull/32))
-- Specify license with PEP 639 metadata format in 'pyproject.toml'
+- Specify license with PEP 639 metadata in 'pyproject.toml'
   ([#28](https://github.com/hdigital/parlgov-web/pull/28))
-- Refactor 'factories' imports
-  ([#23](https://github.com/hdigital/parlgov-web/pull/23))
+- Use links to PR, issue, or commit for 'changelog' entries
+  ([#30](https://github.com/hdigital/parlgov-web/pull/30))
 - Refine database migration scripts
   ([#61](https://github.com/hdigital/parlgov-web/pull/61))
 - Harmonize status messages scripts
   ([#64](https://github.com/hdigital/parlgov-web/pull/64))
+- Refactor 'factories' imports
+  ([#23](https://github.com/hdigital/parlgov-web/pull/23))
 - Use platform specification in Docker Compose
   ([#40](https://github.com/hdigital/parlgov-web/pull/40))
 
