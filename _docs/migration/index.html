@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -554,7 +554,7 @@ legacy</em> and are presented on <em>ParlGov web</em>
 <code>parlgov-experimental.db</code> (see <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC">ParlGov Dataverse</a>)
 is used for the migration. A mapping of the migrated tables and their new table
 names is provided in <code>migration-check.csv</code>.</p>
-<p>The main information is summarized in the tables<code>view_party</code>, <code>view_election</code>,
+<p>The main information is summarized in the tables <code>view_party</code>, <code>view_election</code>,
 and <code>view_cabinet</code>, which are included as database views.</p>
 <p>Database tables now include a <code>data_*</code> or <code>docs_*</code> prefix to distinguish them
 from the database tables created by Django.</p>
@@ -567,7 +567,7 @@ and last update.</p>
 been migrated from <em>ParlGov legacy</em>.</p>
 <p><a href="https://partyfacts.org/">Party Facts</a> provides a link file with ParlGov IDs,
 which should be used to link party IDs with other datasets. Party IDs from Party
-Facts, Manifesto, and CHESS are not included in <em>ParlGov web</em>.</p>
+Facts, Manifesto, and CHES are not included in <em>ParlGov web</em>.</p>
 <p>Party positions and party IDs from other datasets were not updated for recent
 versions of <em>ParlGov legacy</em>.</p>
 <h2 id="elections">Elections</h2>
@@ -591,7 +591,7 @@ includes checks to ensure the documentation covers all tables and variables.
 This documentation and the checks have not been migrated for the initial version
 of <em>ParlGov web</em>. <em>ParlGov legacy</em> also includes a table that documents JSON
 keys.</p>
-<p>Data sources are documented with keys in the data tables and these keys are
+<p>Data sources are documented with keys in the data tables, and these keys are
 mostly documented and checked in <em>ParlGov legacy</em>. A migration of the keys needs
 a substantial revision and is not included in the initial version of <em>ParlGov
 web</em>.</p>

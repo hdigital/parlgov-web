@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -637,7 +637,7 @@
 
 
 <h1 id="development">Development · 💻</h1>
-<p>See Python development dependencies in <code>requirements-dev.txt</code> and a
+<p>See Python development dependencies in <code>requirements-dev.txt</code> and
 documentation of environment variables in <code>.env.example</code>.
 <a href="https://docs.astral.sh/uv/pip/">uv</a> is used as a <em>venv/pip</em> replacement for
 some development tasks.</p>
@@ -664,7 +664,7 @@ pytest --cov --randomly-dont-reorganize
 <ul>
 <li><em>data</em> — data tables (e.g., parties, elections, cabinets)</li>
 <li><em>docs</em> — documentation tables (e.g., codebook, news)</li>
-<li><em>view</em> – main data tables (database views, <em>see below</em>)</li>
+<li><em>view</em> — main data tables (database views, <em>see below</em>)</li>
 </ul>
 <p>Additional tables are included by Django in the app database (<code>parlgov.sqlite</code>).</p>
 <p>A visualization of the data tables is provided in <code>graph-models_data.png</code> (see
@@ -688,7 +688,7 @@ import</a>).</p>
 <p>The three main views are not included as Django models in the project.</p>
 <h2 id="miscellaneous">Miscellaneous · 🗂️</h2>
 <h3 id="documentation">Documentation · 📚</h3>
-<p>Start documentation at <a href="http://localhost:80/">localhost:80</a></p>
+<p>Start documentation at <a href="http://localhost:8888/">localhost:8888</a></p>
 <pre><code class="language-sh"># (.venv) ./
 mkdocs serve --dev-addr localhost:8888
 </code></pre>
@@ -705,12 +705,13 @@ models</a>
 </code></pre>
 <p>The script needs <em>graphviz</em> installed and is included only locally to keep
 testing, Docker, and codespace configuration lean.</p>
-<p>Install on macOS with homebrew</p>
+<p>Install on macOS with Homebrew</p>
 <pre><code class="language-sh">brew install graphviz
 </code></pre>
 <p>Install on Ubuntu and Debian (e.g., codespace) with</p>
 <pre><code class="language-sh">sudo apt-get install graphviz graphviz-dev
 </code></pre>
+<p>See also <code>just codespace-dev</code></p>
 <hr />
 <p><img alt="graph-models" src="../assets/graph-models_data.png" /></p>
 

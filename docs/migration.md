@@ -9,7 +9,7 @@ legacy_ and are presented on _ParlGov web_
 is used for the migration. A mapping of the migrated tables and their new table
 names is provided in `migration-check.csv`.
 
-The main information is summarized in the tables`view_party`, `view_election`,
+The main information is summarized in the tables `view_party`, `view_election`,
 and `view_cabinet`, which are included as database views.
 
 Database tables now include a `data_*` or `docs_*` prefix to distinguish them
@@ -28,7 +28,7 @@ been migrated from _ParlGov legacy_.
 
 [Party Facts](https://partyfacts.org/) provides a link file with ParlGov IDs,
 which should be used to link party IDs with other datasets. Party IDs from Party
-Facts, Manifesto, and CHESS are not included in _ParlGov web_.
+Facts, Manifesto, and CHES are not included in _ParlGov web_.
 
 Party positions and party IDs from other datasets were not updated for recent
 versions of _ParlGov legacy_.
@@ -64,7 +64,7 @@ This documentation and the checks have not been migrated for the initial version
 of _ParlGov web_. _ParlGov legacy_ also includes a table that documents JSON
 keys.
 
-Data sources are documented with keys in the data tables and these keys are
+Data sources are documented with keys in the data tables, and these keys are
 mostly documented and checked in _ParlGov legacy_. A migration of the keys needs
 a substantial revision and is not included in the initial version of _ParlGov
 web_.

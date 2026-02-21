@@ -67,7 +67,7 @@ python manage.py runserver
 docker compose up --build
 ```
 
-See the section _Data import_ below or use init the script in a Docker container
+See the section _Data import_ below or use the init script in a Docker container
 terminal.
 
 ```sh
@@ -113,8 +113,8 @@ Additional validations include
 
 Additional scripts data checks
 
-- `cabinet_update_election` — check and update election variable in all cabinets
-- `election_no_seats_party` — show elections with missing coding of first loser
+- `update_cabinet_election` — check and update election variable in all cabinets
+- `get_elections_no_seats_party` — show elections with missing coding of first loser
   (largest party no seats)
 
 ## Codebook · 📙
@@ -132,7 +132,7 @@ python manage.py create_codebook
 ```
 
 A shell script creates the codebook, formats the Markdown text file, renders a
-[PDF](assets/parlgov-codebook.pdf), and adds the two documents to the
+[PDF](./assets/parlgov-codebook.pdf), and adds the two documents to the
 documentation.
 
 ```sh

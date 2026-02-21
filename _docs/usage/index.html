@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -587,7 +587,7 @@ python manage.py runserver
 <p><strong>Docker</strong> version requires a local database.</p>
 <pre><code class="language-sh">docker compose up --build
 </code></pre>
-<p>See the section <em>Data import</em> below or use init the script in a Docker container
+<p>See the section <em>Data import</em> below or use the init script in a Docker container
 terminal.</p>
 <pre><code class="language-sh">» # /app
 » bash ./scripts/init-dev-project.sh
@@ -628,8 +628,8 @@ python manage.py validate_data
 </ul>
 <p>Additional scripts data checks</p>
 <ul>
-<li><code>cabinet_update_election</code> — check and update election variable in all cabinets</li>
-<li><code>election_no_seats_party</code> — show elections with missing coding of first loser
+<li><code>update_cabinet_election</code> — check and update election variable in all cabinets</li>
+<li><code>get_elections_no_seats_party</code> — show elections with missing coding of first loser
   (largest party no seats)</li>
 </ul>
 <h2 id="codebook">Codebook · 📙</h2>

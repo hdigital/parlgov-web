@@ -18,15 +18,15 @@ is still visible in the code more than a decade later.
 I completed and made public an initial version of the site in 2010. At the time,
 I updated and significantly improved the structure of the database and the
 models by using better table and variable names as well as by restructuring the
-database. This year, I also started using version control, Mercurial at the
+database. That year, I also started using version control, Mercurial at the
 time, so that all changes since 2010 can be tracked. Before 2010, the web app
 required a login.
 
-In 2014, I conducted a major refactoring of the codebase and added the Bootstrap
+In 2014, I conducted a major refactoring of the code base and added the Bootstrap
 CSS framework, which led to a significantly more professional website layout.
 
 Even in 2015, I knew that the web app needed significant refactoring. Newer
-Django versions depreciated some approaches that the code relied on, Python 3
+Django versions deprecated some approaches that the code relied on, Python 3
 became mainstream, and there was too much outdated code.
 
 Between 2015 and 2021, I could not find funding to implement a refactoring, and
@@ -38,7 +38,7 @@ enhancements.
 In 2021, our web hosting provider, Webfaction, was closed, and _ParlGov legacy_
 was no longer publicly accessible. The main information about the project, news,
 and data were now provided with a static site at _parlgov.org_. At the time, I
-created a Docker configuration that allows to run the legacy version locally,
+created a Docker configuration that allows running the legacy version locally,
 and that has been used to create stable releases. Internally, we used web
 hosting at PythonAnywhere to run the legacy app and to update the data. The website
 was not publicly available due to performance and security issues.
@@ -57,11 +57,11 @@ First, the database is not aligned with _Django migrations_. SQLite does not
 enforce data types. The original data was not added through Django and was
 edited manually, so that there are some inconsistencies in the database.
 Migrations were added to Django only in the early 2010s, and the apps' models
-can not be altered with Django migrations.
+cannot be altered with Django migrations.
 
 Second, the project has not been migrated to _newer Django versions_. Django
-introduced some new approaches and depreciated previous approaches. Some better
-best practices have evolved in the Django community, but none of them have been
+introduced some new approaches and deprecated previous approaches. Newer best
+practices have evolved in the Django community, but none of them have been
 included in the code base.
 
 Third, the entire _project structure is opaque_. In the early parts of the

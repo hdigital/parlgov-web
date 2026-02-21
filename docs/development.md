@@ -1,6 +1,6 @@
 # Development · 💻
 
-See Python development dependencies in `requirements-dev.txt` and a
+See Python development dependencies in `requirements-dev.txt` and
 documentation of environment variables in `.env.example`.
 [uv](https://docs.astral.sh/uv/pip/) is used as a _venv/pip_ replacement for
 some development tasks.
@@ -42,7 +42,7 @@ Database tables use prefixes.
 
 - _data_ — data tables (e.g., parties, elections, cabinets)
 - _docs_ — documentation tables (e.g., codebook, news)
-- _view_ – main data tables (database views, _see below_)
+- _view_ — main data tables (database views, _see below_)
 
 Additional tables are included by Django in the app database (`parlgov.sqlite`).
 
@@ -79,7 +79,7 @@ The three main views are not included as Django models in the project.
 
 ### Documentation · 📚
 
-Start documentation at [localhost:80](http://localhost:80/)
+Start documentation at [localhost:8888](http://localhost:8888/)
 
 ```sh
 # (.venv) ./
@@ -107,7 +107,7 @@ models](https://django-extensions.readthedocs.io/en/latest/graph_models.html#exa
 The script needs _graphviz_ installed and is included only locally to keep
 testing, Docker, and codespace configuration lean.
 
-Install on macOS with homebrew
+Install on macOS with Homebrew
 
 ```sh
 brew install graphviz
@@ -118,6 +118,8 @@ Install on Ubuntu and Debian (e.g., codespace) with
 ```sh
 sudo apt-get install graphviz graphviz-dev
 ```
+
+See also `just codespace-dev`
 
 ---
 
