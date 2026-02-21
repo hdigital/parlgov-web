@@ -78,7 +78,7 @@ Django 5.2 and Python 3.13
 ### Fixed
 
 - Fix spelling errors with 'typos'
-  ([#58](https://github.com/hdigital/parlgov-web/pull/58))
+  ([#60](https://github.com/hdigital/parlgov-web/pull/60))
 - Fix csv import error in migration script
   ([#67](https://github.com/hdigital/parlgov-web/pull/67))
 - Minor revisions
