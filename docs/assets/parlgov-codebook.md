@@ -1,6 +1,6 @@
 # ParlGov Codebook
 
-Created on 18 January 2026, 11:44 from ParlGov database documentation entries.
+Created on 22 February 2026, 20:23 from ParlGov database documentation entries.
 
 Döring, Holger and Philip Manow. 2024. Parliaments and governments database (ParlGov): Information on parties, elections and cabinets in established democracies.
 
@@ -852,7 +852,7 @@ Coding comments
 Data sources online
 
 - [Archivio Storico delle Elezioni](http://elezionistorico.interno.it/) — Ministero dell'Interno
-- [Annuario statistico italiano 2002](http://www3.istat.it/dati/catalogo/20101119_00/contenuti.html)
+- [Annuario statistico italiano 2002](https://www.istat.it)
 - [Composition parliament](http://it.wikipedia.org/wiki/Deputati_della_XV_Legislatura_della_Repubblica_Italiana)
 - [dati.camera.it](http://dati.camera.it/it/)
 
@@ -1076,7 +1076,7 @@ Data sources online
 - [Statistical Yearbook of Norway](http://www.ssb.no/english/yearbook/aarbok.html)
 - [Stortingsvalget (Storting Elections)](http://www.ssb.no/histstat/publikasjoner/histemne-24.html#P5850_140889)
 - [Governments since 1814](https://www.regjeringen.no/en/the-government/previous-governments/governments/id410056/)
-- [Archive of Ministers](http://www.nsd.uib.no/polsys/index.cfm?urlname=government&lan=eng&institusjonsnr=2&arkivnr=20&MenuItem=N1_2&ChildItem=&State=collapse)
+- [Archive of Ministers](https://www.nsd.no/polsys/en/)
 - [Store norske leksikon](http://www.snl.no/)
 
 News in English
