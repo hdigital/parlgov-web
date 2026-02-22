@@ -1,6 +1,6 @@
 # ParlGov Codebook
 
-Created on 22 February 2026, 20:23 from ParlGov database documentation entries.
+Created on 22 February 2026, 16:21 from ParlGov database documentation entries.
 
 Döring, Holger and Philip Manow. 2024. Parliaments and governments database (ParlGov): Information on parties, elections and cabinets in established democracies.
 
@@ -35,31 +35,31 @@ Details
 
 - winning 2 seats in an election (eg. member of an electoral alliance)
 - party groups that form in parliament
-  - more than 5.0% seat share (eg. [ITA FLI](http://www.parlgov.org/explore/ita/party/1477/))
-  - forming in two parliamentary terms (eg. [FRA GDR](http://www.parlgov.org/explore/FRA/party/2272/))
-  - members of cabinet (eg. [SWE NP-AV](http://www.parlgov.org/explore/swe/party/2608/))
+  - more than 5.0% seat share (eg. [ITA FLI](https://parlgov.fly.dev/data/parties/ita/1477/))
+  - forming in two parliamentary terms (eg. [FRA GDR](https://parlgov.fly.dev/data/parties/fra/2272/))
+  - members of cabinet (eg. [SWE NP-AV](https://parlgov.fly.dev/data/parties/swe/2608/))
   - providing minority support to a cabinet
 - electoral alliances and members with at least 2 election results
 - no party affiliation
-  - candidates with more than 1.0% vote share (eg. [IRL I-TJM](/explore/IRL/party/2327/))
+  - candidates with more than 1.0% vote share (eg. [IRL I-TJM](https://parlgov.fly.dev/data/parties/irl/2327/))
   - includes 'independent' (also for presidents)
   - one 'no party affiliation' included per country
 - less than 1.0% vote share
   - winning 1 seat in 2 elections
   - 2 election results as largest party no seats (first loser)
-- special categories: 'no-seat' and 'one-seat' (see [election](/documentation/codebook/#election))
+- special categories: 'no-seat' and 'one-seat' (see [election](https://parlgov.fly.dev/docs/codebook/#elections))
 
 We avoid including minor parties or candidates that win a seat only in one election due to low threshold requirements.
 
 #### Party change
 
-New parties are coded in two tables: [party change](/data/table/party_change/) and [party name change](/data/table/party_name_change/).
+New parties are coded in two tables: 'party change' and 'party name change'.
 
 Mergers and party splits are only added as a new party if the (largest) predecessor party won less than 75% of the combined vote of all preceding parties in the last election. Otherwise the largest party is just renamed (cf. Döring 2016, 539).
 
 Details
 
-- splits and re-mergers coded for original party (eg. [JPN DP](/explore/jpn/party/439/))
+- splits and re-mergers coded for original party (eg. [JPN DP](https://parlgov.fly.dev/data/parties/jpn/439/))
 - see also Barnea/Rahat (2011, 311): 'a new label and that no more than half of its top candidates (top of candidate list or safe districts) originate from a single former party'
 
 #### Party names
@@ -75,11 +75,11 @@ Party names and delimiters
 - '|' generic names
 - [ space before and after delimiter ]
 
-Year added to smaller party name if identical names exist in a country (eg. [ SVK SZ-92](http://www.parlgov.org/explore/svk/party/2235/)).
+Year added to smaller party name if identical names exist in a country (eg. [ SVK SZ-92](https://parlgov.fly.dev/data/parties/svk/2235/)).
 
 #### Party positions
 
-We provide aggregated party positions in four major dimensions. These positions are time-invariant unweighted mean values of information from party expert surveys on a 0 to 10 scale. All expert surveys are linked with ids from the [party](/data/table/party/) table and original values are rescaled before calculating the mean.
+We provide aggregated party positions in four major dimensions. These positions are time-invariant unweighted mean values of information from party expert surveys on a 0 to 10 scale. All expert surveys are linked with ids from the 'party' table and original values are rescaled before calculating the mean.
 
 Missing party positions for each dimension are imputed by mean values for the respective party family. We distinguish mean and imputed values by the number of decimal places. Mean values based on external datasets have five decimal places and imputed values have one decimal place only.
 
@@ -96,11 +96,11 @@ We classify parties into families by their position in an economic (state/market
 
 The classification leads to eight party family categories: Communist/Socialist, Green/Ecologist, Social democracy, Liberal, Christian democracy, Agrarian, Conservative, Right-wing.
 
-Parties that can not be classified into the eight categories are coded as 'spec' in the [party](/data/table/view_party/) table with more details in the [party family](/data/table/party_family/) table (e.g. [AUT Martin](https://en.wikipedia.org/wiki/Hans-Peter_Martin%27s_List)). These are mainly special issue parties without a clear left/right profile.
+Parties that can not be classified into the eight categories are coded as 'spec' in the 'party' table with more details in the 'party family' table (e.g. [AUT Martin](https://en.wikipedia.org/wiki/Hans-Peter_Martin%27s_List)). These are mainly special issue parties without a clear left/right profile.
 
-We use one classification for the entire history of a party and do not record changes (e.g. [FIN SP|P](http://www.parlgov.org/explore/FIN/party/200)).
+We use one classification for the entire history of a party and do not record changes (e.g. [FIN SP|P](https://parlgov.fly.dev/data/parties/fin/200/)).
 
-We add further information about party families in a separate table (see [party family](/data/table/party_family/)).
+We add further information about party families in a separate table (see 'party family').
 
 ### Elections
 
@@ -115,10 +115,10 @@ Details
 
 - a party that won _less than 1.0%_ vote share and _1 seat_
   - several election results — included into the list of ParlGov parties
-  - single election result — coded as a 'one-seat' party (eg. [Poland](http://parlgov.org/explore/pol/election/1991-10-27/))
+  - single election result — coded as a 'one-seat' party (eg. [Poland](https://parlgov.fly.dev/data/elections/pol/1991-10-27/))
 - a party that won _less than 1.0%_ vote share but was the _largest party that won no seats_ (first loser)
   - several election results — included into the list of ParlGov parties
-  - single election result — coded as a 'no-seat' party (eg. [Austria](http://parlgov.org/explore/aut/party/2055/))
+  - single election result — coded as a 'no-seat' party (eg. [Austria](https://parlgov.fly.dev/data/parties/aut/2055/))
 - parliamentary party groups – _see below_
   - party group seat compositions different to election results
   - significant changes in the composition of party groups (more than 5.0% seat share)
@@ -133,20 +133,20 @@ Electoral alliances are coded by linking election results (variable 'alliance_id
 
 - each electoral alliance or alliance member coded as an individual party should include _2 elections_
 - members of alliances with a dominant party are coded to this party
-- alliances of parties that are part of a broader alliance are coded with a 'data_json' entry 'alliance_alliance_id' (eg. [Italy 1996](http://parlgov.org/explore/ita/election/1996-04-21))
+- alliances of parties that are part of a broader alliance are coded with a 'data_json' entry 'alliance_alliance_id' (eg. [Italy 1996](https://parlgov.fly.dev/data/elections/ita/1996-04-21/))
 - _votes_ are coded at the level of electoral results for all alliance members
 - _seats_ are coded for alliance members (parliamentary groups), if feasible
-  - seats of an alliance that forms a parliamentary group with members running independently are coded for alliance members and with a 'parliament change' (eg. Germany [CDU/CSU](http://www.parlgov.org/explore/DEU/party/1727/))
+  - seats of an alliance that forms a parliamentary group with members running independently are coded for alliance members and with a 'parliament change' (eg. Germany [CDU/CSU](https://parlgov.fly.dev/data/parties/deu/1727/))
   - seats of alliance members are coded if no information about the parliamentary party group status is available
   - a 'data_json' entry 'seats_alliance' is added to the alliance to check data consistency
-  - a 'one seat' party which is part of an electoral alliance is coded as an alliance member (eg. [Hungary 2014](http://parlgov.org/explore/hun/election/2014-04-06/))
+  - a 'one seat' party which is part of an electoral alliance is coded as an alliance member (eg. [Hungary 2014](https://parlgov.fly.dev/data/elections/hun/2014-04-06/))
 
 #### Parliament composition
 
 - changes (> 5%) in seats composition are recorded in 'parliament change'
   - esp. if changes affect cabinet majority support
 - seats composition of parliament at a particular date is recorded in 'parliament composition'
-  - esp. if composition is relevant for cabinet formation (eg. [JPN elections](http://www.parlgov.org/explore/jpn/election/1996-10-20/) after 1996)
+  - esp. if composition is relevant for cabinet formation (eg. [JPN elections](https://parlgov.fly.dev/data/elections/jpn/1996-10-20/) after 1996)
 - _coding incomplete_
   - significant changes only
   - lack of systematic and reliable sources
@@ -156,7 +156,7 @@ Electoral alliances are coded by linking election results (variable 'alliance_id
 National elections
 
 - Main sources
-  - official data source – national statistical office – see [country notes](/documentation/country)
+  - official data source – national statistical office – see [country notes](https://parlgov.fly.dev/docs/codebook/#countries)
   - Nohlen — Elections: A Data Handbook – various volumes of elections around the world
   - Mackie/Rose (1945–1990) — only Western democracies
   - Essex elections data on Post-Communist Europe (1990–200x)
@@ -196,47 +196,47 @@ Details
   - 'data_json' entry 'three_month_rule' (and 'cabinet_change')
   - see also examples section below
 - any meaningful investiture procedure defines a new cabinet
-  - a PM appointment without a cabinet appointment (eg. [ITA Andreotti I](/explore/ita/cabinet/1972-02-17/), [POL Pawlak I](/explore/pol/cabinet/1992-06-05/))
-  - a constitutionally required new investiture during a parliamentary term (eg. LTU Skvernelis [II](/explore/LTU/cabinet/2017-10-19/)+[III](/explore/LTU/cabinet/2019-08-20/), see [LTU notes](/documentation/country/#ltu))
+  - a PM appointment without a cabinet appointment (eg. [ITA Andreotti I](https://parlgov.fly.dev/data/cabinets/ita/1972-02-17/), [POL Pawlak I](https://parlgov.fly.dev/data/cabinets/pol/1992-06-05/))
+  - a constitutionally required new investiture during a parliamentary term (eg. LTU Skvernelis [II](https://parlgov.fly.dev/data/cabinets/ltu/2017-10-19/)+[III](https://parlgov.fly.dev/data/cabinets/ltu/2019-08-20/), see [LTU notes](https://parlgov.fly.dev/docs/codebook/#lithuania))
 - any meaningful resignation defines a new cabinet
-  - a formal resignation request (eg. [AUT Figl III](/explore/aut/cabinet/1949-11-08/))
-  - a successful dissolution request under negative parliamentarism (eg. [SWE Erlander VII](/explore/swe/cabinet/1958-06-01/))
-  - a lost vote of confidence (or early election vote) and change to caretaker status (eg. [SVK Radicova II](/explore/svk/cabinet/2011-10-20/), [ISR Netanyahu II 1998](/explore/isr/cabinet/1998-01-04/))
+  - a formal resignation request (eg. [AUT Figl III](https://parlgov.fly.dev/data/cabinets/aut/1949-11-08/))
+  - a successful dissolution request under negative parliamentarism (eg. [SWE Erlander VII](https://parlgov.fly.dev/data/cabinets/swe/1958-06-01/))
+  - a lost vote of confidence (or early election vote) and change to caretaker status (eg. [SVK Radicova II](https://parlgov.fly.dev/data/cabinets/svk/2011-10-20/), [ISR Netanyahu II 1998](https://parlgov.fly.dev/data/cabinets/isr/1998-01-04/))
 - first appointment event coded
-  - successive appointments for one cabinet (e.g. [DNK Thorning-Schmidt I](/explore/dnk/cabinet/2011-10-02/)
+  - successive appointments for one cabinet (e.g. [DNK Thorning-Schmidt I](https://parlgov.fly.dev/data/cabinets/dnk/2011-10-02/)
   - e.g. appointments of PM, cabinet, ministers
 - cabinet parties not included
   - ministers without portfolio, interim or junior ministers
-  - cabinet members without party affiliation (party family 'none') are only coded if the prime minister has no party affiliation (e.g. [DEU Papen I](/explore/deu/cabinet/1932-06-02/))
-  - parties supporting a (minority) cabinet are included in table [cabinet support](/data/table/cabinet_support/) — if information available
+  - cabinet members without party affiliation (party family 'none') are only coded if the prime minister has no party affiliation (e.g. [DEU Papen I](https://parlgov.fly.dev/data/cabinets/deu/1932-06-02/))
+  - parties supporting a (minority) cabinet are included in table 'cabinet support' — if information available
 - splits and mergers of cabinet parties
-  - coded as cabinet changes (eg. [AUS Schuessel III](/explore/aut/cabinet/2003-02-28/), [CZE Klaus II](/explore/cze/cabinet/1993-01-01/))
+  - coded as cabinet changes (eg. [AUS Schuessel III](https://parlgov.fly.dev/data/cabinets/aut/2003-02-28/), [CZE Klaus II](https://parlgov.fly.dev/data/cabinets/cze/1993-01-01/))
   - 'data_json' entry 'party_split' and 'party_merger'
 - parliamentary groups and alliances
-  - political parties are coded as parliamentary groups (eg. [DEU CDU/CSU](/explore/DEU/party/1727/))
-  - alliance members that join a parliamentary group are coded as support parties (eg. [POL Szydlo](/explore/pol/cabinet/2015-11-16/) 2015)
+  - political parties are coded as parliamentary groups (eg. [DEU CDU/CSU](https://parlgov.fly.dev/data/parties/deu/1727/))
+  - alliance members that join a parliamentary group are coded as support parties (eg. [POL Szydlo](https://parlgov.fly.dev/data/cabinets/pol/2015-11-16/) 2015)
 - seats at cabinet formation date
   - not coded for each instance of cabinet formation
   - calculated based on
-    1. [election result](/data/table/election_result/) _or_ [parliament compositiion](/data/table/parliament_composition/) table – most recent date used
-    2. [parliament change](/data/table/parliament_change/) table entries after (1)
-  - used in [view cabinet](/data/table/view_cabinet/) and stored in [viewcalc parliament composition](/data/table/viewcalc_parliament_composition/)
-  - see Müller and Strom (2000), Bergman ea. (2019) and [ERDDA](erdda.org) for exact seats at cabinet formation
+    1. 'election result' _or_ 'parliament compositiion' table – most recent date used
+    2. 'parliament change' table entries after (1)
+  - used in 'view cabinet' and stored in 'viewcalc parliament composition'
+  - see Müller and Strom (2000), Bergman ea. (2019) and ERDDA for exact seats at cabinet formation
 - duplicate prime minister names
-  - first letter of first name added to PMs with the same last name (e.g. [DNK Rasmussen N](/explore/DNK/cabinet/))
+  - first letter of first name added to PMs with the same last name (e.g. [DNK Rasmussen N](https://parlgov.fly.dev/data/cabinets/dnk/))
 - country specific
   - Switzerland: changes in the identity of the President of the Swiss Confederation (Bundespräsident) do not define a new cabinet (cf. Kriesi/Trechsel 2008, 75-76)
-  - Iceland: two [prime ministers](/explore/ISL/cabinet/1963-11-14/) named Bjarni Benediktsson (born 1908 and 1970)
+  - Iceland: two [prime ministers](https://parlgov.fly.dev/data/cabinets/isl/1963-11-14/) named Bjarni Benediktsson (born 1908 and 1970)
 
 Examples
 
 - three month constraint
-  - [POL Kaczynski](/explore/pol/cabinet/2006-07-14/) (2006) — coded as one cabinet
+  - [POL Kaczynski](https://parlgov.fly.dev/data/cabinets/pol/2006-07-14/) (2006) — coded as one cabinet
     - SRP withdraws from cabinet on 22 September 2006 (party composition change) and re-enters on 16 October
     - SRP and LPR dismissal on 13 August 2007 (party composition change) — elections take place on 19 October 2007 (within three months)
-  - [BEL Leterme III](/explore/bel/cabinet/2010-06-13/) (2010) — coded as one cabinet (three month constraint)
+  - [BEL Leterme III](https://parlgov.fly.dev/data/cabinets/bel/2010-06-13/) (2010) — coded as one cabinet (three month constraint)
     - Previous coalition collapses on 26 April 2010 (party composition change) — new elections on 13 June. Pre-election caretaker cabinets lasts for less and post-election cabinet for more than three months.
-  - further examples: [AUT Gorbach II](/explore/aut/cabinet/1962-11-18/) (1962), [NLD Balkenende V](/explore/nld/cabinet/2010-02-23/) (2010)
+  - further examples: [AUT Gorbach II](https://parlgov.fly.dev/data/cabinets/aut/1962-11-18/) (1962), [NLD Balkenende V](https://parlgov.fly.dev/data/cabinets/nld/2010-02-23/) (2010)
 
 Damgaard (1994: 194-95) and Müller/Strom (2000: 12) provide a more comprehensive discussion of cabinet definitions.
 
@@ -278,11 +278,11 @@ Details
 
 - cabinet description includes a brief entry for a confidence vote
 - constructive vote of no confidence
-  - coded for outgoing cabinet (eg. [DEU Schmitt III](/explore/deu/cabinet/1980-11-05/), [ESP Rajoy IV](/explore/ESP/cabinet/2016-10-29/))
+  - coded for outgoing cabinet (eg. [DEU Schmitt III](https://parlgov.fly.dev/data/cabinets/deu/1980-11-05/), [ESP Rajoy IV](https://parlgov.fly.dev/data/cabinets/esp/2016-10-29/))
 
 #### Presidents
 
-Party-affiliated heads of state but not short-term acting presidents. See table [president](/data/table/politician_president/).
+Party-affiliated heads of state but not short-term acting presidents. See table 'president'.
 
 #### Data sources
 
@@ -569,7 +569,7 @@ References
 
 Coding comments
 
-- ['Grønland og Færøerne'](http://dev.parlgov.org/data/dnk/party/1634/) coded as one party to include results of regional parties from Greenland and Faroer Island
+- ['Grønland og Færøerne'](https://parlgov.fly.dev/data/parties/dnk/1634/) coded as one party to include results of regional parties from Greenland and Faroer Island
   - we add all parties which won at least one seat in Greenland or Faroer
   - we only code the seats of the affected parties
 - coding of election results 1901 and 1903 based on Mackie and Rose (1991) due to missing data in Nohlen and Stöver (2010)
@@ -634,9 +634,9 @@ References
 
 Coding comments
 
-- ['Suomen Puolue / Perussuomalaiset'](http://dev.parlgov.org/data/246/party/26/) coded as one parties
+- ['Suomen Puolue / Perussuomalaiset'](https://parlgov.fly.dev/data/parties/fin/26/) coded as one parties
   - legally these are two parties – see comment in party observation
-- RKP-SFP private government member in [Sukselainen IV](http://dev.parlgov.org/data/246/cab/party/19590/) coded
+- RKP-SFP private government member in 'Sukselainen IV' coded
 
 Open questions
 
@@ -674,7 +674,7 @@ Coding comments
 - "'Comparatively, France has the most poorly documented electoral statistics.' This statement of Daniele Caramani (2000) must be underlined for various reasons. (...)" (Nohlen 2010, 670). Hence, our coding may include inconsistencies and would profit from feedback by country experts.
 - Mackie/Rose election data exclude Algeria and the overseas territories and departments
 - Paloheimo (1984) cabinet parties that could not be identified: Gauche Democrats, Movement of Democrats, Payson
-- seat strength for some cabinet parties before 1945 unknown – eg. [Painleve 1925](http://www.parlgov.org/explore/fra/cabinet/1925-04-17/)
+- seat strength for some cabinet parties before 1945 unknown – eg. [Painleve 1925](https://parlgov.fly.dev/data/cabinets/fra/1925-04-17/)
 
 Open questions
 
@@ -707,7 +707,7 @@ Coding comments
 - elections since 1945
   - only PR votes provided (no SMD votes from first tier)
   - before 1990 we don't include the MPs from Berlin (only procedural voting rights)
-  - CDU and CSU recorded as alliance with individual results for election data and as [CDU/CSU party group](http://www.parlgov.org/explore/DEU/party/1727/) for cabinet data
+  - CDU and CSU recorded as alliance with individual results for election data and as [CDU/CSU party group](https://parlgov.fly.dev/data/parties/deu/1727/) for cabinet data
 - elections 1919 to 1933
   - some parties won additional seats in a national district (upper tier)
   - upper tier votes are not included
@@ -741,7 +741,7 @@ Open questions
 Todo later
 
 - unify transliteration of greek party names
-- coding of alliance members for [Coalition of the Radical Left](http://dev.parlgov.org/data/300/party/45/) in election results
+- coding of alliance members for [Coalition of the Radical Left](https://parlgov.fly.dev/data/parties/grc/45/) in election results
 - add alliance members for 2004 and 2007 election — latter needs information about seats distribution
 
 ### Hungary
@@ -839,7 +839,7 @@ News in English
 Coding comments
 
 - ministers without portfolio coded as cabinet parties and deputy ministers as cabinet support parties (see above and thanks to Or Tuttnauer for support in 2020)
-- cabinets continuing in office (no resignation or lost confidence vote) after an early dissolution of parliament are coded as "continuation caretaker cabinet" (e.g. [Netanyahu 2014](http://www.parlgov.org/explore/isr/cabinet/2014-12-02/))
+- cabinets continuing in office (no resignation or lost confidence vote) after an early dissolution of parliament are coded as "continuation caretaker cabinet" (e.g. [Netanyahu 2014](https://parlgov.fly.dev/data/cabinets/isr/2014-12-02/))
 - cabinet support parties coded for deputy ministers and Arab satellite lists
 - all changes in parliament included based on [Knesset information](http://www.knesset.gov.il/faction/eng/FactionHistoryAll_eng.asp)
 - seats for alliance members of United Torah Judaism to be included with a 'data_json' key if available
@@ -863,7 +863,7 @@ News in English:
 
 Coding comments
 
-- Non-partisan prime ministers coded [PC](http://www.parlgov.org/explore/ita/party/2001/) to avoid false matches with election results.
+- Non-partisan prime ministers coded [PC](https://parlgov.fly.dev/data/parties/ita/2001/) to avoid false matches with election results.
 - Parliamentary seats for foreign Italians and the seat of Aosta Valley are determined separately. They are added to the "normal" Italian results
 
 Open questions
@@ -912,14 +912,14 @@ News in English:
 
 Open questions
 
-- double check coding of electoral alliances, especially whether [Harmony Center](http://dev.parlgov.org/data/lva/party/1100/) is a party or an electoral alliance
+- double check coding of electoral alliances, especially whether [Harmony Center](https://parlgov.fly.dev/data/parties/lva/1100/) is a party or an electoral alliance
 - seat strength of parties in electoral alliances
-- party family for [MPA-LNP](http://www.parlgov.org/explore/lva/party/1163/)
+- party family for [MPA-LNP](https://parlgov.fly.dev/data/parties/lva/1163/)
 
 Todo later
 
 - add alliance members for EP elections
-- double check electorate and and total votes for [EP 2009 election](http://dev.parlgov.org/data/428/eu/ep/20090/)
+- double check electorate and and total votes for 'EP 2009 election'
 
 ### Lithuania
 
@@ -945,7 +945,7 @@ Coding comments
 - new cabinet coded for resignation and investiture after presidential elections
 - public election committees (visuomeninis rinkimų komitetas)
   - A legal form to run in an election used since 2015 as an alternative to parties
-  - We add a prefix to name ("VRK –"), name short ("K-") and english name ("PEC --") (e.g. [K-AMT](http://www.parlgov.org/explore/ltu/party/2760/) 2019)
+  - We add a prefix to name ("VRK –"), name short ("K-") and english name ("PEC --") (e.g. [K-AMT](https://parlgov.fly.dev/data/parties/ltu/2760/) 2019)
   - We also add 'data_json' entries '{"party_type": "election_committee", "new_party": false}'
 
 Open questions
@@ -1006,7 +1006,7 @@ Coding comments:
 
 - due to STV-PR it is not possible to specify absolute votes per party
 - when coding the absolute votes per party we count the number of first preferences
-- see bonus seats in [1987 election](http://www.parlgov.org/explore/mlt/election/1987-05-09/)
+- see bonus seats in [1987 election](https://parlgov.fly.dev/data/elections/mlt/1987-05-09/)
 
 ### Netherlands
 
@@ -1057,7 +1057,7 @@ News in English
 
 Coding comments
 
-- cabinet under same PM after elections starts when the cabinet is sworn in; legally no new cabinet (eg. [Key II](http://dev.parlgov.org/data/nzl/cabinet-party/2011-12-14/))
+- cabinet under same PM after elections starts when the cabinet is sworn in; legally no new cabinet (eg. [Key II](https://parlgov.fly.dev/data/cabinets/nzl/2011-12-14/))
 - data sources on election results before 1945 are inconsistent; Vowles provides the most extensive information
 - for elections before 1945 electorate shows the number of registered voters in European constituencies; there was no electoral register in the four Maori constituencies
 
@@ -1118,7 +1118,7 @@ References
 Coding comments
 
 - Müller-Rommel ea. (2004) and Conrad/Golder (2010) code the 28/29 April 1993 as the begin of Suchocka II government. However, the Suchocka I government failed a confidence vote on 28 May 1993 and continued as a caretaker cabinet until its resignation on 18 October 1993.
-- German Minority Party (MN) support not included in [cabinet_support](/data/table/cabinet_support/) table. Bergman ea. (2019) mention that since 1991 every government has been supported by the MN.
+- German Minority Party (MN) support not included in 'cabinet_support' table. Bergman ea. (2019) mention that since 1991 every government has been supported by the MN.
 
 Open questions
 
@@ -1232,7 +1232,7 @@ News in English
 Coding comments
 
 - official results include blank votes into valid votes ('Votos Válidos') – ParlGov 'votes_valid' are based on 'Votos a Candidaturas'
-- regional parties which are affiliated with national parties such as the Catalan branch of the [PSOE](http://www.parlgov.org/explore/esp/party/902/) are not coded separately as an individual party in elections
+- regional parties which are affiliated with national parties such as the Catalan branch of the [PSOE](https://parlgov.fly.dev/data/parties/esp/902/) are not coded separately as an individual party in elections
 - (most) regional parties and green parties in ParlGov not coded as alliance members in EP elections
 
 Open questions
@@ -1313,7 +1313,7 @@ Coding comments
 
 Open questions
 
-- more information and independent verification about [PSU](http://dev.parlgov.org/data/756/party/38/) needed
+- more information and independent verification about [PSU](https://parlgov.fly.dev/data/parties/che/38/) needed
 
 Todo later
 
@@ -1570,7 +1570,7 @@ Stable version on 29 April 2022 with data updated until December 2021
 - new elections and cabinets from April 2020 to December 2021
 - validated Central- and Eastern European cabinets with Bergman ea. (2019)
 - validated West European cabinets with Bergman ea. (2021)
-- see also [news](http://www.parlgov.org/documentation/news/?type__short=recent)
+- see also [news](https://parlgov.fly.dev/docs/news/)
 
 #### Corrections and updates
 
@@ -1621,7 +1621,7 @@ Stable version on 8 December 2020 (Covid-19 delay) with data updated until March
 
 #### Documentation
 
-- [unified codebook](http://www.parlgov.org/documentation/codebook-all/) (coding rules, country notes, changes, credits) for stable versions
+- [unified codebook](https://parlgov.fly.dev/docs/codebook/) (coding rules, country notes, changes, credits) for stable versions
 - [ParlGov snippets](https://github.com/hdigital/parlgov-snippets) with usage (code) examples
 - specified coding rules continuation caretaker cabinet
 
@@ -1694,8 +1694,8 @@ Stable version on 8 December 2020 (Covid-19 delay) with data updated until March
 
 #### Webpage
 
-- [codebook unified](http://www.parlgov.org/documentation/codebook-all/) to aggregate documentation
-- [country notes](http://www.parlgov.org/documentation/country) public
+- [codebook unified](https://parlgov.fly.dev/docs/codebook/) to aggregate documentation
+- [country notes](https://parlgov.fly.dev/docs/codebook/#countries) public
 
 #### Database
 
