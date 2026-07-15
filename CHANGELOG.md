@@ -15,7 +15,8 @@ Django 5.2 and Python 3.13
 
 ### Changed
 
-- _for changes in functionality_
+- Use 'uv' for 'pip compile'
+  ([#87](https://github.com/hdigital/parlgov-web/pull/87))
 
 ### Removed
 

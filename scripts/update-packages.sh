@@ -5,15 +5,21 @@ set -e && cd scripts/../
 
 printf "\n\n📋 · Update pip and CSS/JS dependencies\n\n"
 
+# Ensure uv is available
+if ! command -v uv &>/dev/null; then
+  printf "🚨 · 'uv' not found — installing with pip\n"
+  python -m pip install --quiet uv
+fi
+
 # Show available Python packages (all updates)
-python -m pip list --outdated
+uv pip list --outdated
 
 # Update Python packages specification
-python -m piptools compile --upgrade --generate-hashes --quiet -o requirements.txt pyproject.toml
-python -m piptools compile --upgrade --all-extras --generate-hashes --quiet -o requirements-dev.txt pyproject.toml
+uv pip compile --upgrade --quiet --generate-hashes -o requirements.txt pyproject.toml
+uv pip compile --upgrade --group dev --generate-hashes --quiet -o requirements-dev.txt pyproject.toml
 
 # Update Python packages locally (development)
-python -m piptools sync requirements-dev.txt
+uv pip sync requirements-dev.txt
 
 # Update CSS/JS packages
 bash scripts/package-to-web.sh
@@ -29,7 +35,7 @@ mkdocs build --clean --strict
 
 # Show available Python packages (locked dependencies)
 printf "\n\n🔐 · Show locked dependencies\n\n"
-python -m pip list --outdated
+uv pip list --outdated
 
 # Provide information for Git commit
 printf "\n\n✅ · Git commit message\n\n"
