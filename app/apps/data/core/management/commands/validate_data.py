@@ -7,7 +7,7 @@ Run data validation checks.
 
 import datetime
 
-from tqdm import tqdm
+from tqdm import tqdm  # pyrefly: ignore[untyped-import]
 
 import django.apps
 from django.core.exceptions import ValidationError

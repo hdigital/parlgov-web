@@ -16,10 +16,10 @@ def party_detail_view(request, country: str, party_id: int):
         id=party_id,
         country__name_short=country.upper(),
     )
-    elections = party.electionresult_set.select_related(
-        "election__country", "election__type"
-    )
-    cabinets = party.cabinetparty_set.select_related("cabinet__country")
+    elections = party.electionresult_set  # pyrefly: ignore[missing-attribute]
+    elections = elections.select_related("election__country", "election__type")
+    cabinets = party.cabinetparty_set  # pyrefly: ignore[missing-attribute]
+    cabinets = cabinets.select_related("cabinet__country")
 
     context = {
         "party": party,

@@ -7,7 +7,7 @@ An election may be removed or it's date may be changed. Such a change to
 an 'Election' object is not automatically updated in 'Cabinet' objects.
 """
 
-from tqdm import tqdm
+from tqdm import tqdm  # pyrefly: ignore[untyped-import]
 
 from django.core.management.base import BaseCommand
 
