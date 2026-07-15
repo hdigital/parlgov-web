@@ -67,13 +67,13 @@ load-data:
 # synchronize Python packages
 pip-sync:
   uv pip compile --quiet --generate-hashes -o requirements.txt pyproject.toml
-  uv pip compile --quiet --generate-hashes -o requirements-dev.txt --all-extras pyproject.toml
+  uv pip compile --quiet --generate-hashes -o requirements-dev.txt --group dev pyproject.toml
   uv pip sync requirements-dev.txt
 
 # update Python packages
 pip-update:
   uv pip compile --upgrade --quiet --generate-hashes -o requirements.txt pyproject.toml
-  uv pip compile --upgrade --quiet --generate-hashes -o requirements-dev.txt --all-extras pyproject.toml
+  uv pip compile --upgrade --quiet --generate-hashes -o requirements-dev.txt --group dev pyproject.toml
   uv pip sync requirements-dev.txt
   @echo "\n\n✅ · Use only for temporary updates, for production use './scripts/update-packages.sh'\n"
 
