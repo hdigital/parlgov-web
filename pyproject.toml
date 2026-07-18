@@ -31,18 +31,15 @@ dependencies = [
 # 'requirements-dev.txt' created with pip compile
 [dependency-groups]
 dev = [
-  { include-group = "docs" },
   { include-group = "linting" },
   { include-group = "testing" },
+  "mkdocs-material",
   # Django development
   "django-debug-toolbar",
   "django-extensions",    # graph models, 'shell_plus', 'validate_templates', ...
   "django-import-export",
-  # Usage tools
-  "ipython", # enhanced shell
 ]
-docs = [
-  "mkdocs-material",
+docs-drf = [
   "drf-spectacular", # OpenAPI schema generator
 ]
 linting = [
