@@ -15,7 +15,8 @@ Django 5.2 and Python 3.13
 
 ### Changed
 
-- _for changes in functionality_
+- Harmonize 'yaml' quoting
+  ([#88](https://github.com/hdigital/parlgov-web/pull/88))
 
 ### Removed
 
