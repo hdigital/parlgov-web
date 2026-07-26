@@ -29,15 +29,15 @@ dependencies = [
 ]
 
 # 'requirements-dev.txt' created with pip compile
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
+  { include-group = "docs" },
+  { include-group = "linting" },
+  { include-group = "testing" },
   # Django development
   "django-debug-toolbar",
   "django-extensions",    # graph models, 'shell_plus', 'validate_templates', ...
   "django-import-export",
-  # Package management
-  "pip-tools",  # pin versions packages (production)
-  "setuptools", # required by 'pip-tools'
   # Usage tools
   "ipython", # enhanced shell
 ]
@@ -116,11 +116,3 @@ convention = "google"
 
 [tool.mypy]
 exclude = ['migrations']
-
-
-## ----------------------------------------------------------------------------
-# Specify build system to run pip-tools
-# (application is not a package and no build is needed)
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
