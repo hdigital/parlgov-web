@@ -15,8 +15,8 @@ extra:
   generator: false
 
 nav:
-  - "index.md"
-  - "usage.md"
-  - "development.md"
-  - "migration.md"
-  - "project-history.md"
+  - index.md
+  - usage.md
+  - development.md
+  - migration.md
+  - project-history.md

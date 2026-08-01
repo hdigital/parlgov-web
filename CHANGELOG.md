@@ -17,6 +17,8 @@ Django 5.2 and Python 3.13
 
 - Use 'uv' for 'pip compile'
   ([#87](https://github.com/hdigital/parlgov-web/pull/87))
+- Harmonize 'yaml' quoting
+  ([#88](https://github.com/hdigital/parlgov-web/pull/88))
 
 ### Removed
 
