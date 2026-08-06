@@ -271,7 +271,7 @@ if ENV_DEBUG:  # pragma: no cover
         "import_export",
     ]
 
-    # OpenAPI schema generation (optional, install with 'docs-drf' group)
+    # OpenAPI schema generation (optional, install with 'docs-db' group)
     # https://drf-spectacular.readthedocs.io/en/latest/readme.html#installation
 
     if importlib.util.find_spec("drf_spectacular"):

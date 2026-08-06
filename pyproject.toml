@@ -39,8 +39,9 @@ dev = [
   "django-extensions",    # graph models, 'shell_plus', 'validate_templates', ...
   "django-import-export",
 ]
-docs-drf = [
+docs-db = [
   "drf-spectacular", # OpenAPI schema generator
+  "pygraphviz",      # graph data models
 ]
 linting = [
   "ruff",           # code linter and formatter
