@@ -4,6 +4,7 @@ https://docs.djangoproject.com/en/stable/topics/settings/
 https://docs.djangoproject.com/en/stable/ref/settings/
 """
 
+import importlib.util
 import warnings
 from pathlib import Path
 
@@ -265,21 +266,23 @@ if ENV_DEBUG:  # pragma: no cover
         "debug_toolbar.middleware.DebugToolbarMiddleware",
     ] + MIDDLEWARE
 
-    #  OpenAPI schema generation
-    # https://drf-spectacular.readthedocs.io/en/latest/readme.html#installation
-
     INSTALLED_APPS += [
         "django_extensions",
-        "drf_spectacular",
         "import_export",
     ]
 
-    REST_FRAMEWORK["DEFAULT_SCHEMA_CLASS"] = "drf_spectacular.openapi.AutoSchema"
+    # OpenAPI schema generation (optional, install with 'docs-db' group)
+    # https://drf-spectacular.readthedocs.io/en/latest/readme.html#installation
 
-    SPECTACULAR_SETTINGS = {
-        "TITLE": "ParlGov API",
-        "DESCRIPTION": (
-            "Parliaments and Governments Database (ParlGov): "
-            "Data on parties, elections, and cabinets"
-        ),
-    }
+    if importlib.util.find_spec("drf_spectacular"):
+        INSTALLED_APPS += ["drf_spectacular"]
+
+        REST_FRAMEWORK["DEFAULT_SCHEMA_CLASS"] = "drf_spectacular.openapi.AutoSchema"
+
+        SPECTACULAR_SETTINGS = {
+            "TITLE": "ParlGov API",
+            "DESCRIPTION": (
+                "Parliaments and Governments Database (ParlGov): "
+                "Data on parties, elections, and cabinets"
+            ),
+        }

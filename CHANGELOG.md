@@ -19,6 +19,8 @@ Django 5.2 and Python 3.13
   ([#87](https://github.com/hdigital/parlgov-web/pull/87))
 - Harmonize 'yaml' quoting
   ([#88](https://github.com/hdigital/parlgov-web/pull/88))
+- Reduce installed dev packages
+  ([#90](https://github.com/hdigital/parlgov-web/pull/90))
 
 ### Removed
 

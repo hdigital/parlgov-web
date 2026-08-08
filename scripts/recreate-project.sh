@@ -24,7 +24,8 @@ python manage.py loaddata --exclude contenttypes --exclude auth.permission parlg
 # Create views main data tables
 python manage.py dbshell <apps/views_data/views-data.sql
 
-# Generate OpenAPI schema
+# Generate OpenAPI schema (install 'drf-spectacular' on demand)
+uv --project .. pip install --quiet --group docs-db
 python manage.py spectacular --color --file ../schema.yaml
 
 # Collect static files (CSS, JS, images)

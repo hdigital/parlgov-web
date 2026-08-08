@@ -14,7 +14,7 @@ if ! command -v dot &>/dev/null; then
 fi
 
 # Install PyGraphviz temporarily (needs Graphviz installed, see docs)
-uv pip install pygraphviz
+uv pip install --quiet --group docs-db
 
 # Create a graph of the data models
 cd app
@@ -23,10 +23,6 @@ python manage.py \
   base parties elections cabinets \
   -X BaseModel \
   -o ../docs/assets/graph-models_data.png
-
-# Reset installed pip packages (remove PyGraphviz)
-cd ..
-uv pip sync requirements-dev.txt
 
 # Provide information for Git commit
 printf "\n\n✅ · Updated graph data models\n\n"
