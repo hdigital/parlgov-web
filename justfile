@@ -50,7 +50,7 @@ lint:
   cd app && python manage.py validate_templates
   bash scripts/format-with-prettier.sh
   prettier --log-level warn --write .devcontainer .github .vscode
-  mypy --ignore-missing-imports .
+  pyrefly check .
   ruff format .
   ruff check --fix .
   typos --write-changes .

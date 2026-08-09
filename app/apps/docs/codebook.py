@@ -9,7 +9,7 @@ from .models import Page
 
 def codebook_pages() -> dict:
     """Get all codebook pages from database."""
-    pages = {"today": datetime.now()}
+    pages: dict = {"today": datetime.now()}
 
     for page in ["changelog", "codebook", "country", "credits"]:
         pages[page] = Page.objects.filter(page=page)

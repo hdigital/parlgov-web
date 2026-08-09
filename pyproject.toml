@@ -47,8 +47,9 @@ linting = [
   "ruff",           # code linter and formatter
   "pre-commit",     # see '.pre-commit-config.yaml'
   "typos",          # see '.typos.toml'
-  "mypy",           # type checking
-  "types-Markdown",
+  "pyrefly",        # type checking
+  "django-stubs",   # type stubs for 'pyrefly'
+  "types-Markdown", # type stubs for 'pyrefly'
 ]
 testing = [
   "pytest",               # main testing package
@@ -110,7 +111,10 @@ known-local-folder = ["apps"]
 convention = "google"
 
 ## ----------------------------------------------------------------------------
-## Mypy settings
+## Pyrefly settings
+# https://pyrefly.org/en/docs/configuration/#configuration-options
 
-[tool.mypy]
-exclude = ['migrations']
+[tool.pyrefly]
+preset = "legacy"
+project-excludes = ["**/migrations*"]
+search-path = ["app"]
