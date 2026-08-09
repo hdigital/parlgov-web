@@ -90,14 +90,14 @@ python manage.py createsuperuser
 ## Data validation · 🕵🏼‍♀️
 
 All data is validated during the addition to the database with Django. The
-`validate_data` command can run these and additional validations (see below).
+`validate_data` command can run these and other validations (see below).
 
 ```sh
 # (.venv) ./app
 python manage.py validate_data
 ```
 
-Additional validations include
+Other validations include
 
 - parties
     - inclusion criteria check — see priority in `run_include_checks(party)`
@@ -111,7 +111,7 @@ Additional validations include
     - PM for one party specified
     - previous election included
 
-Additional scripts data checks
+Other scripts data checks
 
 - `update_cabinet_election` — check and update election variable in all cabinets
 - `get_elections_no_seats_party` — show elections with missing coding of first loser
@@ -145,7 +145,7 @@ bash scripts/create-codebook.sh
 The website provides an API with [Django REST
 framework](https://www.django-rest-framework.org/).
 
-It is a read-only API; no login is required.
+This is a read-only API; no login is required.
 
 Documentation with an OpenAPI 3 schema is provided in `schema.yaml`.
 

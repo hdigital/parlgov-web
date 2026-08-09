@@ -64,14 +64,14 @@ This documentation and the checks have not been migrated for the initial version
 of _ParlGov web_. _ParlGov legacy_ also includes a table that documents JSON
 keys.
 
-Data sources are documented with keys in the data tables, and these keys are
-mostly documented and checked in _ParlGov legacy_. A migration of the keys needs
-a substantial revision and is not included in the initial version of _ParlGov
-web_.
+Data sources are documented with keys in the data tables, and most of these
+keys are documented and checked in _ParlGov legacy_. A migration of the keys
+needs a considerable revision and is not included in the initial version of
+_ParlGov web_.
 
 ## External
 
-_ParlGov legacy_ includes additional information, such as party IDs and party
+_ParlGov legacy_ includes further information, such as party IDs and party
 names from other datasets, in database tables with the prefix `external_*`.
 
 These tables were not updated for recent versions of _ParlGov legacy_ and are
