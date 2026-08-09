@@ -11,7 +11,7 @@ Django 5.2 and Python 3.13
 
 ### Added
 
-- _for new features_
+- Add 'vale' prose linting for docs
 
 ### Changed
 

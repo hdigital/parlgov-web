@@ -24,6 +24,7 @@ learning-diary.md
 # Development
 .vscode/settings.json
 node_modules
+.vale/styles
 
 # macOS
 .DS_Store
