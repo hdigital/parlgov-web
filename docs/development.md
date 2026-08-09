@@ -27,7 +27,7 @@ pytest --cov
 
 Tests are run randomly with
 [pytest-randomly](https://github.com/pytest-dev/pytest-randomly). This can be
-disabled with
+turned off with
 
 ```sh
 # (.venv) ./app
