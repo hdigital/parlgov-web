@@ -97,7 +97,7 @@ All data is validated during the addition to the database with Django. The
 python manage.py validate_data
 ```
 
-Other validations include
+Other validations include:
 
 - parties
     - inclusion criteria check — see priority in `run_include_checks(party)`
@@ -111,7 +111,7 @@ Other validations include
     - PM for one party specified
     - previous election included
 
-Other scripts data checks
+Other scripts data checks:
 
 - `update_cabinet_election` — check and update election variable in all cabinets
 - `get_elections_no_seats_party` — show elections with missing coding of first loser
