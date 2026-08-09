@@ -93,6 +93,16 @@ Build static site documentation
 mkdocs build --clean --strict
 ```
 
+### Prose linting · ✍️
+
+Check docs and Markdown files for style issues with
+[Vale](https://vale.sh/), run via `uvx` (see `.vale.ini`)
+
+```sh
+uvx vale sync
+uvx vale docs README.md CHANGELOG.md
+```
+
 ### Graph models · 📐
 
 Create or update [graph
