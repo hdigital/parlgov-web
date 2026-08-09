@@ -40,7 +40,7 @@ See the example of a production deployment in `Dockerfile-flyio`.
 
 ## Installation · 🛠️
 
-Run in codespace, install locally, or use Docker (see above).
+Run in codespace, install locally, or use Docker (see the preceding section).
 
 **Codespace** is fully configured. Load the data and run a local server with
 _just_ commands.

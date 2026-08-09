@@ -47,7 +47,7 @@ scripts for the calculation have not been migrated.
 
 **Cabinet parties** have been migrated from _ParlGov legacy_.
 
-Cabinet seats have not been included (see above).
+Cabinet seats have not been included (see the preceding section).
 
 _ParlGov legacy_ includes an experimental and incomplete recording of
 _confidence votes_ and _cabinet support parties_ that have not been migrated to

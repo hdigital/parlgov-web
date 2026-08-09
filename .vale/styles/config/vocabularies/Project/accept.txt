@@ -1,0 +1,6 @@
+(?i)application
+(?i)admin
+(?i)open-source
+An
+MIT
+CC0
