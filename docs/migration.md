@@ -71,8 +71,8 @@ _ParlGov web_.
 
 ## External
 
-_ParlGov legacy_ includes further information, such as party IDs and party
-names from other datasets, in database tables with the prefix `external_*`.
+_ParlGov legacy_ includes further information such as party IDs and party
+names from other datasets in database tables with the prefix `external_*`.
 
 These tables were not updated for recent versions of _ParlGov legacy_ and are
 not needed in a new version of ParlGov.

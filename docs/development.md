@@ -96,7 +96,7 @@ mkdocs build --clean --strict
 ### Prose linting · ✍️
 
 Check docs and Markdown files for style issues with
-[Vale](https://vale.sh/), run via `uvx` (see `.vale.ini`)
+[Vale](https://vale.sh/), run via `uvx` (see `.vale.ini`).
 
 ```sh
 uvx vale sync
