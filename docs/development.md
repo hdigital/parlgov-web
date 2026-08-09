@@ -44,7 +44,7 @@ Database tables use prefixes.
 - _docs_ — documentation tables (e.g., codebook, news)
 - _view_ — main data tables (database views, _see below_)
 
-Additional tables are included by Django in the app database (`parlgov.sqlite`).
+Django also includes other tables in the app database (`parlgov.sqlite`).
 
 A visualization of the data tables is provided in `graph-models_data.png` (see
 below).
@@ -66,7 +66,7 @@ python manage.py update_cabinet_election
 
 ### Views · 🔬
 
-There are three main tables (parties, elections, cabinets) provided as database
+Three main tables (parties, elections, cabinets) are provided as database
 views. They include the most frequently used information from the primary
 database tables.
 
