@@ -12,6 +12,7 @@ Django 5.2 and Python 3.13
 ### Added
 
 - Add 'vale' prose linting for docs
+  ([#95](https://github.com/hdigital/parlgov-web/pull/95))
 
 ### Changed
 
