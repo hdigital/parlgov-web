@@ -15,8 +15,8 @@ def election_detail_view(request, country: str, election_date: str, ep: bool = F
     )
 
     if election.type.short == "ep":
-        election.ep_previous_election = Election.get_by_date(
-            election.country, election.date
+        election.ep_previous_election = (  # pyrefly: ignore[missing-attribute]
+            Election.get_by_date(election.country, election.date)
         )
 
     results = (
@@ -27,7 +27,8 @@ def election_detail_view(request, country: str, election_date: str, ep: bool = F
         .select_related("alliance__party", "election", "party__country")
     )
 
-    cabinets = election.cabinet_set.select_related("country")
+    cabinets = election.cabinet_set  # pyrefly: ignore[missing-attribute]
+    cabinets = cabinets.select_related("country")
 
     context = {
         "election": election,

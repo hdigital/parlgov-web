@@ -9,7 +9,7 @@ the 'django-import-export' package, specified as a development dependency.
 import os
 from pathlib import Path, PosixPath
 
-from import_export import resources
+from import_export import resources  # pyrefly: ignore[untyped-import]
 from tablib import Dataset
 
 from django.apps import apps
@@ -22,7 +22,7 @@ def get_data_files(path: PosixPath) -> list[str]:
     return sorted([dt for dt in os.listdir(path) if "csv" in dt])
 
 
-def get_model(data_file: str) -> Model:
+def get_model(data_file: str) -> type[Model]:
     """Get a model by 'app' and 'model' from file name.
 
     Use 'index__app__model.csv' file name elements to determine
@@ -43,7 +43,9 @@ def import_files_from_folder(path: PosixPath) -> None:
             dataset = Dataset().load(dt)
 
         django_model = get_model(data_file)
-        import_resource = resources.modelresource_factory(model=django_model)()
+        import_resource = resources.modelresource_factory(  # pyrefly: ignore
+            model=django_model
+        )()
         import_resource.import_data(dataset, raise_errors=True)
 
 
