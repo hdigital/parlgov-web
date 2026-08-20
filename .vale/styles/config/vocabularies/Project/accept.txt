@@ -1,0 +1,3 @@
+(?i)application
+(?i)admin
+(?i)open-source

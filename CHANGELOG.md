@@ -11,7 +11,8 @@ Django 5.2 and Python 3.13
 
 ### Added
 
-- _for new features_
+- Add 'vale' prose linting for docs
+  ([#95](https://github.com/hdigital/parlgov-web/pull/95))
 
 ### Changed
 
@@ -56,7 +57,7 @@ Django 5.2 and Python 3.13
   ([#53](https://github.com/hdigital/parlgov-web/pull/53),
    [#55](https://github.com/hdigital/parlgov-web/pull/55),
    [#56](https://github.com/hdigital/parlgov-web/pull/56))
-- Use '/api/v1' as API url for better versioning support
+- Use '/api/v1' as API URL for better versioning support
   ([#29](https://github.com/hdigital/parlgov-web/pull/29))
 - Recreate project data (fixture, schema, codebook)
   ([#65](https://github.com/hdigital/parlgov-web/pull/65))
@@ -127,7 +128,7 @@ Django 4.2 and Python 3.12
 
 ### Fixed
 
-- Specify database url for Docker
+- Specify database URL for Docker
   ([ebeee42](https://github.com/hdigital/parlgov-web/commit/ebeee42))
 
 ## [v24.08] — 2024-08-24
@@ -145,7 +146,7 @@ Django 5.x and Python 3.1x
 
 ### Changed
 
-- _for changes in functionality_
+- _for changes in existing features_
 
 ### Removed
 
