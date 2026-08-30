@@ -75,6 +75,7 @@ changelog = "https://github.com/hdigital/parlgov-web/blob/main/CHANGELOG.md"
 
 ## ----------------------------------------------------------------------------
 ## Ruff settings
+# https://docs.astral.sh/ruff/settings/
 
 [tool.ruff]
 extend-exclude = ["migrations"]
@@ -118,3 +119,11 @@ convention = "google"
 preset = "legacy"
 project-excludes = ["**/migrations*"]
 search-path = ["app"]
+
+## ----------------------------------------------------------------------------
+## uv settings (Python manager)
+# https://docs.astral.sh/uv/reference/settings
+
+[tool.uv]
+exclude-newer = "3 days"
+package = false
