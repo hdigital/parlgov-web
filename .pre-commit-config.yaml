@@ -5,7 +5,7 @@
 # run without commit: `pre-commit run --all-files`
 repos:
   - repo: https://github.com/rtts/djhtml
-    rev: 3.0.10
+    rev: 3.0.11
     hooks:
       - id: djhtml
         args:
@@ -30,7 +30,7 @@ repos:
         exclude: ^_docs/
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.11
+    rev: v0.16.5
     hooks:
       # Run Ruff linter.
       - id: ruff-check
