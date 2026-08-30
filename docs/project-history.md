@@ -6,32 +6,32 @@ accessible between 2010 and 2021.
 
 ## History
 
-The earliest Django version of ParlGov I found is from 2007. It was based on a
-SQLite database I created previously. I liked Django right away but was hesitant
+The earliest Django version of ParlGov I found is from 2007, based on a SQLite
+database I had already created. I liked Django right away but was hesitant
 to tie the project to the framework fully. Hence, I initially implemented the
 Django web app as a "user interface" to the database and started hosting it on
 Webfaction. At the time, I did not follow the best practices recommended by
-Django but kept the focus on the database. It was also the time when I learned
+Django but kept the focus on the database. This was also when I learned
 more advanced Python programming concepts through learning Django. This legacy
 is still visible in the code more than a decade later.
 
 I completed and made public an initial version of the site in 2010. At the time,
-I updated and significantly improved the structure of the database and the
+I updated and improved the structure of the database and the
 models by using better table and variable names as well as by restructuring the
 database. That year, I also started using version control, Mercurial at the
 time, so that all changes since 2010 can be tracked. Before 2010, the web app
 required a login.
 
 In 2014, I conducted a major refactoring of the code base and added the Bootstrap
-CSS framework, which led to a significantly more professional website layout.
+CSS framework, which led to a more professional website layout.
 
 Even in 2015, I knew that the web app needed significant refactoring. Newer
 Django versions deprecated some approaches that the code relied on, Python 3
 became mainstream, and there was too much outdated code.
 
-Between 2015 and 2021, I could not find funding to implement a refactoring, and
+Between 2015 and 2021, I could not find funding to carry out a refactoring, and
 I was not in a position to do these updates myself. That is why the project code
-base stalled, although it was happily running online all those years. During
+base stalled, although it kept happily running online all those years. During
 this period, I added data validations, minor bug fixes, and minuscule
 enhancements.
 
@@ -78,12 +78,12 @@ app is risky and potentially error-prone.
 Sixth, _frontend technologies_ have evolved over the last decade. None of these
 tools, Bootstrap as an exception, is used in the app.
 
-Nevertheless, I firmly believe that the models have stood the test of time.
-There are a few minor adjustments I would like to make, and many removals are
-needed. I am convinced that the major models are very robust and include a lot
-of valuable experience gained over the years.
+Still, I firmly believe that the models have stood the test of time. A few
+minor adjustments would be worthwhile, and many removals are needed. I am
+convinced that the major models are robust and include a lot of valuable
+experience gained over the years.
 
-Therefore, the new version is based on the models from the legacy app. All other
+As a result, the new version is based on the models from the legacy app. All other
 code has been written from scratch, and this is not a "second system syndrome"
 but a hard-won insight.
 
