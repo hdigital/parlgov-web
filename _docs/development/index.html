@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -405,6 +405,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#prose-linting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prose linting · ✍️
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#graph-models" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -604,6 +615,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#prose-linting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prose linting · ✍️
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#graph-models" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -654,7 +676,7 @@ pytest --cov
 </code></pre>
 <p>Tests are run randomly with
 <a href="https://github.com/pytest-dev/pytest-randomly">pytest-randomly</a>. This can be
-disabled with</p>
+turned off with</p>
 <pre><code class="language-sh"># (.venv) ./app
 pytest --cov --randomly-dont-reorganize
 </code></pre>
@@ -666,7 +688,7 @@ pytest --cov --randomly-dont-reorganize
 <li><em>docs</em> — documentation tables (e.g., codebook, news)</li>
 <li><em>view</em> — main data tables (database views, <em>see below</em>)</li>
 </ul>
-<p>Additional tables are included by Django in the app database (<code>parlgov.sqlite</code>).</p>
+<p>Django also includes other tables in the app database (<code>parlgov.sqlite</code>).</p>
 <p>A visualization of the data tables is provided in <code>graph-models_data.png</code> (see
 below).</p>
 <h3 id="normalization">Normalization · ✔️</h3>
@@ -680,7 +702,7 @@ automatically.</p>
 python manage.py update_cabinet_election
 </code></pre>
 <h3 id="views">Views · 🔬</h3>
-<p>There are three main tables (parties, elections, cabinets) provided as database
+<p>Three main tables (parties, elections, cabinets) are provided as database
 views. They include the most frequently used information from the primary
 database tables.</p>
 <p>These views are created during the initialization of the project (see <a href="../usage/#data-import">Data
@@ -695,6 +717,12 @@ mkdocs serve --dev-addr localhost:8888
 <p>Build static site documentation</p>
 <pre><code class="language-sh"># (.venv) ./
 mkdocs build --clean --strict
+</code></pre>
+<h3 id="prose-linting">Prose linting · ✍️</h3>
+<p>Check docs and Markdown files for style issues with
+<a href="https://vale.sh/">Vale</a>, run via <code>uvx</code> (see <code>.vale.ini</code>).</p>
+<pre><code class="language-sh">uvx vale sync
+uvx vale docs README.md CHANGELOG.md
 </code></pre>
 <h3 id="graph-models">Graph models · 📐</h3>
 <p>Create or update <a href="https://django-extensions.readthedocs.io/en/latest/graph_models.html#example-usage">graph
@@ -801,7 +829,7 @@ testing, Docker, and codespace configuration lean.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
