@@ -24,6 +24,13 @@ def test_cabinet_detail_404(client, db, cabinet_party):
     assert response.status_code == 404
 
 
+def test_cabinet_detail_date_404(client):
+    kw_args = {"country": "deu", "cabinet_date": "2020-02-30"}
+    response = client.get(reverse("cabinets:detail", kwargs=kw_args))
+
+    assert response.status_code == 404
+
+
 def test_cabinet_election(client, db, cabinet_party):
     _ = ElectionFactory(country__short="DEU", date="2000-01-01")
     cabinet_party.cabinet.save()  # set 'self.election' attribute on save
