@@ -93,3 +93,12 @@ def test_election_detail_cabinet(client, db, election_result):
     response = get_election_detail_response(client, election_result)
 
     assert "<!-- cabinets-section-test -->" in response.rendered_content
+
+
+@pytest.mark.parametrize("election_date", ["abc", "2020-13-45", "1900-01-01"])
+def test_election_detail_date_404(client, db, election_result, election_date):
+    kw_args = {"country": "deu", "election_date": election_date}
+
+    for url_name in ["elections:detail", "elections:detail_ep"]:
+        response = client.get(reverse(url_name, kwargs=kw_args))
+        assert response.status_code == 404

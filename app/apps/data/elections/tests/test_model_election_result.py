@@ -63,6 +63,14 @@ def test_seat_share(db, election_result):
     assert seat_share == election_result.seat_share
 
 
+def test_seat_share_no_seats(db, election_result):
+    election_result.seats = 0
+    assert election_result.seat_share == 0.0
+
+    election_result.seats = None
+    assert election_result.seat_share is None
+
+
 @pytest.mark.parametrize(
     "value, value_decimal",
     [

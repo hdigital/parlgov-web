@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
 from django.template.response import TemplateResponse
 
-from ..core.utils import get_country_or_404, previous_next_object
+from ..core.utils import get_country_or_404, get_date_or_404, previous_next_object
 from .models import Election, ElectionResult
 
 
@@ -10,7 +10,7 @@ def election_detail_view(request, country: str, election_date: str, ep: bool = F
     election = get_object_or_404(
         Election,
         country__name_short=country.upper(),
-        date=election_date,
+        date=get_date_or_404(election_date),
         type__short="parliament" if not ep else "ep",
     )
 

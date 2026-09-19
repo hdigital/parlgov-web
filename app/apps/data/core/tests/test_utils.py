@@ -7,6 +7,7 @@ from django.http import Http404
 from ..utils import (
     clean_date_format,
     get_country_or_404,
+    get_date_or_404,
     previous_next_item,
     previous_next_object,
 )
@@ -28,11 +29,17 @@ def test_prev_next_object(db, django_user_model):
     assert previous_next_object(object_b)[0] == object_a
 
 
-def test_clean_date():
-    assert clean_date_format(None) == ""
-    assert clean_date_format(date(2020, 7, 1)) == "2020"
-    assert clean_date_format(date(2020, 2, 1)) == "2020-02"
-    assert clean_date_format(date(2020, 2, 2)) == "2020-02-02"
+@pytest.mark.parametrize(
+    "date_value, expected",
+    [
+        (None, ""),
+        (date(2020, 7, 1), "2020"),
+        (date(2020, 2, 1), "2020-02"),
+        (date(2020, 2, 2), "2020-02-02"),
+    ],
+)
+def test_clean_date(date_value, expected):
+    assert clean_date_format(date_value) == expected
 
 
 def test_get_country_or_404(db, country):
@@ -41,3 +48,13 @@ def test_get_country_or_404(db, country):
 
     with pytest.raises(Http404):
         get_country_or_404("DDD")
+
+
+def test_get_date_or_404():
+    assert get_date_or_404("2020-02-01") == date(2020, 2, 1)
+
+
+@pytest.mark.parametrize("date_string", ["abc", "2020-13-01", "2020-02-30"])
+def test_get_date_or_404_invalid(date_string):
+    with pytest.raises(Http404):
+        get_date_or_404(date_string)
