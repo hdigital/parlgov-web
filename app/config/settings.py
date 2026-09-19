@@ -30,8 +30,7 @@ environ.Env.read_env(BASE_DIR / "config" / ".env")
 ENV_CACHES = env.cache_url("CACHE_URL", default="dummycache://")
 ENV_DEBUG = env.bool("DJANGO_DEBUG", default=False)
 # Generate secret key outside env.str() to avoid recursion bug in 'django-environ'
-_default_secret_key = get_random_secret_key()
-ENV_SECRET_KEY = env.str("SECRET_KEY", default=_default_secret_key)
+ENV_SECRET_KEY = env.str("SECRET_KEY", default="") or get_random_secret_key()
 ENV_ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 ENV_SSL_REQUIRED = env.bool("SSL_REQUIRED", default=False)
 ENV_DATABASES = env.db_url(
@@ -91,16 +90,16 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     # WhiteNoise: "above all" after SecurityMiddleware — see docs (link below)
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    # option cache -- see settings below
+    # option cache -- see settings below (before SessionMiddleware, 'Vary: Cookie')
     "django.middleware.cache.UpdateCacheMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    # option cache -- see settings below
-    "django.middleware.cache.FetchFromCacheMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # option cache -- see settings below
+    "django.middleware.cache.FetchFromCacheMiddleware",
 ]
 
 
