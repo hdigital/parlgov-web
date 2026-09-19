@@ -21,4 +21,7 @@ with sqlite3.connect(db_public) as conn:
 
     conn.commit()
 
+    # Purge dropped tables from file
+    cur.execute("VACUUM;")
+
 print("\n\n✅ · Creating database\n\n")
