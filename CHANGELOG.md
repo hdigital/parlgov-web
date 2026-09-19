@@ -31,7 +31,8 @@ Django 5.2 and Python 3.13
 
 ### Fixed
 
-- _for bug fixes_
+- Return 404 for invalid dates and fix seat share for zero seats
+  ([#103](https://github.com/hdigital/parlgov-web/pull/103))
 - Minor revisions
 
 ## [v26.02] — 2026-02-28
