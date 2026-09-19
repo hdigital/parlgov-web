@@ -91,16 +91,16 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     # WhiteNoise: "above all" after SecurityMiddleware — see docs (link below)
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    # option cache -- see settings below
+    # option cache -- see settings below (before SessionMiddleware, 'Vary: Cookie')
     "django.middleware.cache.UpdateCacheMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    # option cache -- see settings below
-    "django.middleware.cache.FetchFromCacheMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # option cache -- see settings below
+    "django.middleware.cache.FetchFromCacheMiddleware",
 ]
 
 
