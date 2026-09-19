@@ -92,9 +92,13 @@
         <dd class="col-sm-9">{{ election.seats_total|default_if_none:"" }}</dd>
         <dt class="col-sm-3">Wikipedia</dt>
         <dd class="col-sm-9">
-          <a href={{ election.wikipedia }}>
-            {{ election.wikipedia|wikipedia_title }}
-          </a>
+          {% if election.wikipedia %}
+            <a href="{{ election.wikipedia }}">
+              {{ election.wikipedia|wikipedia_title }}
+            </a>
+          {% else %}
+            <i>none</i>
+          {% endif %}
         </dd>
         {% if election.ep_previous_election %}
           <dt class="col-sm-3">Election parliament</dt>

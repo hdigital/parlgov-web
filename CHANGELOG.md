@@ -31,7 +31,8 @@ Django 5.2 and Python 3.13
 
 ### Fixed
 
-- _for bug fixes_
+- Fix logout, admin link, and empty values in templates
+  ([#102](https://github.com/hdigital/parlgov-web/pull/102))
 - Minor revisions
 
 ## [v26.02] — 2026-02-28
