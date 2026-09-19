@@ -31,7 +31,8 @@ Django 5.2 and Python 3.13
 
 ### Fixed
 
-- _for bug fixes_
+- Fix cache middleware order and secret key default
+  ([#101](https://github.com/hdigital/parlgov-web/pull/101))
 - Minor revisions
 
 ## [v26.02] — 2026-02-28
