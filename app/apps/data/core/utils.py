@@ -1,5 +1,6 @@
 """Utility methods for ParlGov pages."""
 
+from datetime import date
 from itertools import chain, islice, tee
 
 from django.http import Http404
@@ -45,3 +46,11 @@ def get_country_or_404(country_short):
         raise Http404
 
     return country
+
+
+def get_date_or_404(date_string: str) -> date:
+    """Get date from url string ('YYYY-MM-DD') or raise http 404 error."""
+    try:
+        return date.fromisoformat(date_string)
+    except ValueError:
+        raise Http404 from None

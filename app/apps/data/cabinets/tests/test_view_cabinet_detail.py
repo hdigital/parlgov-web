@@ -1,3 +1,5 @@
+import pytest
+
 from django.urls import reverse
 from pytest_django.asserts import assertTemplateUsed
 
@@ -19,6 +21,14 @@ def test_cabinet_detail(client, db, cabinet_party):
 
 def test_cabinet_detail_404(client, db, cabinet_party):
     kw_args = {"country": "ddd", "cabinet_date": "2000-01-01"}
+    response = client.get(reverse("cabinets:detail", kwargs=kw_args))
+
+    assert response.status_code == 404
+
+
+@pytest.mark.parametrize("cabinet_date", ["abc", "2020-02-30", "1900-01-01"])
+def test_cabinet_detail_date_404(client, db, cabinet_party, cabinet_date):
+    kw_args = {"country": "deu", "cabinet_date": cabinet_date}
     response = client.get(reverse("cabinets:detail", kwargs=kw_args))
 
     assert response.status_code == 404
