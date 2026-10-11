@@ -114,17 +114,25 @@
         </dd>
         <dt class="col-sm-3">Wikipedia</dt>
         <dd class="col-sm-9">
-          <a href={{ cabinet.wikipedia }}>
-            {{ cabinet.wikipedia|wikipedia_title }}
-          </a>
+          {% if cabinet.wikipedia %}
+            <a href="{{ cabinet.wikipedia }}">
+              {{ cabinet.wikipedia|wikipedia_title }}
+            </a>
+          {% else %}
+            <i>none</i>
+          {% endif %}
         </dd>
         <dt class="col-sm-3">
           Election
         </dt>
         <dd class="col-sm-9">
-          <a href={{ cabinet.election.get_absolute_url }}>
-            {{ cabinet.election.date|date:"j. F Y"|default:"<i>none</i>" }}
-          </a>
+          {% if cabinet.election %}
+            <a href="{{ cabinet.election.get_absolute_url }}">
+              {{ cabinet.election.date|date:"j. F Y" }}
+            </a>
+          {% else %}
+            <i>none</i>
+          {% endif %}
         </dd>
         <dt class="col-sm-3">Description</dt>
         <dd class="col-sm-9">

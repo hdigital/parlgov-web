@@ -71,18 +71,29 @@
             {% endif %}
             <li class="nav-item">
               {% if user.is_authenticated %}
-                <a class="nav-link link-dark" href="{% url 'admin:index' %}">
+                <a
+                  class="nav-link link-dark"
+                  href="{% url 'admin:index' %}"
+                  aria-label="Admin"
+                >
                   <i class="bi bi-pencil-square"></i>
                 </a>
               {% endif %}
             </li>
             <li class="nav-item">
               {% if user.is_authenticated %}
-                <a class="nav-link link-dark" href="{% url 'page:logout' %}">
-                  <i class="bi bi-box-arrow-right"></i>
-                </a>
+                <form method="post" action="{% url 'page:logout' %}">
+                  {% csrf_token %}
+                  <button type="submit" class="nav-link link-dark" aria-label="Logout">
+                    <i class="bi bi-box-arrow-right"></i>
+                  </button>
+                </form>
               {% else %}
-                <a class="nav-link link-dark" href="{% url 'page:login' %}">
+                <a
+                  class="nav-link link-dark"
+                  href="{% url 'page:login' %}"
+                  aria-label="Login"
+                >
                   <i class="bi bi-box-arrow-in-right"></i>
                 </a>
               {% endif %}

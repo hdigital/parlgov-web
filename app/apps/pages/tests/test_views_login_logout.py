@@ -27,3 +27,16 @@ def test_logout(logged_in_client):
     response = logged_in_client.get(reverse("page:home"))
 
     assert "bi-box" in response.rendered_content
+    assert 'method="post"' in response.rendered_content
+    assert f'action="{reverse("page:logout")}"' in response.rendered_content
+    assert "csrfmiddlewaretoken" in response.rendered_content
+
+
+def test_logout_post(logged_in_client):
+    response = logged_in_client.post(reverse("page:logout"))
+
+    assert response.status_code == 302
+    assert response.url == reverse("page:home")
+
+    response = logged_in_client.get(reverse("page:home"))
+    assert not response.context["user"].is_authenticated
