@@ -1,4 +1,8 @@
+import importlib
+
+import environ
 import pytest
+from config import settings
 
 from django.contrib.auth.password_validation import validate_password
 from django.core.cache import cache
@@ -47,3 +51,14 @@ def test_cache_middleware_varies_on_cookie(client, admin_user):
     client.logout()
     response = client.get(url)
     assert "editor comment" not in response.content.decode()
+
+
+def test_secret_key_with_dollar_sign(monkeypatch):
+    """Secret key starting with '$' is not resolved as variable reference."""
+    monkeypatch.setattr(environ.Env, "read_env", lambda *args, **kwargs: None)
+
+    monkeypatch.setenv("SECRET_KEY", "$abc")
+    assert importlib.reload(settings).SECRET_KEY == "$abc"
+
+    monkeypatch.delenv("SECRET_KEY")
+    assert len(importlib.reload(settings).SECRET_KEY) == 50

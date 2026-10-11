@@ -5,6 +5,7 @@ https://docs.djangoproject.com/en/stable/ref/settings/
 """
 
 import importlib.util
+import os
 import warnings
 from pathlib import Path
 
@@ -29,8 +30,8 @@ environ.Env.read_env(BASE_DIR / "config" / ".env")
 # get environment variables and set default values
 ENV_CACHES = env.cache_url("CACHE_URL", default="dummycache://")
 ENV_DEBUG = env.bool("DJANGO_DEBUG", default=False)
-# Generate secret key outside env.str() to avoid recursion bug in 'django-environ'
-ENV_SECRET_KEY = env.str("SECRET_KEY", default="") or get_random_secret_key()
+# Read without 'django-environ' -- resolves '$' values
+ENV_SECRET_KEY = os.environ.get("SECRET_KEY") or get_random_secret_key()
 ENV_ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 ENV_SSL_REQUIRED = env.bool("SSL_REQUIRED", default=False)
 ENV_DATABASES = env.db_url(
