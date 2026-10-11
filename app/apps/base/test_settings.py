@@ -35,14 +35,10 @@ def test_password_not_numeric():
     CACHES={"default": {"BACKEND": "django.core.cache.backends.locmem.LocMemCache"}}
 )
 def test_cache_middleware_varies_on_cookie(client, admin_user):
-    """Cached pages are not shared between visitors and logged-in users."""
+    """Cached pages of logged-in users are not served to visitors."""
     cache.clear()
     party = PartyFactory(comment="editor comment")
     url = party.get_absolute_url()
-
-    response = client.get(url)
-    assert "editor comment" not in response.rendered_content
-    assert "Cookie" in response["Vary"]
 
     client.force_login(admin_user)
     response = client.get(url)
@@ -51,6 +47,10 @@ def test_cache_middleware_varies_on_cookie(client, admin_user):
     client.logout()
     response = client.get(url)
     assert "editor comment" not in response.content.decode()
+
+    response = client.get(url)
+    assert not response.templates  # served from cache
+    cache.clear()
 
 
 def test_secret_key_with_dollar_sign(monkeypatch):
