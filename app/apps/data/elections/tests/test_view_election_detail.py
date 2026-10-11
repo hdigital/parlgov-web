@@ -93,3 +93,10 @@ def test_election_detail_cabinet(client, db, election_result):
     response = get_election_detail_response(client, election_result)
 
     assert "<!-- cabinets-section-test -->" in response.rendered_content
+
+
+def test_election_detail_date_404(client):
+    kw_args = {"country": "deu", "election_date": "2020-13-45"}
+    response = client.get(reverse("elections:detail", kwargs=kw_args))
+
+    assert response.status_code == 404
