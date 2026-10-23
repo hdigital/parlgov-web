@@ -14,7 +14,7 @@
       <div class="col-sm-8">
         <h6>
           {{ entry.title }}
-          {% url 'admin:documentation_news_change' entry.id as admin_url %}
+          {% url 'admin:docs_news_change' entry.id as admin_url %}
           {% include '_includes/admin.html' with url=admin_url icon='pencil' middot=True %}
         </h6>
         <p>{{ entry.content|markdown|safe }}</p>

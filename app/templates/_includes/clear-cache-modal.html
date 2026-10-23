@@ -1,11 +1,13 @@
 <!-- Icon trigger modal -->
-<a
+<button
+  type="button"
   class="nav-link link-dark"
   data-bs-toggle="modal"
   data-bs-target="#cacheModal"
+  aria-label="Clear cache"
 >
   <i class="bi bi-trash"></i>
-</a>
+</button>
 <!-- Modal -->
 <div
   class="modal fade"
@@ -37,13 +39,10 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="window.location = '{% url 'clear_cache' %}'"
-        >
-          Clear cache
-        </button>
+        <form method="post" action="{% url 'clear_cache' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary">Clear cache</button>
+        </form>
       </div>
     </div>
   </div>
