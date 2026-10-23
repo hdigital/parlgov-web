@@ -1,7 +1,15 @@
+import importlib
+
+import environ
 import pytest
+from config import settings
 
 from django.contrib.auth.password_validation import validate_password
+from django.core.cache import cache
 from django.core.exceptions import ValidationError
+from django.test import override_settings
+
+from apps.data.parties.tests.factories import PartyFactory
 
 
 def test_password_valid():
@@ -20,3 +28,37 @@ def test_password_not_numeric():
         validate_password("12345678901234567")
 
     assert "entirely numeric" in " ".join(error.value.messages)
+
+
+@pytest.mark.django_db
+@override_settings(
+    CACHES={"default": {"BACKEND": "django.core.cache.backends.locmem.LocMemCache"}}
+)
+def test_cache_middleware_varies_on_cookie(client, admin_user):
+    """Cached pages of logged-in users are not served to visitors."""
+    cache.clear()
+    party = PartyFactory(comment="editor comment")
+    url = party.get_absolute_url()
+
+    client.force_login(admin_user)
+    response = client.get(url)
+    assert "editor comment" in response.content.decode()
+
+    client.logout()
+    response = client.get(url)
+    assert "editor comment" not in response.content.decode()
+
+    response = client.get(url)
+    assert not response.templates  # served from cache
+    cache.clear()
+
+
+def test_secret_key_with_dollar_sign(monkeypatch):
+    """Secret key starting with '$' is not resolved as variable reference."""
+    monkeypatch.setattr(environ.Env, "read_env", lambda *args, **kwargs: None)
+
+    monkeypatch.setenv("SECRET_KEY", "$abc")
+    assert importlib.reload(settings).SECRET_KEY == "$abc"
+
+    monkeypatch.delenv("SECRET_KEY")
+    assert len(importlib.reload(settings).SECRET_KEY) == 50

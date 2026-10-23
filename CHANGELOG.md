@@ -35,6 +35,8 @@ Django 5.2 and Python 3.13
   ([#102](https://github.com/hdigital/parlgov-web/pull/102))
 - Fix invalid dates and zero seats in data pages
   ([#103](https://github.com/hdigital/parlgov-web/pull/103))
+- Fix middleware order and secret keys in settings
+  ([#101](https://github.com/hdigital/parlgov-web/pull/101))
 - Minor revisions
 
 ## [v26.02] — 2026-02-28
