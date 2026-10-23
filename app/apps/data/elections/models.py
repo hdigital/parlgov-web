@@ -132,7 +132,7 @@ class ElectionResult(BaseModel):
     @property
     def seat_share(self):
         """Provide seat share as class property."""
-        if self.seats and self.election.seats_total:
+        if self.seats is not None and self.election.seats_total:
             return float(self.seats) / float(self.election.seats_total) * 100.0
 
     def clean(self):

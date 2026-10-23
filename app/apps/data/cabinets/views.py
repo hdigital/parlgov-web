@@ -1,14 +1,16 @@
 from django.shortcuts import get_object_or_404
 from django.template.response import TemplateResponse
 
-from ..core.utils import get_country_or_404, previous_next_object
+from ..core.utils import get_country_or_404, get_date_or_404, previous_next_object
 from .models import Cabinet, CabinetParty
 
 
 def cabinet_detail_view(request, country: str, cabinet_date: str):
     """Details of cabinet page."""
     cabinet = get_object_or_404(
-        Cabinet, country__name_short=country.upper(), start_date=cabinet_date
+        Cabinet,
+        country__name_short=country.upper(),
+        start_date=get_date_or_404(cabinet_date),
     )
     parties = CabinetParty.objects.filter(cabinet=cabinet).select_related(
         "party__country"
