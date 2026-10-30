@@ -24,6 +24,8 @@ Django 5.2 and Python 3.13
   ([#88](https://github.com/hdigital/parlgov-web/pull/88))
 - Reduce installed dev packages
   ([#90](https://github.com/hdigital/parlgov-web/pull/90))
+- Require CI check and squash merge on 'main'
+  ([#110](https://github.com/hdigital/parlgov-web/pull/110))
 
 ### Removed
 
